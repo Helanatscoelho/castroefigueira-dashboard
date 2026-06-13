@@ -1,1 +1,411 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Dashboard Marketing C&F Advocacia Previdenciaria</title><style>:root{--w:#6B0F1A;--wd:#3D0008;--wm:#8B1A2A;--g:#C9A84C;--gl:#E8C87A;--d:#080808;--d2:#111;--d3:#1A1A1A;--d4:#222;--t:#F0E6D3;--m:#B8A090}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',Arial,sans-serif;background:var(--d);color:var(--t);font-size:17px;line-height:1.7}h1{font-size:clamp(24px,4vw,44px)}h2{font-size:clamp(20px,3vw,34px)}h3{font-size:clamp(18px,2.5vw,28px)}h4{font-size:clamp(16px,2vw,22px)}p,li{font-size:clamp(15px,1.8vw,18px)}.hdr{background:linear-gradient(135deg,var(--wd),var(--w),var(--wm));padding:50px 20px;text-align:center;border-bottom:4px solid var(--g)}.hdr h1{color:var(--g);letter-spacing:3px;margin-bottom:12px}.hdr p{color:var(--t);opacity:.9}.sub{color:var(--gl);font-size:clamp(14px,1.6vw,19px);margin-top:8px}.nav{background:var(--d2);border-bottom:2px solid var(--w);display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:18px;position:sticky;top:0;z-index:100}.nav a{color:var(--g);padding:10px 22px;border:1px solid var(--w);border-radius:5px;font-size:clamp(14px,1.5vw,17px);transition:all .3s;cursor:pointer;text-decoration:none}.nav a:hover,.nav a.active{background:var(--w);color:#fff;border-color:var(--g)}.sec{padding:50px 20px;max-width:1400px;margin:0 auto}.tab{display:none}.tab.on{display:block}.stitle{color:var(--g);border-left:6px solid var(--w);padding-left:18px;margin-bottom:35px}.card{background:var(--d3);border:1px solid var(--wm);border-radius:12px;padding:28px;margin-bottom:22px;transition:transform .25s,box-shadow .25s}.card:hover{transform:translateY(-4px);box-shadow:0 12px 35px rgba(107,15,26,.5)}.card h3{color:var(--g);margin-bottom:14px}.card p,.card li{color:var(--t);margin-bottom:8px}.card ul{padding-left:20px}.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}.badge{display:inline-block;background:var(--w);color:var(--g);padding:5px 14px;border-radius:20px;font-size:clamp(13px,1.4vw,16px);margin:3px;border:1px solid var(--g)}.stat{background:linear-gradient(135deg,var(--d3),var(--d4));border:1px solid var(--w);border-radius:12px;padding:28px;text-align:center}.stat .n{font-size:clamp(32px,5vw,60px);font-weight:bold;color:var(--g);display:block}.stat .l{color:var(--m);font-size:clamp(14px,1.5vw,18px)}.cal{background:var(--d3);border-radius:12px;overflow:hidden;border:1px solid var(--w);margin-bottom:30px}.ch{background:linear-gradient(135deg,var(--w),var(--wm));padding:18px 25px;display:flex;justify-content:space-between;align-items:center}.ch h3{color:var(--g)}.ch button{background:transparent;border:2px solid var(--g);color:var(--g);padding:7px 18px;border-radius:5px;cursor:pointer;font-size:clamp(14px,1.5vw,17px);transition:all .3s}.ch button:hover{background:var(--g);color:var(--d)}.cg{display:grid;grid-template-columns:repeat(7,1fr)}.cd{background:var(--d3);padding:10px 5px;text-align:center;border:1px solid #1a1a1a;min-height:85px;cursor:pointer;transition:background .2s;font-size:clamp(13px,1.4vw,16px)}.cd:hover{background:var(--d4)}.cd.dh{background:var(--wm);color:var(--g);font-weight:bold;min-height:auto;padding:10px}.cd.hp{background:var(--wd);border-color:#8B1A2A}.cd .dn{display:block;font-weight:bold}.cd.hp .dn{color:var(--g)}.cd .pi{font-size:10px;color:var(--gl);background:var(--w);padding:2px 4px;border-radius:3px;display:block;margin-top:3px;line-height:1.3}.tip{background:linear-gradient(135deg,var(--wd),var(--d3));border-left:5px solid var(--g);padding:18px 22px;border-radius:0 10px 10px 0;margin-bottom:14px}.tip strong{color:var(--g)}.vc{background:var(--d3);border:1px solid var(--wm);border-radius:12px;overflow:hidden;transition:transform .25s}.vc:hover{transform:translateY(-4px);box-shadow:0 12px 35px rgba(107,15,26,.5)}.vt{background:linear-gradient(135deg,var(--w),var(--wd));height:120px;display:flex;align-items:center;justify-content:center;font-size:46px}.vb{padding:16px}.vb h4{color:var(--g);margin-bottom:8px}.vb p{color:var(--m)}.vb .tag{display:inline-block;background:var(--w);color:var(--gl);padding:2px 8px;border-radius:4px;font-size:12px;margin:2px}.sc{background:linear-gradient(180deg,var(--wd),var(--w));border-radius:16px;padding:20px 16px;text-align:center;border:2px solid var(--g);min-height:250px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s}.sc:hover{transform:scale(1.03)}.sc h4{color:var(--g);margin-bottom:8px}.sc p{color:var(--t);font-size:clamp(14px,1.5vw,17px)}.sc .ic{font-size:42px;margin-bottom:10px}.ftr{background:var(--d2);border-top:3px solid var(--w);padding:35px 20px;text-align:center}.ftr p{color:var(--m)}.ftr a{color:var(--g)}@media(max-width:600px){.nav a{padding:8px 14px;font-size:14px}.sec{padding:30px 15px}}</style></head><body><header class="hdr"><h1>&#9878; C&amp;F ADVOCACIA</h1><p>Dashboard de Marketing Estrategico | Direito Previdenciario</p><p class="sub">Dr. Marlon Figueira OAB/RJ 152.763 | @castroefigueira | (22) 9.9759-9350</p></header><nav class="nav"><a href="#" class="active" onclick="show('v',this)">&#127919; Visao Geral</a><a href="#" onclick="show('c',this)">&#128197; Calendario</a><a href="#" onclick="show('vi',this)">&#127909; Videos</a><a href="#" onclick="show('f',this)">&#128247; Fotos</a><a href="#" onclick="show('s',this)">&#127775; Stories</a><a href="#" onclick="show('l',this)">&#128172; Linguagem</a><a href="#" onclick="show('p',this)">&#127891; Publico</a><a href="#" onclick="show('cr',this)">&#127912; Visual</a></nav><div class="sec"><div id="v" class="tab on"><h2 class="stitle">&#127919; Visao Geral</h2><div class="g4"><div class="stat"><span class="n">711</span><div class="l">Publicacoes</div></div><div class="stat"><span class="n">1.263</span><div class="l">Seguidores</div></div><div class="stat"><span class="n">&#9733;&#9733;&#9733;&#9733;&#9733;</span><div class="l">Potencial</div></div><div class="stat"><span class="n">100%</span><div class="l">Foco Previd.</div></div></div><br><div class="g2"><div class="card"><h3>&#128269; Perfil Atual</h3><p><b style="color:#C9A84C">Nome:</b> Castro e Figueira | Direito Previdenciario e Trabalhista</p><p><b style="color:#C9A84C">Advogado Principal:</b> Marlon da S. Figueira - OAB/RJ 152.763</p><p><b style="color:#C9A84C">Contato:</b> (22) 9.9759-9350 | Online e Presencial</p><p><b style="color:#C9A84C">Localizacao:</b> Itaperuna/RJ - Ed. Policenter</p><p><b style="color:#C9A84C">Formato:</b> Reels, Carrosseis, Posts informativos</p><p><b style="color:#C9A84C">Temas:</b> Auxilio Acidente, INSS, Aposentadoria, CLT, BPC</p></div><div class="card"><h3>&#128161; Diagnostico</h3><p>Perfil com alta frequencia de publicacoes. Para consolidar posicionamento como ESPECIALISTA PREVIDENCIARIO precisa de estrategia mais focada e autoridade comprovada.</p><br><p><b style="color:#C9A84C">&#9989; Pontos Fortes:</b></p><ul><li>711 publicacoes - alta consistencia</li><li>Videos respondem duvidas reais</li><li>Identidade visual vinho ja presente</li><li>Atendimento online amplia alcance</li></ul><br><p><b style="color:#C9A84C">&#9888; Melhorias:</b></p><ul><li>BIO: 'Especialista em Direito Previdenciario'</li><li>Usar resultados numericos nos posts</li><li>Mais depoimentos (prova social)</li><li>Serie exclusiva: Aposentadoria Especial</li></ul></div></div></div><div id="c" class="tab"><h2 class="stitle">&#128197; Calendario Editorial</h2><div class="cal"><div class="ch"><button onclick="m(-1)">&#8592; Ant</button><h3 id="mt">Junho 2026</h3><button onclick="m(1)">Pro &#8594;</button></div><div class="cg" id="cd"></div></div><div class="g3"><div class="card"><h3>&#128198; Frequencia</h3><ul><li><b style="color:#C9A84C">Reels:</b> 4-5x/semana</li><li><b style="color:#C9A84C">Stories:</b> Diario (5-7)</li><li><b style="color:#C9A84C">Carrosseis:</b> 2x/semana</li><li><b style="color:#C9A84C">Posts estaticos:</b> 1x/semana</li><li><b style="color:#C9A84C">Lives:</b> Quinzenal</li></ul></div><div class="card"><h3>&#128215; 5 Pilares</h3><ul><li>&#128209; <b style="color:#C9A84C">Educativo</b> - 40%</li><li>&#9878; <b style="color:#C9A84C">Autoridade</b> - 25%</li><li>&#128101; <b style="color:#C9A84C">Prova Social</b> - 15%</li><li>&#128269; <b style="color:#C9A84C">Bastidores</b> - 10%</li><li>&#127919; <b style="color:#C9A84C">Posicionamento</b> - 10%</li></ul></div><div class="card"><h3>&#128337; Melhores Horarios</h3><ul><li><b style="color:#C9A84C">Seg/Qua/Sex:</b> 12h e 19h30</li><li><b style="color:#C9A84C">Ter/Qui:</b> 7h e 20h</li><li><b style="color:#C9A84C">Sabado:</b> 9h e 18h</li><li><b style="color:#C9A84C">Domingo:</b> 10h</li></ul></div></div></div><div id="vi" class="tab"><h2 class="stitle">&#127909; 20 Ideias de Videos (Reels)</h2><div class="g3"><div class="vc"><div class="vt">&#128209;</div><div class="vb"><h4>1. Quando posso me aposentar?</h4><p>Tipos: por idade, contribuicao e especial.</p><span class="tag">Educativo</span><span class="tag">Alta busca</span></div></div><div class="vc"><div class="vt">&#128203;</div><div class="vb"><h4>2. INSS negou? O que fazer agora</h4><p>Recursos, casos reais de reversao e CTA.</p><span class="tag">Autoridade</span><span class="tag">Viral</span></div></div><div class="vc"><div class="vt">&#129657;</div><div class="vb"><h4>3. Auxilio-doenca x Aposentadoria invalidez</h4><p>Diferenca, valores e como transitar.</p><span class="tag">Educativo</span></div></div><div class="vc"><div class="vt">&#128201;</div><div class="vb"><h4>4. Quanto o INSS vai me pagar?</h4><p>Calculo real, teto e otimizacao.</p><span class="tag">Engajamento</span><span class="tag">Salvo</span></div></div><div class="vc"><div class="vt">&#127757;</div><div class="vb"><h4>5. Aposentadoria especial: quem tem direito?</h4><p>Profissoes insalubres/perigosas.</p><span class="tag">Nicho</span><span class="tag">Alta busca</span></div></div><div class="vc"><div class="vt">&#128246;</div><div class="vb"><h4>6. Pensao por morte: quem recebe?</h4><p>Criterios, prazo e documentos.</p><span class="tag">Duvida frequente</span></div></div><div class="vc"><div class="vt">&#128166;</div><div class="vb"><h4>7. Acidente de trabalho e INSS</h4><p>CAT, Auxilio Acidente, estabilidade 12 meses.</p><span class="tag">CLT</span><span class="tag">Alta busca</span></div></div><div class="vc"><div class="vt">&#9749;</div><div class="vb"><h4>8. BPC/LOAS: o beneficio pouco divulgado</h4><p>Para baixa renda e PcD. Criterios e valor.</p><span class="tag">Social</span><span class="tag">Compartilhado</span></div></div><div class="vc"><div class="vt">&#128522;</div><div class="vb"><h4>9. MEI e aposentadoria: vale contribuir?</h4><p>Calculos e impacto na aposentadoria futura.</p><span class="tag">MEI</span><span class="tag">Autonomo</span></div></div><div class="vc"><div class="vt">&#128218;</div><div class="vb"><h4>10. Erros ao requerer aposentadoria</h4><p>Erros comuns que custam dinheiro ao segurado.</p><span class="tag">Autoridade</span><span class="tag">Viral</span></div></div><div class="vc"><div class="vt">&#127969;</div><div class="vb"><h4>11. Revisao: voce pode estar recebendo menos</h4><p>Direito a revisao e como o advogado recupera.</p><span class="tag">Conversao</span></div></div><div class="vc"><div class="vt">&#128241;</div><div class="vb"><h4>12. Como usar o app Meu INSS</h4><p>Tutorial pratico passo a passo com dicas.</p><span class="tag">Tutorial</span><span class="tag">Compartilhado</span></div></div><div class="vc"><div class="vt">&#128293;</div><div class="vb"><h4>13. Salario maternidade: INSS e MEI</h4><p>Direitos da mulher autonoma e MEI.</p><span class="tag">Feminino</span><span class="tag">Alto alcance</span></div></div><div class="vc"><div class="vt">&#128268;</div><div class="vb"><h4>14. Fui demitido doente: e agora?</h4><p>Estabilidade, afastamento e continuidade.</p><span class="tag">CLT</span><span class="tag">Viral</span></div></div><div class="vc"><div class="vt">&#128196;</div><div class="vb"><h4>15. Trabalhador rural e INSS</h4><p>Regras especificas pouco conhecidas.</p><span class="tag">Nicho rural</span></div></div><div class="vc"><div class="vt">&#128578;</div><div class="vb"><h4>16. Carencia do INSS explicada</h4><p>Contribuicoes necessarias por beneficio.</p><span class="tag">Educativo basico</span></div></div><div class="vc"><div class="vt">&#128081;</div><div class="vb"><h4>17. Planejamento previdenciario</h4><p>Como se aposentar com qualidade de vida.</p><span class="tag">Premium</span><span class="tag">Consultoria</span></div></div><div class="vc"><div class="vt">&#128588;</div><div class="vb"><h4>18. Empresa nao pagou meu INSS</h4><p>Como regularizar e garantir aposentadoria.</p><span class="tag">Urgente</span></div></div><div class="vc"><div class="vt">&#127774;</div><div class="vb"><h4>19. Contribuinte individual: aposentadoria</h4><p>Para profissionais liberais e autonomos.</p><span class="tag">Autonomo</span></div></div><div class="vc"><div class="vt">&#128104;&#8205;&#9878;</div><div class="vb"><h4>20. Apresentacao: quem sou eu</h4><p>Video de autoridade: 'Sou especialista em dir. previdenciario'.</p><span class="tag">Branding</span><span class="tag">Autoridade</span></div></div></div></div><div id="f" class="tab"><h2 class="stitle">&#128247; 15 Ideias de Fotos e Posts Visuais</h2><div class="g3"><div class="card"><h3>&#128247; 1. Foto Profissional no Escritorio</h3><p>Marlon sentado na mesa, terno escuro, livros ao fundo, luz quente. <b style="color:#C9A84C">Legenda:</b> 'Seu direito previdenciario tem um especialista ao seu lado.'</p><span class="badge">Autoridade</span></div><div class="card"><h3>&#128247; 2. Carrossel: 5 Tipos de Aposentadoria</h3><p>Fundo vinho escuro, texto dourado, icone + texto. Logo C&F no rodape de cada slide.</p><span class="badge">Educativo</span><span class="badge">Salvo</span></div><div class="card"><h3>&#128247; 3. Foto com Cliente Satisfeito</h3><p>Foto ao lado de cliente (com permissao). Depoimento escrito na arte. Humaniza a marca.</p><span class="badge">Prova Social</span></div><div class="card"><h3>&#128247; 4. Post Quote: Frase de Autoridade</h3><p>Arte minimalista vinho e dourado. 'Seu beneficio e um direito, nao um favor. Eu luto por ele.'</p><span class="badge">Posicionamento</span></div><div class="card"><h3>&#128247; 5. Post: Resultado de Caso Real</h3><p>'Caso ganho!' com resumo (sem dados pessoais). Quanto foi recuperado. Prova de competencia.</p><span class="badge">Resultado</span><span class="badge">Alta conversao</span></div><div class="card"><h3>&#128247; 6. Carrossel: Checklist para Aposentadoria</h3><p>Lista visual de documentos necessarios. Post util que gera salvamentos e compartilhamentos.</p><span class="badge">Util</span><span class="badge">Salvo</span></div><div class="card"><h3>&#128247; 7. Post: Calendario INSS do Mes</h3><p>Arte com datas de pagamento. Postado mensalmente. Salvo por aposentados e familiares.</p><span class="badge">Recorrente</span><span class="badge">Alto alcance</span></div><div class="card"><h3>&#128247; 8. Foto: Marlon com Livros de Direito</h3><p>Marlon segurando Manual de Direito Previdenciario. Evidencia especializacao visualmente.</p><span class="badge">Especialista</span></div><div class="card"><h3>&#128247; 9. Infografico: Mapa de Beneficios INSS</h3><p>Todos os beneficios conectados em um unico visual. Referencia que gera trafego organico.</p><span class="badge">Referencia</span></div><div class="card"><h3>&#128247; 10. Bastidores: Reuniao de Equipe</h3><p>Foto descontraida dos advogados em reuniao. 'Trabalhando pelo seu caso.' Humaniza a marca.</p><span class="badge">Bastidores</span></div><div class="card"><h3>&#128247; 11. Arte: Numeros de Autoridade</h3><p>'+500 casos previdenciarios atendidos' em arte impactante. Prova numerica de experiencia.</p><span class="badge">Autoridade</span></div><div class="card"><h3>&#128247; 12. Carrossel: 10 Perguntas Respondidas</h3><p>Cada slide = 1 duvida frequente. Altamente compartilhavel. Gera alcance organico.</p><span class="badge">Educativo</span><span class="badge">Viral</span></div><div class="card"><h3>&#128247; 13. Post: Opiniao sobre Legislacao</h3><p>Marlon comenta mudancas recentes no INSS. Posicionamento em tempo real como especialista.</p><span class="badge">Atualidade</span></div><div class="card"><h3>&#128247; 14. Antes e Depois: Beneficio Negado x Concedido</h3><p>Visual impactante mostrando a transformacao na vida do cliente apos atuacao do escritorio.</p><span class="badge">Conversao</span></div><div class="card"><h3>&#128247; 15. Foto: Marlon Estudando/Lendo</h3><p>Foto casual lendo processo ou artigo. 'Estudo constante para garantir seus direitos.'</p><span class="badge">Humanizacao</span></div></div></div><div id="s" class="tab"><h2 class="stitle">&#127775; 15 Ideias de Stories</h2><div class="g3"><div class="sc"><div class="ic">&#10067;</div><h4>1. Caixa de Perguntas</h4><p>'Me manda sua duvida sobre INSS!' Responder as melhores em video no feed.</p></div><div class="sc"><div class="ic">&#127919;</div><h4>2. Dica Rapida do Dia</h4><p>'Sabia que pode contribuir como autonomo e se aposentar?' Link na bio.</p></div><div class="sc"><div class="ic">&#128203;</div><h4>3. Verdade ou Mito?</h4><p>Post interativo de multipla escolha. Alta taxa de resposta e engajamento.</p></div><div class="sc"><div class="ic">&#128172;</div><h4>4. Depoimento de Cliente</h4><p>Print de mensagem (com permissao). Emocao e prova social autentica.</p></div><div class="sc"><div class="ic">&#128293;</div><h4>5. Noticia Quente do INSS</h4><p>'Urgente! O INSS mudou a regra de...' Posiciona como fonte de informacao.</p></div><div class="sc"><div class="ic">&#128526;</div><h4>6. Bastidores do Escritorio</h4><p>Video curto da equipe trabalhando. 'Mais um dia pelos seus direitos!'</p></div><div class="sc"><div class="ic">&#127881;</div><h4>7. Conquista do Cliente</h4><p>'Mais uma aposentadoria concedida!' Cria desejo e expectativa no seguidor.</p></div><div class="sc"><div class="ic">&#128196;</div><h4>8. Enquete de Engajamento</h4><p>'Voce ja pensou na sua aposentadoria? SIM / AINDA NAO.' Seguir no DM quem votou NAO.</p></div><div class="sc"><div class="ic">&#128197;</div><h4>9. Dia de Pagamento INSS</h4><p>'Hoje paga beneficiarios com final X!' Recorrente e muito salvo por seguidores.</p></div><div class="sc"><div class="ic">&#9878;</div><h4>10. Apresentacao Relampago</h4><p>'Sou Marlon, especialista em direito previdenciario. Duvida sobre INSS? Me chama!'</p></div><div class="sc"><div class="ic">&#128293;</div><h4>11. 3 Erros no INSS</h4><p>Serie de 3 stories: '3 erros que vao te fazer perder o beneficio!' Alta retencao.</p></div><div class="sc"><div class="ic">&#128155;</div><h4>12. Historia de Superacao</h4><p>'Esse cliente ficou 2 anos sem beneficio. Revertemos em 4 meses.' Narrativa que converte.</p></div><div class="sc"><div class="ic">&#127760;</div><h4>13. Atendimento Online</h4><p>'Nao precisa sair de casa para resolver seu INSS. Atendemos todo o Brasil!' CTA WhatsApp.</p></div><div class="sc"><div class="ic">&#128081;</div><h4>14. Dica de Segunda-Feira</h4><p>Motivacao + dica previdenciaria semanal. 'Comecar a semana sabendo seus direitos!'</p></div><div class="sc"><div class="ic">&#128222;</div><h4>15. CTA Diario</h4><p>'Duvida sobre seu INSS? Me chama no WhatsApp! Primeira consulta sem compromisso.'</p></div></div></div><div id="l" class="tab"><h2 class="stitle">&#128172; Linguagem e Tom de Voz</h2><div class="g2"><div class="card"><h3>&#128483; Tom de Voz: Como Falar</h3><p>A linguagem deve ser <b style="color:#C9A84C">clara, acessivel e empoderada</b>. O cliente nao conhece juridiques - o advogado e o TRADUTOR do direito para a vida real.</p><br><ul><li><b style="color:#C9A84C">Evite:</b> Latin, juridiques, vocabulario tecnico sem explicacao</li><li><b style="color:#C9A84C">Use:</b> Linguagem simples, exemplos do cotidiano</li><li><b style="color:#C9A84C">Tom:</b> Firme, confiante, acolhedor e empoderador</li><li><b style="color:#C9A84C">Postura:</b> 'Eu resolvo isso por voce'</li><li><b style="color:#C9A84C">Persona:</b> Especialista acessivel, nao advogado distante</li></ul></div><div class="card"><h3>&#128221; Estrutura de Legenda Ideal</h3><p>5 elementos em toda legenda:</p><br><p>1. <b style="color:#C9A84C">Gancho inicial</b> - 1 linha que para o scroll<br>Ex: 'Voce sabia que o INSS pode te dever dinheiro?'</p><br><p>2. <b style="color:#C9A84C">Desenvolvimento</b> - Explica de forma simples</p><br><p>3. <b style="color:#C9A84C">Prova de autoridade</b> - Cases, anos de experiencia</p><br><p>4. <b style="color:#C9A84C">Call to Action</b> - Comentar, salvar, mandar mensagem</p><br><p>5. <b style="color:#C9A84C">Hashtags</b> - Max 10, bem escolhidas</p></div></div><div class="g2"><div class="card"><h3>&#128204; Frases de Posicionamento (Use no Conteudo)</h3><div class="tip"><strong>'Sou especialista em direito previdenciario. Nao apenas advogado - especialista.'</strong></div><div class="tip"><strong>'Seu beneficio nao e um favor. E um direito conquistado. Eu sei como garanti-lo.'</strong></div><div class="tip"><strong>'O INSS tem suas regras. Eu tenho as estrategias para navegar nelas a seu favor.'</strong></div><div class="tip"><strong>'Se o INSS negou seu beneficio, a batalha ainda nao acabou. Me chama.'</strong></div><div class="tip"><strong>'Em X anos de atuacao, ja ajudei mais de [N] familias a garantirem seus beneficios.'</strong></div></div><div class="card"><h3>&#127908; Como se Portar nos Videos</h3><ul><li><b style="color:#C9A84C">Postura:</b> Coluna ereta, olhar para camera, terno escuro</li><li><b style="color:#C9A84C">Gravata:</b> Vinho ou dourado - reforco visual da marca</li><li><b style="color:#C9A84C">Cenario:</b> Escritorio com livros ao fundo</li><li><b style="color:#C9A84C">Iluminacao:</b> Luz frontal quente - sem sombras no rosto</li><li><b style="color:#C9A84C">Audio:</b> Microfone de lapela - obrigatorio</li><li><b style="color:#C9A84C">Duracao Reels:</b> 30-60 segundos (ideal)</li><li><b style="color:#C9A84C">Gancho:</b> Primeiros 3 segundos decidem tudo</li><li><b style="color:#C9A84C">Legenda no video:</b> Sempre, pois 70% assiste sem som</li></ul></div></div><div class="card" style="margin-top:22px"><h3>&#128172; Hashtags Estrategicas</h3><p><b style="color:#C9A84C">Use sempre:</b></p><span class="badge">#direitoprevidenciario</span><span class="badge">#inss</span><span class="badge">#aposentadoria</span><span class="badge">#advogadoprevidenciario</span><span class="badge">#marlonfigueira</span><br><br><p><b style="color:#C9A84C">Varie (escolha 5):</b></p><span class="badge">#auxilioacidente</span><span class="badge">#pensaopormorte</span><span class="badge">#beneficioinss</span><span class="badge">#previdenciasocial</span><span class="badge">#advogadoitaperuna</span><span class="badge">#auxiliodoenca</span><span class="badge">#bpcloas</span><span class="badge">#aposentadoriaespecial</span><span class="badge">#direitostrabalhistas</span><span class="badge">#castroefigueira</span></div></div><div id="p" class="tab"><h2 class="stitle">&#127891; Publico-Alvo Detalhado</h2><div class="g2"><div class="card"><h3>&#128101; Perfil Principal</h3><p><b style="color:#C9A84C">Faixa etaria:</b> 40-65 anos (principal) | 25-39 anos (planejamento)</p><p><b style="color:#C9A84C">Genero:</b> 55% feminino / 45% masculino</p><p><b style="color:#C9A84C">Classe:</b> C e D - trabalhadores formais e informais</p><br><p><b style="color:#C9A84C">Situacoes de busca:</b></p><ul><li>Doenca/acidente de trabalho - INSS negou</li><li>Proximo da aposentadoria sem saber como</li><li>Beneficio cortado ou suspenso pelo INSS</li><li>Dependente buscando pensao por morte</li><li>MEI/autonomo sem orientacao previdenciaria</li><li>Trabalhador rural com regras especificas</li></ul></div><div class="card"><h3>&#128205; Perfil Digital</h3><p><b style="color:#C9A84C">Abrangencia:</b> Itaperuna/RJ (presencial) + Brasil todo (online)</p><br><p><b style="color:#C9A84C">Comportamento online:</b></p><ul><li>Consome conteudo no celular (Instagram e YouTube)</li><li>Busca respostas rapidas sobre INSS</li><li>Prefere video curto a texto longo</li><li>Compartilha conteudo util com familia</li><li>Salva posts para ver depois</li><li>Desconfia de promessas excessivas</li><li>Valoriza clareza e experiencia comprovada</li><li>Toma decisao por emocao, justifica com logica</li></ul></div></div><div class="g3"><div class="card"><h3>&#129488; Persona 1: Dona Maria, 58 anos</h3><p>Trabalhou 30 anos como domestica. Quer se aposentar mas tem medo do INSS. Acessa Instagram pelo celular. Vai compartilhar conteudo util com filhos.</p><p style="color:#C9A84C;margin-top:10px">&#127919; Como atingi-la: Videos simples, linguagem acolhedora, cases de aposentadoria de domestica.</p></div><div class="card"><h3>&#129489; Persona 2: Carlos, 45 anos</h3><p>Pedreiro que sofreu acidente de trabalho. INSS negou o beneficio. Sem renda, desesperado. Pesquisou no Google e achou @castroefigueira.</p><p style="color:#C9A84C;margin-top:10px">&#127919; Como atingi-lo: 'INSS negou? O que fazer' com CTA forte e urgente para contato.</p></div><div class="card"><h3>&#128105; Persona 3: Ana, 35 anos</h3><p>Empreendedora MEI que nunca pensou em aposentadoria. Viu um video e ficou preocupada. Tem poder de compra e quer planejar o futuro.</p><p style="color:#C9A84C;margin-top:10px">&#127919; Como atingi-la: Planejamento previdenciario, MEI e aposentadoria antecipada.</p></div></div></div><div id="cr" class="tab"><h2 class="stitle">&#127912; Identidade Visual e Cores</h2><div class="g2"><div class="card"><h3>&#127912; Paleta de Cores Oficial</h3><div style="display:flex;flex-wrap:wrap;gap:15px;margin:20px 0"><div style="background:#3D0008;width:90px;height:90px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-direction:column;font-size:12px;color:#fff;border:2px solid #C9A84C;text-align:center;padding:5px"><span>Vinho Escuro</span><span>#3D0008</span></div><div style="background:#6B0F1A;width:90px;height:90px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-direction:column;font-size:12px;color:#fff;border:2px solid #C9A84C;text-align:center;padding:5px"><span>Vinho Principal</span><span>#6B0F1A</span></div><div style="background:#8B1A2A;width:90px;height:90px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-direction:column;font-size:12px;color:#fff;border:2px solid #C9A84C;text-align:center;padding:5px"><span>Vinho Medio</span><span>#8B1A2A</span></div><div style="background:#C9A84C;width:90px;height:90px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-direction:column;font-size:12px;color:#000;border:2px solid #fff;text-align:center;padding:5px"><span>Dourado</span><span>#C9A84C</span></div><div style="background:#E8C87A;width:90px;height:90px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-direction:column;font-size:12px;color:#000;border:2px solid #fff;text-align:center;padding:5px"><span>Dourado Claro</span><span>#E8C87A</span></div><div style="background:#0A0A0A;width:90px;height:90px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-direction:column;font-size:12px;color:#fff;border:2px solid #C9A84C;text-align:center;padding:5px"><span>Preto Fundo</span><span>#0A0A0A</span></div><div style="background:#F0E6D3;width:90px;height:90px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-direction:column;font-size:12px;color:#000;border:2px solid #C9A84C;text-align:center;padding:5px"><span>Creme Texto</span><span>#F0E6D3</span></div></div></div><div class="card"><h3>&#127775; Principios Visuais</h3><ul><li><b style="color:#C9A84C">Estilo:</b> Dark Premium - autoridade e sofisticacao juridica</li><li><b style="color:#C9A84C">Cor predominante:</b> Vinho (#6B0F1A) - ja presente no material</li><li><b style="color:#C9A84C">Cor de destaque:</b> Dourado (#C9A84C) - premium e juridico</li><li><b style="color:#C9A84C">Fundo:</b> Preto/cinza muito escuro - contraste e elegancia</li><li><b style="color:#C9A84C">Tipografia titulos:</b> Playfair Display ou Cormorant Garamond</li><li><b style="color:#C9A84C">Tipografia corpo:</b> Lato ou Montserrat</li><li><b style="color:#C9A84C">Foto:</b> Marlon terno escuro, gravata vinho/dourada, luz quente</li><li><b style="color:#C9A84C">Logo C&F:</b> Manter o triangulo atual - ja tem reconhecimento</li></ul></div></div><div class="g3"><div class="card"><h3>&#128248; Formatos de Arte</h3><ul><li><b style="color:#C9A84C">Post feed:</b> 1080x1080px (quadrado)</li><li><b style="color:#C9A84C">Post retrato:</b> 1080x1350px (maior alcance)</li><li><b style="color:#C9A84C">Reels:</b> 1080x1920px vertical</li><li><b style="color:#C9A84C">Stories:</b> 1080x1920px</li><li><b style="color:#C9A84C">Margem:</b> 50px em todos os lados</li></ul></div><div class="card"><h3>&#128396; Tipografia</h3><ul><li><b style="color:#C9A84C">Titulos:</b> Playfair Display - serifada, elegante</li><li><b style="color:#C9A84C">Corpo:</b> Lato ou Open Sans - legivel</li><li><b style="color:#C9A84C">CTAs:</b> Bebas Neue - impacto</li><li><b style="color:#C9A84C">Min. corpo:</b> 18px nos posts</li><li><b style="color:#C9A84C">Min. titulos:</b> 24px nos posts</li></ul></div><div class="card"><h3>&#128203; Padrao Visual</h3><ul><li>Logo sempre no canto inferior direito</li><li>@castroefigueira sempre visivel</li><li>Mesmos templates todo mes</li><li>Linha dourada fina como elemento grafico</li><li>Icones minimalistas dourados</li><li>Fundo escuro em todos os posts</li></ul></div></div></div></div><footer class="ftr"><p>&#9878; <strong style="color:#C9A84C">C&amp;F Advocacia</strong> | Dashboard de Marketing Estrategico | Direito Previdenciario</p><p style="margin-top:8px">Dr. Marlon Figueira OAB/RJ 152.763 | <a href="https://instagram.com/castroefigueira" target="_blank">@castroefigueira</a> | (22) 9.9759-9350</p></footer><script>function show(id,el){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));document.querySelectorAll('.nav a').forEach(a=>a.classList.remove('active'));document.getElementById(id).classList.add('on');el.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}var cy=2026,cm=5;var ag=[{m:5,d:2,t:'Reel: Auxilio Acidente'},{m:5,d:4,t:'Carrossel: Aposentadoria'},{m:5,d:7,t:'Reel: INSS negou?'},{m:5,d:9,t:'Post: Calendario INSS'},{m:5,d:11,t:'Reel: MEI e INSS'},{m:5,d:14,t:'Carrossel: Pensao por morte'},{m:5,d:16,t:'Reel: BPC/LOAS'},{m:5,d:18,t:'Post quote autoridade'},{m:5,d:21,t:'Reel: Aposentadoria especial'},{m:5,d:23,t:'Carrossel: Documentos'},{m:5,d:25,t:'Reel: Acidente de trabalho'},{m:5,d:28,t:'Reel: Revisao beneficio'},{m:5,d:30,t:'Carrossel: 10 perguntas INSS'},{m:6,d:2,t:'Reel: Carencia do INSS'},{m:6,d:4,t:'Post: Resultado caso real'},{m:6,d:7,t:'Reel: Trabalhador rural'},{m:6,d:9,t:'Carrossel: Auxilio doenca'},{m:6,d:11,t:'Live: Tira-duvidas INSS'},{m:6,d:14,t:'Reel: Contribuinte individual'},{m:6,d:16,t:'Post: Infografico previd.'},{m:6,d:18,t:'Reel: Salario maternidade'},{m:6,d:21,t:'Carrossel: Erros no INSS'},{m:6,d:23,t:'Reel: Planejamento previd.'},{m:6,d:25,t:'Post: Depoimento cliente'},{m:6,d:28,t:'Reel: Aposentadoria rural'},{m:6,d:30,t:'Live: Perguntas e respostas'}];var px={};ag.forEach(a=>{var k=a.m+'-'+a.d;if(!px[k])px[k]=[];px[k].push(a);});function buildCal(){var ms=['Janeiro','Fevereiro','Marco','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];document.getElementById('mt').textContent=ms[cm]+' '+cy;var g=document.getElementById('cd');if(!g)return;g.innerHTML='';['Dom','Seg','Ter','Qua','Qui','Sex','Sab'].forEach(d=>{var e=document.createElement('div');e.className='cd dh';e.textContent=d;g.appendChild(e);});var fd=new Date(cy,cm,1).getDay(),nd=new Date(cy,cm+1,0).getDate();for(var i=0;i<fd;i++){g.appendChild(document.createElement('div')).className='cd';}for(var d=1;d<=nd;d++){var e=document.createElement('div'),k=cm+'-'+d,hp=px[k];e.className='cd'+(hp?' hp':'');e.innerHTML='<span class="dn">'+d+'</span>';if(hp)hp.forEach(p=>{e.innerHTML+='<span class="pi">'+p.t+'</span>';});g.appendChild(e);}}function m(d){cm+=d;if(cm>11){cm=0;cy++;}if(cm<0){cm=11;cy--;}buildCal();}window.addEventListener('DOMContentLoaded',()=>buildCal());</script></body></html>
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Dashboard C&F Advocacia Previdenciaria</title><style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{--wine:#6B0F1A;--wine-dark:#3D0008;--wine-med:#8B1A2A;--wine-light:#A52535;--gold:#C9A84C;--gold-light:#E0C068;--bg:#080808;--bg2:#111;--bg3:#1a1a1a;--bg4:#222;--text:#F0E6D3;--text2:#C4B49A;--text3:#8a7a65;--radius:10px;--shadow:0 4px 20px rgba(0,0,0,0.5)}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:clamp(15px,1.6vw,17px);min-height:100vh}
+  header{background:linear-gradient(135deg,var(--wine-dark) 0%,var(--wine) 60%,var(--wine-med) 100%);padding:24px 32px;display:flex;align-items:center;gap:20px;border-bottom:2px solid var(--gold)}
+  header .logo{width:52px;height:52px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:var(--wine-dark);flex-shrink:0}
+  header h1{font-size:clamp(20px,3vw,30px);font-weight:800;letter-spacing:1px}
+  header p{font-size:clamp(13px,1.4vw,15px);color:var(--gold-light);margin-top:3px}
+  nav{background:var(--bg2);display:flex;flex-wrap:wrap;gap:4px;padding:12px 24px;border-bottom:1px solid #2a2a2a;position:sticky;top:0;z-index:100}
+  nav button{background:transparent;border:1px solid #333;color:var(--text2);padding:8px 16px;border-radius:6px;cursor:pointer;font-size:clamp(13px,1.3vw,15px);font-weight:600;transition:all .2s}
+  nav button:hover{border-color:var(--wine-light);color:var(--text)}
+  nav button.active{background:var(--wine);border-color:var(--wine);color:#fff}
+  .tab{display:none;padding:28px 24px;max-width:1400px;margin:0 auto}
+  .tab.active{display:block}
+  h2{font-size:clamp(20px,2.5vw,28px);color:var(--gold);margin-bottom:20px;font-weight:800}
+  h3{font-size:clamp(17px,2vw,22px);color:var(--wine-light);margin-bottom:12px;font-weight:700}
+  .card{background:var(--bg2);border:1px solid #2a2a2a;border-radius:var(--radius);padding:20px;margin-bottom:16px}
+  .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:24px}
+  .stat{background:var(--bg3);border:1px solid #333;border-radius:var(--radius);padding:20px;text-align:center;border-top:3px solid var(--wine)}
+  .stat .num{font-size:clamp(24px,3vw,36px);font-weight:900;color:var(--gold);display:block}
+  .stat .lbl{font-size:clamp(12px,1.2vw,14px);color:var(--text2);margin-top:4px}
+  .badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:13px;font-weight:600;margin:2px}
+  .badge.reel{background:rgba(107,15,26,.4);border:1px solid var(--wine);color:#ff9aaa}
+  .badge.foto{background:rgba(201,168,76,.2);border:1px solid var(--gold);color:var(--gold-light)}
+  .badge.story{background:rgba(100,180,255,.15);border:1px solid #4a9eff;color:#7bbfff}
+  .badge.carrossel{background:rgba(100,255,180,.15);border:1px solid #4aff9e;color:#7bffbb}
+  </style>
+  /* ===== KANBAN / TRELLO STYLES ===== */
+  .kanban-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px}
+  .kanban-controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .month-nav{display:flex;align-items:center;gap:12px}
+  .month-nav button{background:var(--wine);border:none;color:#fff;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center}
+  .month-nav span{font-size:clamp(16px,2vw,20px);font-weight:700;color:var(--gold);min-width:180px;text-align:center}
+  .btn{padding:9px 18px;border-radius:7px;border:none;cursor:pointer;font-size:clamp(13px,1.3vw,15px);font-weight:700;transition:all .2s}
+  .btn-wine{background:var(--wine);color:#fff}.btn-wine:hover{background:var(--wine-light)}
+  .btn-gold{background:var(--gold);color:var(--wine-dark)}.btn-gold:hover{background:var(--gold-light)}
+  .btn-outline{background:transparent;border:1px solid #444;color:var(--text2)}.btn-outline:hover{border-color:var(--wine-light);color:var(--text)}
+  .btn-green{background:#1a5c2a;color:#7fffaa;border:1px solid #2a8c3a}.btn-green:hover{background:#1f7033}
+  .btn-red{background:#5c1a1a;color:#ffaaaa;border:1px solid #8c2a2a}.btn-red:hover{background:#7c2020}
+  .kanban-board{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:start}
+  @media(max-width:900px){.kanban-board{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.kanban-board{grid-template-columns:1fr}}
+  .kanban-col{background:var(--bg3);border-radius:var(--radius);padding:14px;border-top:4px solid var(--wine);min-height:400px}
+  .kanban-col.col-ideas{border-top-color:#4a9eff}
+  .kanban-col.col-scheduled{border-top-color:var(--gold)}
+  .kanban-col.col-doing{border-top-color:#ff9a3c}
+  .kanban-col.col-done{border-top-color:#3cff7a}
+  .col-title{font-size:clamp(14px,1.5vw,16px);font-weight:700;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between}
+  .col-title .col-count{background:var(--bg4);padding:2px 8px;border-radius:10px;font-size:12px;color:var(--text3)}
+  .kanban-cards{min-height:200px;display:flex;flex-direction:column;gap:8px}
+  .kanban-card{background:var(--bg4);border-radius:8px;padding:12px;cursor:grab;border:1px solid #333;transition:all .2s;position:relative}
+  .kanban-card:hover{border-color:var(--wine-light);transform:translateY(-2px);box-shadow:0 4px 12px rgba(107,15,26,.3)}
+  .kanban-card.dragging{opacity:.4;transform:rotate(2deg)}
+  .kanban-card.drag-over{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+  .kanban-card .card-title{font-size:clamp(13px,1.3vw,15px);font-weight:600;color:var(--text);margin-bottom:6px;padding-right:24px}
+  .kanban-card .card-meta{font-size:12px;color:var(--text3);display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+  .kanban-card .card-date{font-size:12px;color:var(--gold);font-weight:600}
+  .kanban-card .card-actions{position:absolute;top:8px;right:8px;display:flex;gap:4px}
+  .kanban-card .card-actions button{background:transparent;border:none;cursor:pointer;color:var(--text3);font-size:14px;padding:2px 4px;border-radius:4px;transition:all .2s}
+  .kanban-card .card-actions button:hover{color:var(--text);background:rgba(255,255,255,.1)}
+  .kanban-card .card-check{display:flex;align-items:center;gap:6px;margin-top:8px}
+  .kanban-card .card-check input[type=checkbox]{width:16px;height:16px;accent-color:var(--wine)}
+  .kanban-card .card-check label{font-size:12px;color:var(--text2)}
+  .kanban-card.done-card .card-title{text-decoration:line-through;color:var(--text3)}
+  .kanban-card.done-card{opacity:.75;border-color:#2a4a2a}
+  .drop-zone{min-height:80px;border:2px dashed #333;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:13px;transition:all .2s;margin-top:4px}
+  .drop-zone.drag-over{border-color:var(--gold);background:rgba(201,168,76,.05);color:var(--gold)}
+  /* ===== ADD CARD FORM ===== */
+  .add-card-form{background:var(--bg4);border:1px solid #333;border-radius:8px;padding:14px;margin-top:8px}
+  .add-card-form input,.add-card-form select,.add-card-form textarea{width:100%;background:var(--bg);border:1px solid #444;color:var(--text);border-radius:6px;padding:8px 10px;font-size:clamp(13px,1.3vw,15px);margin-bottom:8px;font-family:inherit}
+  .add-card-form input:focus,.add-card-form select:focus,.add-card-form textarea:focus{outline:none;border-color:var(--wine)}
+  .add-card-form textarea{resize:vertical;min-height:60px}
+  .form-row{display:flex;gap:8px}
+  .form-row input,.form-row select{flex:1}
+  .add-card-btns{display:flex;gap:8px;margin-top:4px}
+  /* ===== MODAL ===== */
+  .modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:999;align-items:center;justify-content:center}
+  .modal-overlay.open{display:flex}
+  .modal{background:var(--bg2);border:1px solid var(--wine);border-radius:14px;padding:30px;width:90%;max-width:640px;max-height:90vh;overflow-y:auto;position:relative}
+  .modal h2{font-size:clamp(18px,2.2vw,24px);margin-bottom:16px}
+  .modal .close-btn{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--text2);font-size:22px;cursor:pointer}
+  .modal .close-btn:hover{color:var(--text)}
+  .modal input,.modal select,.modal textarea{width:100%;background:var(--bg3);border:1px solid #444;color:var(--text);border-radius:7px;padding:10px 14px;font-size:clamp(14px,1.4vw,16px);margin-bottom:12px;font-family:inherit}
+  .modal input:focus,.modal select:focus,.modal textarea:focus{outline:none;border-color:var(--wine)}
+  .modal label{display:block;font-size:14px;color:var(--text2);margin-bottom:4px}
+  .analysis-result{background:var(--bg3);border-radius:var(--radius);padding:20px;border-left:4px solid var(--wine)}
+  .analysis-result h4{color:var(--gold);font-size:clamp(15px,1.6vw,17px);margin-bottom:10px}
+  .analysis-result ul{padding-left:20px}
+  .analysis-result li{margin-bottom:8px;line-height:1.5;font-size:clamp(14px,1.4vw,16px)}
+  .score-bar{background:#222;border-radius:20px;height:10px;margin:8px 0;overflow:hidden}
+  .score-fill{height:100%;border-radius:20px;background:linear-gradient(90deg,var(--wine),var(--gold));transition:width .8s}
+  .score-label{display:flex;justify-content:space-between;font-size:13px;color:var(--text2)}
+  /* ===== OTHER SECTIONS ===== */
+  .ideas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+  .idea-card{background:var(--bg3);border:1px solid #2a2a2a;border-radius:var(--radius);padding:18px;border-left:4px solid var(--wine);transition:all .2s}
+  .idea-card:hover{border-color:var(--wine-light);transform:translateY(-2px)}
+  .idea-card h4{font-size:clamp(15px,1.5vw,17px);color:var(--text);margin-bottom:8px}
+  .idea-card p{font-size:clamp(13px,1.3vw,15px);color:var(--text2);line-height:1.5}
+  .palette{display:flex;flex-wrap:wrap;gap:16px;margin:16px 0}
+  .color-chip{border-radius:var(--radius);overflow:hidden;width:120px;border:1px solid #333}
+  .color-chip .swatch{height:80px}
+  .color-chip .info{padding:8px;background:var(--bg3);font-size:13px;text-align:center}
+  .persona{background:var(--bg3);border:1px solid #2a2a2a;border-radius:var(--radius);padding:20px;margin-bottom:16px;border-left:4px solid var(--gold)}
+  .persona h4{font-size:clamp(16px,1.8vw,19px);color:var(--gold);margin-bottom:10px}
+  .persona p{font-size:clamp(13px,1.4vw,15px);color:var(--text2);margin-bottom:6px;line-height:1.5}
+  .lang-block{background:var(--bg3);border-radius:var(--radius);padding:20px;margin-bottom:16px;border-top:3px solid var(--wine)}
+  .lang-block h4{color:var(--wine-light);margin-bottom:10px;font-size:clamp(15px,1.6vw,17px)}
+  .lang-block p{color:var(--text2);line-height:1.6;font-size:clamp(13px,1.4vw,15px)}
+  .tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .tag{background:var(--bg4);border:1px solid #333;padding:5px 12px;border-radius:20px;font-size:13px;color:var(--text2)}
+  footer{text-align:center;padding:24px;color:var(--text3);font-size:14px;border-top:1px solid #1a1a1a;margin-top:32px}
+  footer a{color:var(--wine-light);text-decoration:none}
+</style>
+</style></title></head>
+<body>
+  <header><div class="logo">CF</div>div><div><h1>C&F Advocacia Previdenciaria</h1><p>Dashboard de Marketing Estrategico | @castroefigueira</p></div></header>
+<nav>
+  <button class="active" onclick="showTab('visao')">Visao Geral</button>button>
+  <button onclick="showTab('kanban')">Calendario Kanban</button>button>
+  <button onclick="showTab('videos')">Videos</button>button>
+  <button onclick="showTab('fotos')">Fotos</button>button>
+  <button onclick="showTab('stories')">Stories</button>button>
+  <button onclick="showTab('linguagem')">Linguagem</button>button>
+  <button onclick="showTab('publico')">Publico</button>button>
+  <button onclick="showTab('cores')">Cores e Visual</button>button>
+</nav>
+  <!-- TAB: VISAO GERAL -->
+  <div id="tab-visao" class="tab active">
+    <h2>Visao Geral do Perfil</h2>
+    <div class="stat-grid">
+      <div class="stat"><span class="num">711</span>span><div class="lbl">Publicacoes</div></div>
+      <div class="stat"><span class="num">1.263</span>span><div class="lbl">Seguidores</div></div>
+      <div class="stat"><span class="num">535</span>span><div class="lbl">Seguindo</div></div>
+      <div class="stat"><span class="num">2,3x</span>span><div class="lbl">Meta de Crescimento</div></div>
+    </div>
+    <div class="card"><h3>Sobre o Perfil</h3>
+      <p><strong>Advogado:</strong> Marlon da S. Figueira - OAB/RJ 152.763</p>
+    <p><strong>Especialidade:</strong>strong> Direito Previdenciario e Trabalhista</p>
+    <p><strong>Localizacao:</strong> Itaperuna/RJ - Ed. Policenter</p>
+    <p><strong>Instagram:</strong> @castroefigueira</p>
+    <p style="margin-top:12px;color:var(--text2)">Objetivo: Ser reconhecido como especialista em Direito Previdenciario no interior do RJ, gerando confianca, autoridade e novos clientes atraves do Instagram.</p>
+    </div>
+  <div class="card"><h3>Diagnostico Atual</h3>
+  <p style="margin-bottom:12px;color:var(--text2)">O perfil ja possui boa base de conteudo (711 posts) mas precisa de estrategia mais consistente para alavancar seguidores e posicionamento de autoridade.</p>
+  <div><strong style="color:var(--gold)">Pontos Fortes:</strong>
+  <div class="tag-cloud"><span class="tag">Conteudo educativo</span>span><span class="tag">Reels de INSS</span>span><span class="tag">Aposentadoria</span>span><span class="tag">Auxilio Acidente</span>span><span class="tag">Tom acessivel</span>span></div></div>
+  <div style="margin-top:12px"><strong style="color:var(--wine-light)">Oportunidades:</strong>
+  <div class="tag-cloud"><span class="tag">Calendario consistente</span>span><span class="tag">CTAs claros</span>span><span class="tag">Depoimentos</span>span><span class="tag">Cases de sucesso</span>span><span class="tag">Mais Stories</span>span></div></div>
+  </div>
+  </div>
+<!-- TAB: KANBAN -->
+<div id="tab-kanban" class="tab">
+<div class="kanban-header">
+<div class="month-nav">
+<button onclick="changeMonth(-1)">&#8249;</button>button>
+<span id="month-label">Junho 2026</span>span>
+<button onclick="changeMonth(1)">&#8250;</button>button>
+</div>
+<div class="kanban-controls">
+<button class="btn btn-gold" onclick="openAddModal()">+ Nova Ideia</button>button>
+<button class="btn btn-wine" onclick="openEvalModal()">Avaliar Mes</button>button>
+<button class="btn btn-outline" onclick="clearDone()">Limpar Concluidos</button>button>
+</div>
+</div>
+<div class="kanban-board">
+<div class="kanban-col col-ideas" id="col-ideas">
+<div class="col-title">Ideias <span class="col-count" id="cnt-ideas">0</span>span></div>
+<div class="kanban-cards" id="cards-ideas" ondragover="allowDrop(event)" ondrop="dropCard(event,'ideas')"></div>
+<div class="drop-zone" ondragover="allowDrop(event)" ondrop="dropCard(event,'ideas')">Solte aqui</div>
+</div>
+<div class="kanban-col col-scheduled" id="col-scheduled">
+<div class="col-title">Agendado <span class="col-count" id="cnt-scheduled">0</span>span></div>
+<div class="kanban-cards" id="cards-scheduled" ondragover="allowDrop(event)" ondrop="dropCard(event,'scheduled')"></div>
+<div class="drop-zone" ondragover="allowDrop(event)" ondrop="dropCard(event,'scheduled')">Solte aqui</div>
+</div>
+<div class="kanban-col col-doing" id="col-doing">
+<div class="col-title">Produzindo <span class="col-count" id="cnt-doing">0</span>span></div>
+<div class="kanban-cards" id="cards-doing" ondragover="allowDrop(event)" ondrop="dropCard(event,'doing')"></div>
+<div class="drop-zone" ondragover="allowDrop(event)" ondrop="dropCard(event,'doing')">Solte aqui</div>
+</div>
+<div class="kanban-col col-done" id="col-done">
+<div class="col-title">Publicado <span class="col-count" id="cnt-done">0</span>span></div>
+<div class="kanban-cards" id="cards-done" ondragover="allowDrop(event)" ondrop="dropCard(event,'done')"></div>
+<div class="drop-zone" ondragover="allowDrop(event)" ondrop="dropCard(event,'done')">Solte aqui</div>
+</div>
+</div>
+</div></strong></strong></p></p></strong>
+</nav></p></h1></div></header>
+</body>
+<!-- TAB: VIDEOS -->
+  <div id="tab-videos" class="tab">
+    <h2>Ideias de Videos (Reels)</h2>
+  <div class="ideas-grid">
+  <div class="idea-card"><h4>1. "Voce tem direito sem saber"</h4><p>Reel revelando 3 beneficios do INSS que trabalhadores informais desconhecem. CTA: "Salve esse video!"</p><span class="badge reel">Reel</span>span></div>div>
+  <div class="idea-card"><h4>2. Aposentadoria por Invalidez</h4><p>Explica passo a passo quem tem direito, documentos necessarios e como dar entrada no INSS.</p><span class="badge reel">Reel</span>span></div>div>
+  <div class="idea-card"><h4>3. "INSS negou? Saiba o que fazer"</h4><p>Roteiro mostrando os 3 passos apos negativa: recurso, pericia, acao judicial. Tom direto e encorajador.</p><span class="badge reel">Reel</span>span></div>div>
+  <div class="idea-card"><h4>4. Auxilio Acidente vs Auxilio Doenca</h4><p>Comparativo visual mostrando diferencas, valores e requisitos de cada beneficio.</p><span class="badge reel">Reel</span>span></div>div>
+  <div class="idea-card"><h4>5. "Qual aposentadoria e melhor pra voce?"</h4><p>Video interativo com 3 perfis diferentes (autonomo, CLT, rural) e qual modalidade se aplica.</p><span class="badge reel">Reel</span>span></div>div>
+  <div class="idea-card"><h4>6. Mitos do INSS</h4><p>Desmistifica 5 crencas erradas sobre previdencia social com linguagem simples e didatica.</p><span class="badge reel">Reel</span>span></div>div>
+  <div class="idea-card"><h4>7. Pensao por Morte - Quem tem direito?</h4><p>Explica dependentes legais, documentos e prazos. Muito compartilhavel por familias.</p><span class="badge reel">Reel</span>span></div>div>
+  <div class="idea-card"><h4>8. "Trabalhador rural e suas aposentadorias"</h4><p>Foco no publico da regiao: aposentadoria rural, documentos e peculiaridades do campo.</p><span class="badge reel">Reel</span>span></div>div>
+  <div class="idea-card"><h4>9. Salario Maternidade para MEI</h4><p>Muitas MEIs desconhecem esse direito. Video educativo com passo a passo do processo.</p><span class="badge reel">Reel</span>span></div>div>
+  <div class="idea-card"><h4>10. "Quanto tempo leva um processo?"</h4><p>Transparencia sobre prazos no INSS e na Justica Federal. Gera confianca e expectativa realista.</p><span class="badge reel">Reel</span>span></div>div>
+  <div class="idea-card"><h4>11. BPC/LOAS - Para quem e?</h4><p>Beneficio para pessoas com deficiencia e idosos de baixa renda. Muito buscado e pouco compreendido.</p><span class="badge reel">Reel</span>span></div>div>
+  <div class="idea-card"><h4>12. "Fui demitido. E agora?"</h4><p>Guia rapido: seguro desemprego, FGTS, aviso previo, direitos trabalhistas. Alto potencial viral.</p><span class="badge reel">Reel</span>span></div>div>
+  <div class="idea-card"><h4>13. Pericia Medica: Como se preparar</h4><p>Dicas praticas para a pericia do INSS: documentos, comportamento, o que dizer e o que evitar.</p><span class="badge reel">Reel</span>span></div>div>
+  <div class="idea-card"><h4>14. "Advogado previdenciario cobra caro?"</h4><p>Quebra objecao principal: explica honorarios, quando vale a pena, e custo x beneficio.</p><span class="badge reel">Reel</span>span></div>div>
+  <div class="idea-card"><h4>15. Revisao de Beneficios</h4><p>Muitos aposentados recebem menos do que deveriam. Video sobre como fazer a revisao do beneficio.</p><span class="badge reel">Reel</span>span></div>div>
+  <div class="idea-card"><h4>16. Antes x Depois (Case de Cliente)</h4><p>Sem revelar dados, mostrar situacao antes da consultoria e resultado alcancado. Prova social forte.</p><span class="badge foto">Carrossel</span>span></div>div>
+  <div class="idea-card"><h4>17. "Perguntas que me fazem todo dia"</h4><p>Responde as 5 perguntas mais frequentes no direct ou WhatsApp. Formato rapido e dinamico.</p><span class="badge reel">Reel</span>span></div>div>
+  <div class="idea-card"><h4>18. Beneficio para Pessoa com Deficiencia</h4><p>Apresenta tipos de beneficios, laudo necessario e como funciona a pericia especializada.</p><span class="badge reel">Reel</span>span></div>div>
+  <div class="idea-card"><h4>19. "Por que contratar um especialista?"</h4><p>Diferencial do advogado previdenciario vs tentar sozinho vs advocacia generalista. Video de autoridade.</p><span class="badge reel">Reel</span>span></div>div>
+  <div class="idea-card"><h4>20. Atualizacao da Reforma da Previdencia</h4><p>Explica as regras de transicao, pontos e tempo de contribuicao de forma visual e simples.</p><span class="badge reel">Reel</span>span></div>div>
+  </div>div>
+  </div>div></p></p></h4></h2>
+  <!-- TAB: FOTOS -->
+  <div id="tab-fotos" class="tab">
+    <h2>Ideias de Fotos e Posts</h2>
+  <div class="ideas-grid">
+  <div class="idea-card" style="border-left-color:var(--gold)"><h4>1. Foto Profissional no Escritorio</h4><p>Marlon em postura de autoridade, terno escuro, fundo do escritorio desfocado. Caption sobre especialidade.</p><span class="badge foto">Foto</span>span></div>div>
+  <div class="idea-card" style="border-left-color:var(--gold)"><h4>2. Carrossel "5 Direitos que voce ignora"</h4><p>Slides educativos com fundo vinho, tipografia em dourado. Cada slide = 1 direito previdenciario.</p><span class="badge carrossel">Carrossel</span>span></div>div>
+  <div class="idea-card" style="border-left-color:var(--gold)"><h4>3. Post de Citacao Juridica</h4><p>Citacao de lei ou jurisprudencia com visual elegante, fundo escuro e nome do escritorio.</p><span class="badge foto">Foto</span>span></div>div>
+  <div class="idea-card" style="border-left-color:var(--gold)"><h4>4. Infografico: Tipos de Aposentadoria</h4><p>Mapa visual com todas as modalidades de aposentadoria, requisitos resumidos em icones.</p><span class="badge carrossel">Carrossel</span>span></div>div>
+  <div class="idea-card" style="border-left-color:var(--gold)"><h4>5. "Cliente aprovado!" (Prova Social)</h4><p>Post comemorativo quando um beneficio e concedido - sem dados do cliente, apenas resultado.</p><span class="badge foto">Foto</span>span></div>div>
+  <div class="idea-card" style="border-left-color:var(--gold)"><h4>6. Foto com Livros de Direito</h4><p>Marlon estudando ou com livros juridicos. Reforco da imagem de especialista e profissional dedicado.</p><span class="badge foto">Foto</span>span></div>div>
+  <div class="idea-card" style="border-left-color:var(--gold)"><h4>7. Calendario Previdenciario</h4><p>Infografico com datas importantes do INSS do mes: pagamentos, prazos, mudancas de regras.</p><span class="badge foto">Foto</span>span></div>div>
+  <div class="idea-card" style="border-left-color:var(--gold)"><h4>8. Carrossel "Mito ou Verdade"</h4><p>Serie de afirmacoes sobre INSS - a audiencia adivinha se e mito ou verdade. Alto engajamento.</p><span class="badge carrossel">Carrossel</span>span></div>div>
+  <div class="idea-card" style="border-left-color:var(--gold)"><h4>9. Foto em Tribunal/Forum</h4><p>Imagem profissional em ambiente juridico. Reforco de credibilidade e atuacao real nos processos.</p><span class="badge foto">Foto</span>span></div>div>
+  <div class="idea-card" style="border-left-color:var(--gold)"><h4>10. Post "Hoje aprendi"</h4><p>Compartilha uma novidade juridica ou decisao do STJ/TRF de forma simples e acessivel.</p><span class="badge foto">Foto</span>span></div>div>
+  <div class="idea-card" style="border-left-color:var(--gold)"><h4>11. Checklist do Pedido de Beneficio</h4><p>Lista visual dos documentos necessarios para dar entrada em cada tipo de beneficio do INSS.</p><span class="badge carrossel">Carrossel</span>span></div>div>
+  <div class="idea-card" style="border-left-color:var(--gold)"><h4>12. "Quem sou eu" - Post Pessoal</h4><p>Marlon compartilha sua historia, porque escolheu o direito previdenciario, conexao humana com audiencia.</p><span class="badge carrossel">Carrossel</span>span></div>div>
+  <div class="idea-card" style="border-left-color:var(--gold)"><h4>13. Post de Efemérides</h4><p>Datas relevantes: Dia do Trabalhador, Dia do Idoso, Dia da Consciencia Negra - contextualizando com beneficios.</p><span class="badge foto">Foto</span>span></div>div>
+  <div class="idea-card" style="border-left-color:var(--gold)"><h4>14. Antes e Depois - Linha do Tempo</h4><p>Carrossel mostrando evolucao da previdencia social no Brasil - conteudo de autoridade e historico.</p><span class="badge carrossel">Carrossel</span>span></div>div>
+  <div class="idea-card" style="border-left-color:var(--gold)"><h4>15. Post de Parceria/Indicacao</h4><p>Parceria com medicos, contadores ou outros profissionais que encaminham clientes. Rede de valor.</p><span class="badge foto">Foto</span>span></div>div>
+  </div>div>
+  </div>div></p></p></h4></h2>
+  <!-- TAB: STORIES -->
+  <div id="tab-stories" class="tab">
+    <h2>Ideias para Stories</h2>
+  <div class="ideas-grid">
+  <div class="idea-card" style="border-left-color:#4a9eff"><h4>1. Caixa de Perguntas Semanal</h4><p>Toda segunda-feira: "Me pergunte sobre o INSS". Responde nos stories seguintes - gera engajamento direto.</p><span class="badge story">Story</span>span></div>div>
+  <div class="idea-card" style="border-left-color:#4a9eff"><h4>2. Enquete Juridica</h4><p>"Voce sabia que..." com opcoes SIM/NAO. Simples, rapido, educa e gera dado de engajamento.</p><span class="badge story">Story</span>span></div>div>
+  <div class="idea-card" style="border-left-color:#4a9eff"><h4>3. Bastidores do Escritorio</h4><p>Mostra rotina: reuniao com cliente, preparacao de peticao, estudo de jurisprudencia. Humaniza o advogado.</p><span class="badge story">Story</span>span></div>div>
+  <div class="idea-card" style="border-left-color:#4a9eff"><h4>4. "Sabado de Consultas"</h4><p>Avisa disponibilidade para atendimento rapido via WhatsApp nos fins de semana. CTA direto.</p><span class="badge story">Story</span>span></div>div>
+  <div class="idea-card" style="border-left-color:#4a9eff"><h4>5. Resultado da Semana</h4><p>Sexta-feira: "Essa semana conseguimos X beneficios aprovados". Prova social em formato de conquista.</p><span class="badge story">Story</span>span></div>div>
+  <div class="idea-card" style="border-left-color:#4a9eff"><h4>6. Quiz "Você Sabe Seus Direitos?"</h4><p>Serie de 3-5 perguntas sobre direito previdenciario em formato de quiz. Muito compartilhavel.</p><span class="badge story">Story</span>span></div>div>
+  <div class="idea-card" style="border-left-color:#4a9eff"><h4>7. Dica Rapida do Dia</h4><p>Um fato ou dica em 15 segundos. Ex: "Voce sabia que o INSS tem prazo de 45 dias para resposta?"</p><span class="badge story">Story</span>span></div>div>
+  <div class="idea-card" style="border-left-color:#4a9eff"><h4>8. Compartilha Depoimento</h4><p>Print (anonimizado) de mensagem de cliente agradecendo o resultado. Prova social poderosa.</p><span class="badge story">Story</span>span></div>div>
+  <div class="idea-card" style="border-left-color:#4a9eff"><h4>9. Repost de Noticias do INSS</h4><p>Compartilha noticia relevante sobre previdencia e comenta rapidamente. Posiciona como atualizado.</p><span class="badge story">Story</span>span></div>div>
+  <div class="idea-card" style="border-left-color:#4a9eff"><h4>10. "Esse e um sinal que voce precisa de ajuda"</h4><p>Lista de situacoes que indicam necessidade de consulta juridica. Alto potencial de conversao.</p><span class="badge story">Story</span>span></div>div>
+  <div class="idea-card" style="border-left-color:#4a9eff"><h4>11. Contagem Regressiva</h4><p>Para eventos, mudancas de prazo ou datas de pagamento do INSS. Cria expectativa e urgencia.</p><span class="badge story">Story</span>span></div>div>
+  <div class="idea-card" style="border-left-color:#4a9eff"><h4>12. Bastidores de uma Audiencia</h4><p>Foto ou video rapido antes de entrar no forum/TRF. Mostra atuacao real, gera credibilidade.</p><span class="badge story">Story</span>span></div>div>
+  <div class="idea-card" style="border-left-color:#4a9eff"><h4>13. Mood de Segunda</h4><p>Frase motivacional com viés juridico para comecar a semana. Tom humano e acolhedor.</p><span class="badge story">Story</span>span></div>div>
+  <div class="idea-card" style="border-left-color:#4a9eff"><h4>14. Link para Novo Reel</h4><p>Story promovendo novo video publicado: previa de 5s + CTA "Assista no feed!"</p><span class="badge story">Story</span>span></div>div>
+  <div class="idea-card" style="border-left-color:#4a9eff"><h4>15. "Como nos contratar"</h4><p>Instrucoes simples: WhatsApp, Instagram, endereco. Com botao de link direto. Publicar 1x/semana.</p><span class="badge story">Story</span>span></div>div>
+  </div>div>
+  </div>div></p></p></h4></h2>
+  <!-- TAB: LINGUAGEM -->
+  <div id="tab-linguagem" class="tab">
+    <h2>Linguagem e Tom de Voz</h2>
+  <div class="lang-block"><h4>Tom Geral</h4><p>Acessivel e humano, mas com autoridade. Evitar juridiquese. Falar como um amigo que entende de direito. O objetivo e que o seguidor sinta que pode confiar nesse advogado sem ter medo de nao entender nada.</p></div>div>
+  <div class="lang-block"><h4>Vocabulario Recomendado</h4>
+  <div class="tag-cloud">
+  <span class="tag">Voce tem direito</span>span><span class="tag">E mais facil do que parece</span>span><span class="tag">Muita gente nao sabe</span>span><span class="tag">Posso te ajudar</span>span><span class="tag">Seu beneficio</span>span><span class="tag">INSS nao pode negar sem motivo</span>span><span class="tag">Consulta gratuita</span>span><span class="tag">Especialista em previdencia</span>span>
+  </div>div></div>div>
+  <div class="lang-block"><h4>Vocabulario a Evitar</h4>
+  <div class="tag-cloud">
+  <span class="tag" style="border-color:#ff6b6b;color:#ff9aaa">Jurisprudencia consolidada</span>span><span class="tag" style="border-color:#ff6b6b;color:#ff9aaa">Ratio decidendi</span>span><span class="tag" style="border-color:#ff6b6b;color:#ff9aaa">In fine</span>span><span class="tag" style="border-color:#ff6b6b;color:#ff9aaa">Termos tecnicos desnecessarios</span>span><span class="tag" style="border-color:#ff6b6b;color:#ff9aaa">Linguagem inacessivel</span>span>
+  </div>div></div>div>
+  <div class="lang-block"><h4>CTAs Recomendados</h4>
+  <div class="tag-cloud">
+  <span class="tag">Salva esse video!</span>span><span class="tag">Manda para quem precisa ver isso</span>span><span class="tag">Comenta aqui embaixo</span>span><span class="tag">Clica no link da bio</span>span><span class="tag">Me chama no WhatsApp</span>span><span class="tag">Segue para mais dicas</span>span>
+  </div>div></div>div>
+  <div class="lang-block"><h4>Hashtags Estrategicas</h4>
+  <div class="tag-cloud">
+  <span class="tag">#direitoprevidenciario</span>span><span class="tag">#INSS</span>span><span class="tag">#aposentadoria</span>span><span class="tag">#advogadoprevidenciario</span>span><span class="tag">#beneficiosINSS</span>span><span class="tag">#auxiliodoenca</span>span><span class="tag">#itaperuna</span>span><span class="tag">#advocaciaprevidenciaria</span>span><span class="tag">#direitoRJ</span>span><span class="tag">#pensaopormorte</span>span><span class="tag">#BPC</span>span><span class="tag">#invalidez</span>span>
+  </div>div></div>div>
+  </div>div>
+<!-- TAB: PUBLICO -->
+<div id="tab-publico" class="tab">
+<h2>Publico-Alvo</h2>
+<div class="persona"><h4>Persona 1: Maria, 58 anos - Trabalhadora Informal</h4>
+<p><strong>Perfil:</strong> Trabalhou a vida toda sem carteira assinada ou contribuindo esporadicamente ao INSS. Agora nao sabe se tem direito a aposentadoria.</p>
+<p><strong>Dor:</strong> Medo de nao ter renda na velhice, nao entende o sistema previdenciario, desconfia de advogados.</p>
+<p><strong>O que a converte:</strong>strong> Conteudo claro sobre aposentadoria por idade, linguagem simples, prova social de casos parecidos.</p></div>div>
+<div class="persona"><h4>Persona 2: Joao, 42 anos - CLT com Doenca Cronica</h4>
+<p><strong>Perfil:</strong> Trabalhou anos com carteira assinada mas nao consegue mais trabalhar por doenca. INSS negou o auxilio.</p>
+<p><strong>Dor:</strong> Renda comprometida, INSS negado, nao sabe o que fazer apos a negativa, sem acesso a informacao juridica.</p>
+<p><strong>O que o converte:</strong>strong> Videos sobre "INSS negou, e agora?", cases de reversao de negativa, CTA para WhatsApp.</p></div>div>
+<div class="persona"><h4>Persona 3: Ana, 35 anos - Filha Cuidadora</h4>
+<p><strong>Perfil:</strong> Cuida dos pais idosos, quer entender os direitos deles para ajuda-los a conseguir beneficios do INSS.</p>
+<p><strong>Dor:</strong> Nao sabe como ajudar os pais, sistema complexo, medo de ser enganada ou perder prazo.</p>
+<p><strong>O que a converte:</strong>strong> Conteudo sobre pensao por morte, BPC/LOAS, checklist de documentos, facilidade de contato.</p></div>div>
+</div>div>
+<!-- TAB: CORES -->
+<div id="tab-cores" class="tab">
+<h2>Identidade Visual e Cores</h2>
+<div class="palette">
+<div class="color-chip"><div class="swatch" style="background:#6B0F1A"></div>div><div class="info"><strong>#6B0F1A</strong><br>Vinho Principal</div>div></div>div>
+<div class="color-chip"><div class="swatch" style="background:#3D0008"></div>div><div class="info"><strong>#3D0008</strong><br>Vinho Escuro</div>div></div>div>
+<div class="color-chip"><div class="swatch" style="background:#8B1A2A"></div>div><div class="info"><strong>#8B1A2A</strong><br>Vinho Medio</div>div></div>div>
+<div class="color-chip"><div class="swatch" style="background:#C9A84C"></div>div><div class="info"><strong>#C9A84C</strong><br>Dourado</div>div></div>div>
+<div class="color-chip"><div class="swatch" style="background:#080808"></div>div><div class="info"><strong>#080808</strong><br>Preto Base</div>div></div>div>
+<div class="color-chip"><div class="swatch" style="background:#F0E6D3"></div>div><div class="info"><strong>#F0E6D3</strong><br>Creme Texto</div>div></div>div>
+</div>div>
+<div class="card"><h3>Tipografia</h3><p>Fonte principal: <strong>Cormorant Garamond</strong> ou <strong>Playfair Display</strong> para titulos (elegancia e autoridade). Fonte de corpo: <strong>Lato</strong> ou <strong>Montserrat</strong> para textos longos (legibilidade). Tamanho minimo: 15px em todos os materiais.</p></div>div>
+<div class="card"><h3>Aplicacao Visual</h3><p>Fundo escuro (#080808) com elementos em vinho (#6B0F1A) e detalhes em dourado (#C9A84C). Fotos do advogado preferencialmente em tons escuros ou com overlay de cor. Evitar fundos brancos - isso dilui a personalidade forte da marca.</p></div>div>
+</div>div>
+<footer><p>Dashboard C&F Advocacia Previdenciaria | <a href="https://instagram.com/castroefigueira" target="_blank">@castroefigueira</a>a> | Desenvolvido com estrategia de marketing especializado</p>p></footer></footer></p></strong></strong></p></p></strong></strong></p></p></strong></strong></p></p></strong></strong></p></p></h4></h2>
+  <!-- MODALS -->
+  <div class="modal-overlay" id="addModal">
+    <div class="modal">
+      <button class="close-btn" onclick="closeModal('addModal')">x</button>button>
+      <h2>+ Nova Ideia de Post</h2>
+    <label>Titulo da Ideia</label>
+    <input type="text" id="newTitle" placeholder="Ex: Reel sobre Auxilio Doenca">
+    <label>Tipo de Conteudo</label>
+    <select id="newType"><option value="reel">Reel</option>option><option value="foto">Foto</option>option><option value="carrossel">Carrossel</option>option><option value="story">Story</option>option></select>select>
+    <label>Data Planejada</label>
+    <input type="date" id="newDate">
+    <label>Descricao / Notas</label>
+    <textarea id="newDesc" placeholder="Detalhes, referencias, roteiro..."></textarea>
+    <label>Coluna Inicial</label>
+    <select id="newCol"><option value="ideas">Ideias</option>option><option value="scheduled">Agendado</option>option><option value="doing">Produzindo</option>option></select>select>
+    <div class="add-card-btns">
+    <button class="btn btn-wine" onclick="addNewCard()">Adicionar Card</button>button>
+    <button class="btn btn-outline" onclick="closeModal('addModal')">Cancelar</button>button>
+    </div>div>
+    </div>div>
+  </div>div>
+<div class="modal-overlay" id="evalModal">
+<div class="modal">
+<button class="close-btn" onclick="closeModal('evalModal')">x</button>button>
+<h2>Avaliar Mes</h2>
+<label>Link do Perfil Instagram (opcional)</label>
+<input type="text" id="igLink" placeholder="https://instagram.com/castroefigueira">
+<label>Mes Avaliado</label>
+<select id="evalMonth"><option value="6">Junho 2026</option>option><option value="7">Julho 2026</option>option><option value="8">Agosto 2026</option>option></select>select>
+<label>Quantos posts foram publicados?</label>
+<input type="number" id="evalPosts" min="0" max="60" placeholder="Ex: 12">
+<label>Qual foi o alcance medio por post? (opcional)</label>
+<input type="number" id="evalReach" placeholder="Ex: 850">
+<label>Maior dificuldade do mes?</label>
+<select id="evalDiff">
+<option value="criacao">Criacao de conteudo</option>option>
+<option value="consistencia">Manter consistencia</option>option>
+<option value="engajamento">Baixo engajamento</option>option>
+<option value="ideias">Falta de ideias</option>option>
+<option value="tempo">Falta de tempo</option>option>
+</select>select>
+<button class="btn btn-wine" onclick="generateAnalysis()" style="width:100%;margin-bottom:12px">Gerar Analise do Mes</button>button>
+<div id="analysisResult" style="display:none"></div>div>
+</div>div>
+</div>div>
+<div class="modal-overlay" id="editModal">
+<div class="modal">
+<button class="close-btn" onclick="closeModal('editModal')">x</button>button>
+<h2>Editar Card</h2>
+<label>Titulo</label>
+<input type="text" id="editTitle">
+<label>Data</label>
+<input type="date" id="editDate">
+<label>Notas</label>
+<textarea id="editDesc"></textarea>
+<div class="add-card-btns">
+<button class="btn btn-wine" onclick="saveEdit()">Salvar</button>button>
+<button class="btn btn-outline" onclick="closeModal('editModal')">Cancelar</button>button>
+</div>div>
+</div>div>
+</div>div></label></label></h2>
+  <script>
+    var cards=JSON.parse(localStorage.getItem('kanban-cards-cf')||'null')||[
+      {id:1,title:'Reel: INSS negou? Saiba o que fazer',type:'reel',date:'2026-06-02',desc:'Roteiro dos 3 passos pos-negativa',col:'scheduled',done:false},
+      {id:2,title:'Story: Caixa de Perguntas',type:'story',date:'2026-06-03',desc:'Me pergunte sobre o INSS',col:'scheduled',done:false},
+      {id:3,title:'Carrossel: 5 Direitos que voce ignora',type:'carrossel',date:'2026-06-05',desc:'Slides com fundo vinho e dourado',col:'ideas',done:false},
+      {id:4,title:'Reel: Aposentadoria por Invalidez',type:'reel',date:'2026-06-09',desc:'Passo a passo e documentos',col:'scheduled',done:false},
+      {id:5,title:'Post: Cliente aprovado!',type:'foto',date:'2026-06-10',desc:'Prova social - beneficio concedido',col:'ideas',done:false},
+      {id:6,title:'Reel: Auxilio Acidente vs Auxilio Doenca',type:'reel',date:'2026-06-12',desc:'Comparativo visual',col:'doing',done:false},
+    {id:7,title:'Story: Enquete juridica',type:'story',date:'2026-06-13',desc:'Voce sabia que... SIM/NAO',col:'scheduled',done:false},
+      {id:8,title:'Reel: Trabalhador Rural',type:'reel',date:'2026-06-16',desc:'Aposentadoria rural e documentos',col:'ideas',done:false},
+      {id:9,title:'Carrossel: Checklist de Documentos INSS',type:'carrossel',date:'2026-06-18',desc:'Lista visual por tipo de beneficio',col:'scheduled',done:false},
+      {id:10,title:'Reel: Salario Maternidade MEI',type:'reel',date:'2026-06-23',desc:'Muitas MEIs desconhecem esse direito',col:'ideas',done:false},
+      {id:11,title:'Post: Foto Profissional Escritorio',type:'foto',date:'2026-06-25',desc:'Tom de autoridade e especialidade',col:'ideas',done:false},
+      {id:12,title:'Reel: Pericia Medica - Como se preparar',type:'reel',date:'2026-06-27',desc:'Dicas praticas para a pericia',col:'ideas',done:false}
+      ];
+    var nextId=100;var currentMonth=5;var currentYear=2026;var dragId=null;var editingId=null;
+    function saveCards(){localStorage.setItem('kanban-cards-cf',JSON.stringify(cards))}
+    function showTab(name){document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active')});document.querySelectorAll('nav button').forEach(function(b){b.classList.remove('active')});document.getElementById('tab-'+name).classList.add('active');event.target.classList.add('active');if(name==='kanban')renderKanban()}
+    function changeMonth(d){currentMonth+=d;if(currentMonth>11){currentMonth=0;currentYear++}if(currentMonth<0){currentMonth=11;currentYear--}var names=['Janeiro','Fevereiro','Marco','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];document.getElementById('month-label').textContent=names[currentMonth]+' '+currentYear;renderKanban()}
+    function renderKanban(){var cols={ideas:[],scheduled:[],doing:[],done:[]};var mn=currentMonth+1;cards.forEach(function(c){var cm=c.date?parseInt(c.date.split('-')[1]):0;var cy=c.date?parseInt(c.date.split('-')[0]):0;if(!c.date||(cm===mn&&cy===currentYear))cols[c.col].push(c)});['ideas','scheduled','doing','done'].forEach(function(col){var el=document.getElementById('cards-'+col);if(!el)return;el.innerHTML='';cols[col].forEach(function(c){el.appendChild(makeCard(c))});document.getElementById('cnt-'+col).textContent=cols[col].length})}
+    function makeCard(c){var div=document.createElement('div');div.className='kanban-card'+(c.done?' done-card':'');div.draggable=true;div.dataset.id=c.id;div.addEventListener('dragstart',function(){dragId=c.id;div.classList.add('dragging')});div.addEventListener('dragend',function(){div.classList.remove('dragging')});var typeColors={reel:'#ff9aaa',foto:'var(--gold-light)',carrossel:'#7bffbb',story:'#7bbfff'};var typeLabel={reel:'Reel',foto:'Foto',carrossel:'Carrossel',story:'Story'};div.innerHTML='<div class="card-title">'+c.title+'</div><div class="card-meta"><span class="badge '+c.type+'" style="font-size:11px;padding:2px 7px">'+typeLabel[c.type]+'</span>'+(c.date?'<span class="card-date">'+formatDate(c.date)+'</span>':'')+'</div><div class="card-actions"><button title="Editar" onclick="openEdit('+c.id+')">...</button><button title="Excluir" onclick="deleteCard('+c.id+')" style="color:#ff6b6b">X</button></div><div class="card-check"><input type="checkbox" id="chk'+c.id+'" '+(c.done?'checked':'')+' onchange="toggleDone('+c.id+',this.checked)"><label for="chk'+c.id+'">'+(c.done?'Publicado':'Marcar como publicado')+'</label></div>';return div}
+    function formatDate(d){if(!d)return'';var p=d.split('-');return p[2]+'/'+p[1]+'/'+p[0]}
+    function allowDrop(e){e.preventDefault();e.currentTarget.classList.add('drag-over')}
+    function dropCard(e,col){e.preventDefault();document.querySelectorAll('.kanban-cards,.drop-zone').forEach(function(z){z.classList.remove('drag-over')});if(dragId!==null){var card=cards.find(function(c){return c.id===dragId});if(card){card.col=col;saveCards();renderKanban()}dragId=null}}
+    function toggleDone(id,checked){var c=cards.find(function(x){return x.id===id});if(c){c.done=checked;if(checked)c.col='done';saveCards();renderKanban()}}
+    function deleteCard(id){cards=cards.filter(function(c){return c.id!==id});saveCards();renderKanban()}
+    function openEdit(id){var c=cards.find(function(x){return x.id===id});if(!c)return;editingId=id;document.getElementById('editTitle').value=c.title;document.getElementById('editDate').value=c.date||'';document.getElementById('editDesc').value=c.desc||'';document.getElementById('editModal').classList.add('open')}
+    function saveEdit(){var c=cards.find(function(x){return x.id===editingId});if(c){c.title=document.getElementById('editTitle').value;c.date=document.getElementById('editDate').value;c.desc=document.getElementById('editDesc').value;saveCards();renderKanban()}closeModal('editModal')}
+    function openAddModal(){document.getElementById('addModal').classList.add('open')}
+    function addNewCard(){var title=document.getElementById('newTitle').value.trim();if(!title)return alert('Insira um titulo!');var c={id:++nextId,title:title,type:document.getElementById('newType').value,date:document.getElementById('newDate').value,desc:document.getElementById('newDesc').value,col:document.getElementById('newCol').value,done:false};cards.push(c);saveCards();renderKanban();closeModal('addModal');document.getElementById('newTitle').value='';document.getElementById('newDate').value='';document.getElementById('newDesc').value=''}
+    function clearDone(){cards=cards.filter(function(c){return!c.done});saveCards();renderKanban()}
+    function openEvalModal(){document.getElementById('evalModal').classList.add('open')}
+    function closeModal(id){document.getElementById(id).classList.remove('open')}
+    function generateAnalysis(){var posts=parseInt(document.getElementById('evalPosts').value)||0;var reach=parseInt(document.getElementById('evalReach').value)||0;var diff=document.getElementById('evalDiff').value;var score=Math.min(100,Math.round((posts/20)*60+(reach/1000)*40));var done=cards.filter(function(c){return c.done}).length;var pending=cards.filter(function(c){return!c.done&&c.col!='ideas'}).length;var tips={criacao:'Separe 1 dia por semana so para gravar. Crie batches de 4-5 videos de uma vez.',consistencia:'Use o Kanban diariamente. Defina um horario fixo de postagem (ex: 18h sempre).',engajamento:'Adicione CTAs mais diretos. Finalize cada video com uma pergunta ao publico.',ideias:'Use a aba Videos e Stories deste dashboard para nunca ficar sem ideias.',tempo:'Delegue edicao ou use templates prontos. Reels de 30s gastam menos tempo.'};var result='<div class="analysis-result"><h4>Analise de '+['','Janeiro','Fevereiro','Marco','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'][parseInt(document.getElementById('evalMonth').value)]+'</h4><div class="score-label"><span>Pontuacao do Mes</span><span>'+score+'/100</span></div><div class="score-bar"><div class="score-fill" style="width:'+score+'%"></div></div><ul style="margin-top:16px"><li><strong>Posts publicados:</strong> '+posts+' (meta: 20/mes)</li>'+(reach?'<li><strong>Alcance medio:</strong> '+reach+' pessoas por post</li>':'')+'<li><strong>Cards concluidos no Kanban:</strong> '+done+'</li><li><strong>Cards pendentes:</strong> '+pending+'</li></ul><h4 style="margin-top:16px">Sugestao Principal</h4><p>'+tips[diff]+'</p>'+(posts<8?'<p style="margin-top:12px;color:#ffaaaa"><strong>Atencao:</strong> Menos de 8 posts/mes reduz muito a visibilidade. Tente postar ao menos 3x por semana.</p>':posts>=16?'<p style="margin-top:12px;color:#7bffbb"><strong>Excelente!</strong> Consistencia alta. Foque agora na qualidade e em CTAs mais fortes.</p>':'<p style="margin-top:12px;color:#ffe97b">Bom ritmo! Tente aumentar para 4x por semana para acelerar o crescimento.</p>')+'</div>';document.getElementById('analysisResult').innerHTML=result;document.getElementById('analysisResult').style.display='block'}
+    window.addEventListener('click',function(e){if(e.target.classList.contains('modal-overlay'))e.target.classList.remove('open')});
+    document.querySelectorAll('.kanban-cards,.drop-zone').forEach(function(z){z.addEventListener('dragleave',function(){z.classList.remove('drag-over')})});
+    renderKanban();
+    renderKanban();
+  </script></body></html>
+  </script></html>body></html>
+  </script>
