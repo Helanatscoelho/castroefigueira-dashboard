@@ -140,13 +140,7 @@ footer a{color:var(--wine-light);text-decoration:none}
   <button onclick="showTab('cores',this)">Cores e Visual</button>
 </nav>
 <div id="tab-visao" class="tab active">
-<h2>Visao Geral do Perfil</h2>
-<div class="stat-grid">
-  <div class="stat"><span class="num">711</span><div class="lbl">Publicacoes</div></div>
-  <div class="stat"><span class="num">1.263</span><div class="lbl">Seguidores</div></div>
-  <div class="stat"><span class="num">535</span><div class="lbl">Seguindo</div></div>
-  <div class="stat"><span class="num">2,3x</span><div class="lbl">Meta de Crescimento</div></div>
-</div>
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px;"><h2 style="margin-bottom:0">Visao Geral do Perfil</h2><div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;"><span id="profile-last-updated" style="font-size:clamp(12px,1.2vw,13px);color:var(--text3);">Carregando...</span><button class="btn btn-wine btn-sm" onclick="openProfileModal()">Atualizar Perfil</button></div></div><div id="profile-warn" style="display:none;background:rgba(201,168,76,.1);border:1px solid var(--gold);border-radius:8px;padding:10px 16px;margin-bottom:16px;font-size:clamp(13px,1.3vw,14px);color:var(--gold);">&#9888; Ja faz mais de 30 dias desde a ultima atualizacao. Acesse o Instagram e atualize os dados do perfil.</div><div id="profile-stats-grid" class="stat-grid"></div>
 <div class="card"><h3>Sobre o Perfil</h3>
   <p><strong>Advogado:</strong> Marlon da S. Figueira - OAB/RJ 152.763</p>
   <p><strong>Especialidade:</strong> Direito Previdenciario e Trabalhista</p>
@@ -259,9 +253,64 @@ footer a{color:var(--wine-light);text-decoration:none}
 </div>
 <div class="modal-overlay" id="evalModal">
 <div class="modal"><button class="modal-close" onclick="closeModal('evalModal')">&#x2715;</button><h2>&#128202; Avaliar Mes</h2><label>Mes</label><select id="evalMonth"><option value="1">Janeiro</option><option value="2">Fevereiro</option><option value="3">Marco</option><option value="4">Abril</option><option value="5">Maio</option><option value="6" selected>Junho</option><option value="7">Julho</option><option value="8">Agosto</option><option value="9">Setembro</option><option value="10">Outubro</option><option value="11">Novembro</option><option value="12">Dezembro</option></select><label>Posts publicados</label><input type="number" id="evalPosts" min="0" max="60" placeholder="Ex: 12"><label>Alcance medio por post</label><input type="number" id="evalReach" placeholder="Ex: 850"><label>Principal dificuldade</label><select id="evalDiff"><option value="criacao">Criacao de conteudo</option><option value="consistencia">Manter consistencia</option><option value="engajamento">Baixo engajamento</option><option value="ideias">Falta de ideias</option><option value="tempo">Falta de tempo</option></select><button class="btn btn-wine" onclick="generateAnalysis()" style="width:100%;margin:8px 0 4px">Gerar Analise</button><div id="analysisResult"></div></div>
+<!-- Profile Update Modal -->
+<div id="profileModal" class="modal-overlay"><div class="modal"><button class="modal-close" onclick="closeProfileModal()">&times;</button><h2>Atualizar Dados do Perfil</h2><p style="font-size:clamp(13px,1.3vw,14px);color:var(--text2);margin-bottom:20px;">Acesse o Instagram @castroefigueira e atualize os numeros abaixo. Isso permite acompanhar o crescimento do perfil.</p><label>Publicacoes</label><input type="number" id="pf-posts" min="0" placeholder="Ex: 711"><label>Seguidores</label><input type="number" id="pf-followers" min="0" placeholder="Ex: 1263"><label>Seguindo</label><input type="number" id="pf-following" min="0" placeholder="Ex: 535"><label>Meta de Crescimento (ex: 2,5x)</label><input type="text" id="pf-goal" placeholder="Ex: 2,3x"><div class="modal-btns"><button class="btn btn-wine" onclick="saveProfileData()">Salvar Atualizacao</button><button class="btn btn-outline" onclick="closeProfileModal()">Cancelar</button></div></div></div>
+
 </div>
 <footer><p>Dashboard C&amp;F Advocacia Previdenciaria | <a href="https://instagram.com/castroefigueira" target="_blank">@castroefigueira</a></p></footer>
 <script>
+// ===== PROFILE OVERVIEW =====
+var CF_PROFILE_KEY = "cf-profile-data";
+function getProfileData() {
+  var defaults = {posts:"711",followers:"1.263",following:"535",goal:"2,3x",updatedAt:null};
+  try { var s=localStorage.getItem(CF_PROFILE_KEY); return s?JSON.parse(s):defaults; } catch(e){return defaults;}
+}
+function renderProfileStats() {
+  var d = getProfileData();
+  var grid = document.getElementById("profile-stats-grid");
+  if(!grid) return;
+  grid.innerHTML = '' +
+    '<div class="stat"><span class="num" id="pf-disp-posts">'+d.posts+'</span><div class="lbl">Publicacoes</div></div>' +
+    '<div class="stat"><span class="num" id="pf-disp-followers">'+d.followers+'</span><div class="lbl">Seguidores</div></div>' +
+    '<div class="stat"><span class="num" id="pf-disp-following">'+d.following+'</span><div class="lbl">Seguindo</div></div>' +
+    '<div class="stat"><span class="num" id="pf-disp-goal">'+d.goal+'</span><div class="lbl">Meta de Crescimento</div></div>';
+  var lu = document.getElementById("profile-last-updated");
+  var warn = document.getElementById("profile-warn");
+  if(d.updatedAt) {
+    var dt = new Date(d.updatedAt);
+    var now = new Date();
+    var diff = Math.floor((now - dt)/(1000*60*60*24));
+    lu.textContent = "Atualizado em " + dt.toLocaleDateString("pt-BR") + " (" + diff + " dias atras)";
+    if(diff >= 30) { warn.style.display="block"; } else { warn.style.display="none"; }
+  } else {
+    lu.textContent = "Dados de referencia - atualize com os valores atuais do Instagram";
+    warn.style.display = "none";
+  }
+}
+function openProfileModal() {
+  var d = getProfileData();
+  document.getElementById("pf-posts").value = d.posts.replace(/\./g,"");
+  document.getElementById("pf-followers").value = d.followers.replace(/\./g,"");
+  document.getElementById("pf-following").value = d.following.replace(/\./g,"");
+  document.getElementById("pf-goal").value = d.goal;
+  document.getElementById("profileModal").classList.add("open");
+}
+function closeProfileModal() {
+  document.getElementById("profileModal").classList.remove("open");
+}
+function saveProfileData() {
+  var posts = parseInt(document.getElementById("pf-posts").value)||0;
+  var followers = parseInt(document.getElementById("pf-followers").value)||0;
+  var following = parseInt(document.getElementById("pf-following").value)||0;
+  var goal = document.getElementById("pf-goal").value || "2,3x";
+  function fmt(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".");}
+  var data = {posts:fmt(posts),followers:fmt(followers),following:fmt(following),goal:goal,updatedAt:new Date().toISOString()};
+  localStorage.setItem(CF_PROFILE_KEY, JSON.stringify(data));
+  renderProfileStats();
+  closeProfileModal();
+}
+// ===== END PROFILE =====
+
 /* ===== DADOS PADRAO ===== */
 var DEF = {
 videos:[
@@ -441,6 +490,7 @@ function showTab(name, btn){
   document.getElementById("tab-"+name).classList.add("active");
   if(btn) btn.classList.add("active");
   if(name==="kanban") renderKanban();
+renderProfileStats();
   if(name==="videos") renderIdeas("videos");
   if(name==="fotos")  renderIdeas("fotos");
   if(name==="stories") renderIdeas("stories");
