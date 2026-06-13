@@ -36,6 +36,7 @@ h3{font-size:clamp(17px,2vw,22px);color:var(--wine-light);margin-bottom:12px;fon
 .badge.foto{background:rgba(201,168,76,.2);border:1px solid var(--gold);color:var(--gold-light)}
 .badge.story{background:rgba(100,180,255,.15);border:1px solid #4a9eff;color:#7bbfff}
 .badge.carrossel{background:rgba(100,255,180,.15);border:1px solid #4aff9e;color:#7bffbb}
+/* KANBAN */
 .kanban-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px}
 .kanban-controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .month-nav{display:flex;align-items:center;gap:12px}
@@ -45,6 +46,8 @@ h3{font-size:clamp(17px,2vw,22px);color:var(--wine-light);margin-bottom:12px;fon
 .btn-wine{background:var(--wine);color:#fff}.btn-wine:hover{background:var(--wine-light)}
 .btn-gold{background:var(--gold);color:var(--wine-dark)}.btn-gold:hover{background:var(--gold-light)}
 .btn-outline{background:transparent;border:1px solid #444;color:var(--text2)}.btn-outline:hover{border-color:var(--wine-light);color:var(--text)}
+.btn-green{background:#1a4a1a;color:#7fff7f;border:1px solid #2a7a2a}.btn-green:hover{background:#1f6a1f}
+.btn-sm{padding:5px 12px;font-size:clamp(12px,1.1vw,13px)}
 .kanban-board{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:start}
 @media(max-width:900px){.kanban-board{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.kanban-board{grid-template-columns:1fr}}
@@ -72,6 +75,36 @@ h3{font-size:clamp(17px,2vw,22px);color:var(--wine-light);margin-bottom:12px;fon
 .done-card{opacity:.75;border-color:#2a4a2a!important}
 .drop-zone{min-height:60px;border:2px dashed #333;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:13px;transition:all .2s;margin-top:8px}
 .drop-zone.drag-over,.kanban-cards.drag-over{border-color:var(--gold)!important;background:rgba(201,168,76,.05)}
+/* IDEAS EDITAVEIS */
+.ideas-toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px}
+.ideas-toolbar h2{margin-bottom:0}
+.ideas-stats{display:flex;gap:16px;font-size:clamp(13px,1.3vw,15px);color:var(--text2)}
+.ideas-stats span{display:flex;align-items:center;gap:6px}
+.ideas-stats strong{color:var(--gold)}
+.ideas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.idea-card{background:var(--bg3);border:1px solid #2a2a2a;border-radius:var(--radius);padding:18px;border-left:4px solid var(--wine);transition:border-color .2s;position:relative}
+.idea-card.published{border-left-color:#3cff7a;opacity:.85}
+.idea-card.published .idea-title{text-decoration:line-through;color:var(--text3)}
+.idea-card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:8px}
+.idea-card-btns{display:flex;gap:4px;flex-shrink:0}
+.idea-card-btns button{background:transparent;border:none;cursor:pointer;font-size:13px;padding:3px 6px;border-radius:4px;color:var(--text3);transition:all .2s}
+.idea-card-btns button:hover{background:rgba(255,255,255,.1);color:var(--text)}
+.idea-title{font-size:clamp(14px,1.4vw,16px);font-weight:700;color:var(--text);line-height:1.3;cursor:pointer;border:1px solid transparent;border-radius:4px;padding:2px 4px;transition:border-color .2s;word-break:break-word}
+.idea-title:hover{border-color:#444}
+.idea-title[contenteditable=true]{border-color:var(--wine);background:var(--bg4);outline:none;padding:4px 8px}
+.idea-desc{font-size:clamp(13px,1.3vw,14px);color:var(--text2);line-height:1.5;margin:6px 0 10px;cursor:pointer;border:1px solid transparent;border-radius:4px;padding:2px 4px;min-height:36px;transition:border-color .2s;word-break:break-word}
+.idea-desc:hover{border-color:#444}
+.idea-desc[contenteditable=true]{border-color:var(--wine);background:var(--bg4);outline:none;padding:4px 8px}
+.idea-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.btn-published{padding:6px 14px;border-radius:20px;border:none;cursor:pointer;font-size:clamp(12px,1.2vw,13px);font-weight:700;transition:all .2s}
+.btn-published.not-done{background:transparent;border:1px solid #444;color:var(--text3)}
+.btn-published.not-done:hover{border-color:#3cff7a;color:#3cff7a}
+.btn-published.is-done{background:#1a4a1a;border:1px solid #3cff7a;color:#7fff7f}
+.idea-type-select{background:var(--bg4);border:1px solid #444;color:var(--text2);border-radius:6px;padding:4px 8px;font-size:12px;cursor:pointer}
+.idea-type-select:focus{outline:none;border-color:var(--wine)}
+.add-idea-card{background:var(--bg4);border:2px dashed #333;border-radius:var(--radius);padding:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;min-height:120px;flex-direction:column;gap:8px;color:var(--text3);font-size:clamp(14px,1.4vw,16px);font-weight:600}
+.add-idea-card:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.05)}
+/* MODAL */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:999;align-items:center;justify-content:center}
 .modal-overlay.open{display:flex}
 .modal{background:var(--bg2);border:1px solid var(--wine);border-radius:14px;padding:30px;width:90%;max-width:640px;max-height:90vh;overflow-y:auto;position:relative}
@@ -91,11 +124,7 @@ h3{font-size:clamp(17px,2vw,22px);color:var(--wine-light);margin-bottom:12px;fon
 .analysis-box h4{color:var(--gold);font-size:clamp(15px,1.6vw,17px);margin-bottom:10px}
 .analysis-box ul{padding-left:20px}
 .analysis-box li{margin-bottom:8px;line-height:1.5;font-size:clamp(14px,1.4vw,16px)}
-.ideas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-.idea-card{background:var(--bg3);border:1px solid #2a2a2a;border-radius:var(--radius);padding:18px;border-left:4px solid var(--wine);transition:all .2s}
-.idea-card:hover{border-color:var(--wine-light);transform:translateY(-2px)}
-.idea-card h4{font-size:clamp(15px,1.5vw,17px);color:var(--text);margin-bottom:8px}
-.idea-card p{font-size:clamp(13px,1.3vw,15px);color:var(--text2);line-height:1.5}
+/* OUTRAS ABAS */
 .palette{display:flex;flex-wrap:wrap;gap:16px;margin:16px 0}
 .color-chip{border-radius:var(--radius);overflow:hidden;width:120px;border:1px solid #333}
 .color-chip .swatch{height:80px}
@@ -196,76 +225,54 @@ footer a{color:var(--wine-light);text-decoration:none}
   </div>
 </div>
 </div>
-<!-- TAB VIDEOS -->
+
+<!-- TAB VIDEOS - EDITAVEL -->
 <div id="tab-videos" class="tab">
-<h2>Ideias de Videos (Reels)</h2>
-<div class="ideas-grid">
-  <div class="idea-card"><h4>1. "Voce tem direito sem saber"</h4><p>Reel revelando 3 beneficios do INSS que trabalhadores informais desconhecem. CTA: Salve esse video!</p><span class="badge reel">Reel</span></div>
-  <div class="idea-card"><h4>2. Aposentadoria por Invalidez</h4><p>Explica passo a passo quem tem direito, documentos necessarios e como dar entrada no INSS.</p><span class="badge reel">Reel</span></div>
-  <div class="idea-card"><h4>3. "INSS negou? Saiba o que fazer"</h4><p>Roteiro mostrando os 3 passos apos negativa: recurso, pericia, acao judicial.</p><span class="badge reel">Reel</span></div>
-  <div class="idea-card"><h4>4. Auxilio Acidente vs Auxilio Doenca</h4><p>Comparativo visual mostrando diferencas, valores e requisitos de cada beneficio.</p><span class="badge reel">Reel</span></div>
-  <div class="idea-card"><h4>5. "Qual aposentadoria e melhor pra voce?"</h4><p>Video interativo com 3 perfis diferentes: autonomo, CLT, rural - qual modalidade se aplica.</p><span class="badge reel">Reel</span></div>
-  <div class="idea-card"><h4>6. Mitos do INSS</h4><p>Desmistifica 5 crencas erradas sobre previdencia social com linguagem simples e didatica.</p><span class="badge reel">Reel</span></div>
-  <div class="idea-card"><h4>7. Pensao por Morte - Quem tem direito?</h4><p>Explica dependentes legais, documentos e prazos. Muito compartilhavel por familias.</p><span class="badge reel">Reel</span></div>
-  <div class="idea-card"><h4>8. "Trabalhador rural e suas aposentadorias"</h4><p>Foco no publico da regiao: aposentadoria rural, documentos e peculiaridades do campo.</p><span class="badge reel">Reel</span></div>
-  <div class="idea-card"><h4>9. Salario Maternidade para MEI</h4><p>Muitas MEIs desconhecem esse direito. Video educativo com passo a passo do processo.</p><span class="badge reel">Reel</span></div>
-  <div class="idea-card"><h4>10. "Quanto tempo leva um processo?"</h4><p>Transparencia sobre prazos no INSS e na Justica Federal. Gera confianca e expectativa realista.</p><span class="badge reel">Reel</span></div>
-  <div class="idea-card"><h4>11. BPC/LOAS - Para quem e?</h4><p>Beneficio para pessoas com deficiencia e idosos de baixa renda. Muito buscado e pouco compreendido.</p><span class="badge reel">Reel</span></div>
-  <div class="idea-card"><h4>12. "Fui demitido. E agora?"</h4><p>Guia rapido: seguro desemprego, FGTS, aviso previo, direitos trabalhistas. Alto potencial viral.</p><span class="badge reel">Reel</span></div>
-  <div class="idea-card"><h4>13. Pericia Medica: Como se preparar</h4><p>Dicas praticas para a pericia do INSS: documentos, comportamento, o que dizer e o que evitar.</p><span class="badge reel">Reel</span></div>
-  <div class="idea-card"><h4>14. "Advogado previdenciario cobra caro?"</h4><p>Quebra objecao principal: explica honorarios, quando vale a pena, custo x beneficio.</p><span class="badge reel">Reel</span></div>
-  <div class="idea-card"><h4>15. Revisao de Beneficios</h4><p>Muitos aposentados recebem menos do que deveriam. Video sobre como fazer a revisao do beneficio.</p><span class="badge reel">Reel</span></div>
-  <div class="idea-card"><h4>16. Antes x Depois - Case de Cliente</h4><p>Sem revelar dados, mostrar situacao antes da consultoria e resultado alcancado. Prova social forte.</p><span class="badge carrossel">Carrossel</span></div>
-  <div class="idea-card"><h4>17. "Perguntas que me fazem todo dia"</h4><p>Responde as 5 perguntas mais frequentes no direct. Formato rapido e dinamico.</p><span class="badge reel">Reel</span></div>
-  <div class="idea-card"><h4>18. Beneficio para Pessoa com Deficiencia</h4><p>Apresenta tipos de beneficios, laudo necessario e como funciona a pericia especializada.</p><span class="badge reel">Reel</span></div>
-  <div class="idea-card"><h4>19. "Por que contratar um especialista?"</h4><p>Diferencial do advogado previdenciario vs tentar sozinho vs advocacia generalista.</p><span class="badge reel">Reel</span></div>
-  <div class="idea-card"><h4>20. Atualizacao da Reforma da Previdencia</h4><p>Explica as regras de transicao, pontos e tempo de contribuicao de forma visual e simples.</p><span class="badge reel">Reel</span></div>
+<div class="ideas-toolbar">
+  <h2>&#127909; Ideias de Videos</h2>
+  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+    <div class="ideas-stats">
+      <span>Total: <strong id="v-total">0</strong></span>
+      <span>&#9989; Publicados: <strong id="v-done">0</strong></span>
+    </div>
+    <button class="btn btn-gold btn-sm" onclick="addIdea('videos')">+ Nova Ideia</button>
+    <button class="btn btn-outline btn-sm" onclick="resetIdeas('videos')">Restaurar Padrao</button>
+  </div>
 </div>
+<div class="ideas-grid" id="grid-videos"></div>
 </div>
 
-<!-- TAB FOTOS -->
+<!-- TAB FOTOS - EDITAVEL -->
 <div id="tab-fotos" class="tab">
-<h2>Ideias de Fotos e Posts</h2>
-<div class="ideas-grid">
-  <div class="idea-card" style="border-left-color:var(--gold)"><h4>1. Foto Profissional no Escritorio</h4><p>Marlon em postura de autoridade, terno escuro, fundo do escritorio desfocado.</p><span class="badge foto">Foto</span></div>
-  <div class="idea-card" style="border-left-color:var(--gold)"><h4>2. Carrossel "5 Direitos que voce ignora"</h4><p>Slides educativos com fundo vinho, tipografia em dourado. Cada slide = 1 direito previdenciario.</p><span class="badge carrossel">Carrossel</span></div>
-  <div class="idea-card" style="border-left-color:var(--gold)"><h4>3. Post de Citacao Juridica</h4><p>Citacao de lei ou jurisprudencia com visual elegante, fundo escuro e nome do escritorio.</p><span class="badge foto">Foto</span></div>
-  <div class="idea-card" style="border-left-color:var(--gold)"><h4>4. Infografico: Tipos de Aposentadoria</h4><p>Mapa visual com todas as modalidades, requisitos resumidos em icones.</p><span class="badge carrossel">Carrossel</span></div>
-  <div class="idea-card" style="border-left-color:var(--gold)"><h4>5. "Cliente aprovado!" (Prova Social)</h4><p>Post comemorativo quando um beneficio e concedido - sem dados do cliente, apenas resultado.</p><span class="badge foto">Foto</span></div>
-  <div class="idea-card" style="border-left-color:var(--gold)"><h4>6. Foto com Livros de Direito</h4><p>Marlon estudando ou com livros juridicos. Reforco da imagem de especialista dedicado.</p><span class="badge foto">Foto</span></div>
-  <div class="idea-card" style="border-left-color:var(--gold)"><h4>7. Calendario Previdenciario</h4><p>Infografico com datas importantes do INSS do mes: pagamentos, prazos, mudancas de regras.</p><span class="badge foto">Foto</span></div>
-  <div class="idea-card" style="border-left-color:var(--gold)"><h4>8. Carrossel "Mito ou Verdade"</h4><p>Serie de afirmacoes sobre INSS - a audiencia adivinha se e mito ou verdade. Alto engajamento.</p><span class="badge carrossel">Carrossel</span></div>
-  <div class="idea-card" style="border-left-color:var(--gold)"><h4>9. Foto em Tribunal/Forum</h4><p>Imagem profissional em ambiente juridico. Reforco de credibilidade e atuacao real.</p><span class="badge foto">Foto</span></div>
-  <div class="idea-card" style="border-left-color:var(--gold)"><h4>10. Post "Hoje aprendi"</h4><p>Compartilha uma novidade juridica ou decisao do STJ/TRF de forma simples e acessivel.</p><span class="badge foto">Foto</span></div>
-  <div class="idea-card" style="border-left-color:var(--gold)"><h4>11. Checklist do Pedido de Beneficio</h4><p>Lista visual dos documentos necessarios para dar entrada em cada tipo de beneficio.</p><span class="badge carrossel">Carrossel</span></div>
-  <div class="idea-card" style="border-left-color:var(--gold)"><h4>12. "Quem sou eu" - Post Pessoal</h4><p>Marlon compartilha sua historia, porque escolheu o direito previdenciario. Conexao humana.</p><span class="badge carrossel">Carrossel</span></div>
-  <div class="idea-card" style="border-left-color:var(--gold)"><h4>13. Post de Efemerides</h4><p>Datas relevantes: Dia do Trabalhador, Dia do Idoso - contextualizando com beneficios INSS.</p><span class="badge foto">Foto</span></div>
-  <div class="idea-card" style="border-left-color:var(--gold)"><h4>14. Antes e Depois - Linha do Tempo</h4><p>Carrossel mostrando evolucao da previdencia social no Brasil - conteudo de autoridade.</p><span class="badge carrossel">Carrossel</span></div>
-  <div class="idea-card" style="border-left-color:var(--gold)"><h4>15. Post de Parceria/Indicacao</h4><p>Parceria com medicos, contadores ou outros profissionais que encaminham clientes.</p><span class="badge foto">Foto</span></div>
+<div class="ideas-toolbar">
+  <h2>&#128248; Ideias de Fotos e Posts</h2>
+  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+    <div class="ideas-stats">
+      <span>Total: <strong id="f-total">0</strong></span>
+      <span>&#9989; Publicados: <strong id="f-done">0</strong></span>
+    </div>
+    <button class="btn btn-gold btn-sm" onclick="addIdea('fotos')">+ Nova Ideia</button>
+    <button class="btn btn-outline btn-sm" onclick="resetIdeas('fotos')">Restaurar Padrao</button>
+  </div>
 </div>
-</div>
-<!-- TAB STORIES -->
-<div id="tab-stories" class="tab">
-<h2>Ideias para Stories</h2>
-<div class="ideas-grid">
-  <div class="idea-card" style="border-left-color:#4a9eff"><h4>1. Caixa de Perguntas Semanal</h4><p>Toda segunda-feira: "Me pergunte sobre o INSS". Responde nos stories seguintes - gera engajamento direto.</p><span class="badge story">Story</span></div>
-  <div class="idea-card" style="border-left-color:#4a9eff"><h4>2. Enquete Juridica</h4><p>"Voce sabia que..." com opcoes SIM/NAO. Simples, rapido, educa e gera dado de engajamento.</p><span class="badge story">Story</span></div>
-  <div class="idea-card" style="border-left-color:#4a9eff"><h4>3. Bastidores do Escritorio</h4><p>Mostra rotina: reuniao com cliente, preparacao de peticao. Humaniza o advogado.</p><span class="badge story">Story</span></div>
-  <div class="idea-card" style="border-left-color:#4a9eff"><h4>4. "Sabado de Consultas"</h4><p>Avisa disponibilidade para atendimento rapido via WhatsApp nos fins de semana. CTA direto.</p><span class="badge story">Story</span></div>
-  <div class="idea-card" style="border-left-color:#4a9eff"><h4>5. Resultado da Semana</h4><p>Sexta-feira: "Essa semana conseguimos X beneficios aprovados". Prova social em formato de conquista.</p><span class="badge story">Story</span></div>
-  <div class="idea-card" style="border-left-color:#4a9eff"><h4>6. Quiz "Voce Sabe Seus Direitos?"</h4><p>Serie de 3-5 perguntas sobre direito previdenciario em formato de quiz. Muito compartilhavel.</p><span class="badge story">Story</span></div>
-  <div class="idea-card" style="border-left-color:#4a9eff"><h4>7. Dica Rapida do Dia</h4><p>Um fato ou dica em 15 segundos. Ex: "Voce sabia que o INSS tem prazo de 45 dias para resposta?"</p><span class="badge story">Story</span></div>
-  <div class="idea-card" style="border-left-color:#4a9eff"><h4>8. Compartilha Depoimento</h4><p>Print anonimizado de mensagem de cliente agradecendo o resultado. Prova social poderosa.</p><span class="badge story">Story</span></div>
-  <div class="idea-card" style="border-left-color:#4a9eff"><h4>9. Repost de Noticias do INSS</h4><p>Compartilha noticia relevante sobre previdencia e comenta rapidamente. Posiciona como atualizado.</p><span class="badge story">Story</span></div>
-  <div class="idea-card" style="border-left-color:#4a9eff"><h4>10. "Esse e um sinal que voce precisa de ajuda"</h4><p>Lista de situacoes que indicam necessidade de consulta juridica. Alto potencial de conversao.</p><span class="badge story">Story</span></div>
-  <div class="idea-card" style="border-left-color:#4a9eff"><h4>11. Contagem Regressiva</h4><p>Para eventos, mudancas de prazo ou datas de pagamento do INSS. Cria expectativa e urgencia.</p><span class="badge story">Story</span></div>
-  <div class="idea-card" style="border-left-color:#4a9eff"><h4>12. Bastidores de uma Audiencia</h4><p>Foto ou video rapido antes de entrar no forum/TRF. Mostra atuacao real, gera credibilidade.</p><span class="badge story">Story</span></div>
-  <div class="idea-card" style="border-left-color:#4a9eff"><h4>13. Mood de Segunda</h4><p>Frase motivacional com vies juridico para comecar a semana. Tom humano e acolhedor.</p><span class="badge story">Story</span></div>
-  <div class="idea-card" style="border-left-color:#4a9eff"><h4>14. Link para Novo Reel</h4><p>Story promovendo novo video publicado: previa de 5s + CTA "Assista no feed!"</p><span class="badge story">Story</span></div>
-  <div class="idea-card" style="border-left-color:#4a9eff"><h4>15. "Como nos contratar"</h4><p>Instrucoes simples: WhatsApp, Instagram, endereco. Com botao de link direto. Publicar 1x/semana.</p><span class="badge story">Story</span></div>
-</div>
+<div class="ideas-grid" id="grid-fotos"></div>
 </div>
 
+<!-- TAB STORIES - EDITAVEL -->
+<div id="tab-stories" class="tab">
+<div class="ideas-toolbar">
+  <h2>&#128247; Ideias para Stories</h2>
+  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+    <div class="ideas-stats">
+      <span>Total: <strong id="s-total">0</strong></span>
+      <span>&#9989; Publicados: <strong id="s-done">0</strong></span>
+    </div>
+    <button class="btn btn-gold btn-sm" onclick="addIdea('stories')">+ Nova Ideia</button>
+    <button class="btn btn-outline btn-sm" onclick="resetIdeas('stories')">Restaurar Padrao</button>
+  </div>
+</div>
+<div class="ideas-grid" id="grid-stories"></div>
+</div>
 <!-- TAB LINGUAGEM -->
 <div id="tab-linguagem" class="tab">
 <h2>Linguagem e Tom de Voz</h2>
@@ -321,23 +328,21 @@ footer a{color:var(--wine-light);text-decoration:none}
 <div class="card"><h3>Tipografia</h3><p>Titulo: <strong>Cormorant Garamond</strong> ou <strong>Playfair Display</strong> - elegancia e autoridade. Corpo: <strong>Lato</strong> ou <strong>Montserrat</strong> - legibilidade. Tamanho minimo: 15px em todos os materiais.</p></div>
 <div class="card"><h3>Aplicacao Visual</h3><p>Fundo escuro (#080808) com elementos em vinho (#6B0F1A) e detalhes em dourado (#C9A84C). Fotos do advogado preferencialmente em tons escuros ou com overlay de cor. Evitar fundos brancos - isso dilui a personalidade forte da marca.</p></div>
 </div>
+
 <!-- MODALS -->
 <div class="modal-overlay" id="addModal">
 <div class="modal">
   <button class="modal-close" onclick="closeModal('addModal')">&#x2715;</button>
-  <h2>+ Nova Ideia de Post</h2>
-  <label>Titulo da Ideia</label>
-  <input type="text" id="newTitle" placeholder="Ex: Reel sobre Auxilio Doenca">
-  <label>Tipo de Conteudo</label>
+  <h2>+ Nova Ideia (Kanban)</h2>
+  <label>Titulo</label><input type="text" id="newTitle" placeholder="Ex: Reel sobre Auxilio Doenca">
+  <label>Tipo</label>
   <select id="newType"><option value="reel">Reel</option><option value="foto">Foto</option><option value="carrossel">Carrossel</option><option value="story">Story</option></select>
-  <label>Data Planejada</label>
-  <input type="date" id="newDate">
-  <label>Descricao / Notas</label>
-  <textarea id="newDesc" placeholder="Detalhes, referencias, roteiro..."></textarea>
+  <label>Data Planejada</label><input type="date" id="newDate">
+  <label>Descricao / Notas</label><textarea id="newDesc" placeholder="Detalhes, roteiro..."></textarea>
   <label>Coluna Inicial</label>
   <select id="newCol"><option value="ideas">Ideias</option><option value="scheduled">Agendado</option><option value="doing">Produzindo</option></select>
   <div class="modal-btns">
-    <button class="btn btn-wine" onclick="addNewCard()">Adicionar Card</button>
+    <button class="btn btn-wine" onclick="addNewCard()">Adicionar</button>
     <button class="btn btn-outline" onclick="closeModal('addModal')">Cancelar</button>
   </div>
 </div>
@@ -347,12 +352,9 @@ footer a{color:var(--wine-light);text-decoration:none}
 <div class="modal">
   <button class="modal-close" onclick="closeModal('editModal')">&#x2715;</button>
   <h2>Editar Card</h2>
-  <label>Titulo</label>
-  <input type="text" id="editTitle">
-  <label>Data</label>
-  <input type="date" id="editDate">
-  <label>Notas</label>
-  <textarea id="editDesc"></textarea>
+  <label>Titulo</label><input type="text" id="editTitle">
+  <label>Data</label><input type="date" id="editDate">
+  <label>Notas</label><textarea id="editDesc"></textarea>
   <div class="modal-btns">
     <button class="btn btn-wine" onclick="saveEdit()">Salvar</button>
     <button class="btn btn-outline" onclick="closeModal('editModal')">Cancelar</button>
@@ -364,8 +366,6 @@ footer a{color:var(--wine-light);text-decoration:none}
 <div class="modal">
   <button class="modal-close" onclick="closeModal('evalModal')">&#x2715;</button>
   <h2>&#128202; Avaliar Mes</h2>
-  <label>Link do Perfil Instagram (opcional)</label>
-  <input type="text" id="igLink" placeholder="https://instagram.com/castroefigueira">
   <label>Mes Avaliado</label>
   <select id="evalMonth">
     <option value="1">Janeiro</option><option value="2">Fevereiro</option><option value="3">Marco</option>
@@ -373,11 +373,9 @@ footer a{color:var(--wine-light);text-decoration:none}
     <option value="7">Julho</option><option value="8">Agosto</option><option value="9">Setembro</option>
     <option value="10">Outubro</option><option value="11">Novembro</option><option value="12">Dezembro</option>
   </select>
-  <label>Quantos posts foram publicados este mes?</label>
-  <input type="number" id="evalPosts" min="0" max="60" placeholder="Ex: 12">
-  <label>Alcance medio por post (opcional)</label>
-  <input type="number" id="evalReach" placeholder="Ex: 850">
-  <label>Principal dificuldade do mes:</label>
+  <label>Posts publicados este mes</label><input type="number" id="evalPosts" min="0" max="60" placeholder="Ex: 12">
+  <label>Alcance medio por post (opcional)</label><input type="number" id="evalReach" placeholder="Ex: 850">
+  <label>Principal dificuldade:</label>
   <select id="evalDiff">
     <option value="criacao">Criacao de conteudo</option>
     <option value="consistencia">Manter consistencia</option>
@@ -385,7 +383,7 @@ footer a{color:var(--wine-light);text-decoration:none}
     <option value="ideias">Falta de ideias</option>
     <option value="tempo">Falta de tempo</option>
   </select>
-  <button class="btn btn-wine" onclick="generateAnalysis()" style="width:100%;margin:8px 0 4px">Gerar Analise do Mes</button>
+  <button class="btn btn-wine" onclick="generateAnalysis()" style="width:100%;margin:8px 0 4px">Gerar Analise</button>
   <div id="analysisResult"></div>
 </div>
 </div>
@@ -394,6 +392,170 @@ footer a{color:var(--wine-light);text-decoration:none}
   <p>Dashboard C&amp;F Advocacia Previdenciaria | <a href="https://instagram.com/castroefigueira" target="_blank">@castroefigueira</a> | Marketing Estrategico para Advogados</p>
 </footer>
 <script>
+/* ========== DADOS PADRAO ========== */
+var DEFAULT_IDEAS = {
+  videos: [
+    {id:'v1',title:'"Voce tem direito sem saber"',desc:'Reel revelando 3 beneficios do INSS que trabalhadores informais desconhecem. CTA: Salve esse video!',type:'reel',done:false},
+    {id:'v2',title:'Aposentadoria por Invalidez',desc:'Explica passo a passo quem tem direito, documentos necessarios e como dar entrada no INSS.',type:'reel',done:false},
+    {id:'v3',title:'"INSS negou? Saiba o que fazer"',desc:'Roteiro mostrando os 3 passos apos negativa: recurso, pericia, acao judicial.',type:'reel',done:false},
+    {id:'v4',title:'Auxilio Acidente vs Auxilio Doenca',desc:'Comparativo visual mostrando diferencas, valores e requisitos de cada beneficio.',type:'reel',done:false},
+    {id:'v5',title:'"Qual aposentadoria e melhor pra voce?"',desc:'Video com 3 perfis diferentes: autonomo, CLT, rural - qual modalidade se aplica.',type:'reel',done:false},
+    {id:'v6',title:'Mitos do INSS',desc:'Desmistifica 5 crencas erradas sobre previdencia social com linguagem simples e didatica.',type:'reel',done:false},
+    {id:'v7',title:'Pensao por Morte - Quem tem direito?',desc:'Explica dependentes legais, documentos e prazos. Muito compartilhavel por familias.',type:'reel',done:false},
+    {id:'v8',title:'"Trabalhador rural e suas aposentadorias"',desc:'Foco no publico da regiao: aposentadoria rural, documentos e peculiaridades do campo.',type:'reel',done:false},
+    {id:'v9',title:'Salario Maternidade para MEI',desc:'Muitas MEIs desconhecem esse direito. Video educativo com passo a passo do processo.',type:'reel',done:false},
+    {id:'v10',title:'"Quanto tempo leva um processo?"',desc:'Transparencia sobre prazos no INSS e na Justica Federal. Gera confianca e expectativa realista.',type:'reel',done:false},
+    {id:'v11',title:'BPC/LOAS - Para quem e?',desc:'Beneficio para pessoas com deficiencia e idosos de baixa renda. Muito buscado e pouco compreendido.',type:'reel',done:false},
+    {id:'v12',title:'"Fui demitido. E agora?"',desc:'Guia rapido: seguro desemprego, FGTS, aviso previo, direitos trabalhistas. Alto potencial viral.',type:'reel',done:false},
+    {id:'v13',title:'Pericia Medica: Como se preparar',desc:'Dicas praticas para a pericia do INSS: documentos, comportamento, o que dizer e o que evitar.',type:'reel',done:false},
+    {id:'v14',title:'"Advogado previdenciario cobra caro?"',desc:'Quebra objecao principal: explica honorarios, quando vale a pena, custo x beneficio.',type:'reel',done:false},
+    {id:'v15',title:'Revisao de Beneficios',desc:'Muitos aposentados recebem menos do que deveriam. Video sobre como fazer a revisao do beneficio.',type:'reel',done:false},
+    {id:'v16',title:'Antes x Depois - Case de Cliente',desc:'Sem revelar dados, mostrar situacao antes da consultoria e resultado alcancado. Prova social forte.',type:'carrossel',done:false},
+    {id:'v17',title:'"Perguntas que me fazem todo dia"',desc:'Responde as 5 perguntas mais frequentes no direct. Formato rapido e dinamico.',type:'reel',done:false},
+    {id:'v18',title:'Beneficio para Pessoa com Deficiencia',desc:'Apresenta tipos de beneficios, laudo necessario e como funciona a pericia especializada.',type:'reel',done:false},
+    {id:'v19',title:'"Por que contratar um especialista?"',desc:'Diferencial do advogado previdenciario vs tentar sozinho vs advocacia generalista.',type:'reel',done:false},
+    {id:'v20',title:'Atualizacao da Reforma da Previdencia',desc:'Explica as regras de transicao, pontos e tempo de contribuicao de forma visual e simples.',type:'reel',done:false}
+  ],
+  fotos: [
+    {id:'f1',title:'Foto Profissional no Escritorio',desc:'Marlon em postura de autoridade, terno escuro, fundo do escritorio desfocado.',type:'foto',done:false},
+    {id:'f2',title:'Carrossel "5 Direitos que voce ignora"',desc:'Slides educativos com fundo vinho, tipografia em dourado. Cada slide = 1 direito previdenciario.',type:'carrossel',done:false},
+    {id:'f3',title:'Post de Citacao Juridica',desc:'Citacao de lei ou jurisprudencia com visual elegante, fundo escuro e nome do escritorio.',type:'foto',done:false},
+    {id:'f4',title:'Infografico: Tipos de Aposentadoria',desc:'Mapa visual com todas as modalidades, requisitos resumidos em icones.',type:'carrossel',done:false},
+    {id:'f5',title:'"Cliente aprovado!" (Prova Social)',desc:'Post comemorativo quando um beneficio e concedido - sem dados do cliente, apenas resultado.',type:'foto',done:false},
+    {id:'f6',title:'Foto com Livros de Direito',desc:'Marlon estudando ou com livros juridicos. Reforco da imagem de especialista dedicado.',type:'foto',done:false},
+    {id:'f7',title:'Calendario Previdenciario',desc:'Infografico com datas importantes do INSS do mes: pagamentos, prazos, mudancas de regras.',type:'foto',done:false},
+    {id:'f8',title:'Carrossel "Mito ou Verdade"',desc:'Serie de afirmacoes sobre INSS - a audiencia adivinha se e mito ou verdade. Alto engajamento.',type:'carrossel',done:false},
+    {id:'f9',title:'Foto em Tribunal/Forum',desc:'Imagem profissional em ambiente juridico. Reforco de credibilidade e atuacao real.',type:'foto',done:false},
+    {id:'f10',title:'Post "Hoje aprendi"',desc:'Compartilha uma novidade juridica ou decisao do STJ/TRF de forma simples e acessivel.',type:'foto',done:false},
+    {id:'f11',title:'Checklist do Pedido de Beneficio',desc:'Lista visual dos documentos necessarios para dar entrada em cada tipo de beneficio.',type:'carrossel',done:false},
+    {id:'f12',title:'"Quem sou eu" - Post Pessoal',desc:'Marlon compartilha sua historia, porque escolheu o direito previdenciario. Conexao humana.',type:'carrossel',done:false},
+    {id:'f13',title:'Post de Efemerides',desc:'Datas relevantes: Dia do Trabalhador, Dia do Idoso - contextualizando com beneficios INSS.',type:'foto',done:false},
+    {id:'f14',title:'Antes e Depois - Linha do Tempo',desc:'Carrossel mostrando evolucao da previdencia social no Brasil - conteudo de autoridade.',type:'carrossel',done:false},
+    {id:'f15',title:'Post de Parceria/Indicacao',desc:'Parceria com medicos, contadores ou outros profissionais que encaminham clientes.',type:'foto',done:false}
+  ],
+  stories: [
+    {id:'s1',title:'Caixa de Perguntas Semanal',desc:'Toda segunda-feira: "Me pergunte sobre o INSS". Responde nos stories seguintes - gera engajamento direto.',type:'story',done:false},
+    {id:'s2',title:'Enquete Juridica',desc:'"Voce sabia que..." com opcoes SIM/NAO. Simples, rapido, educa e gera dado de engajamento.',type:'story',done:false},
+    {id:'s3',title:'Bastidores do Escritorio',desc:'Mostra rotina: reuniao com cliente, preparacao de peticao. Humaniza o advogado.',type:'story',done:false},
+    {id:'s4',title:'"Sabado de Consultas"',desc:'Avisa disponibilidade para atendimento rapido via WhatsApp nos fins de semana. CTA direto.',type:'story',done:false},
+    {id:'s5',title:'Resultado da Semana',desc:'Sexta-feira: "Essa semana conseguimos X beneficios aprovados". Prova social em formato de conquista.',type:'story',done:false},
+    {id:'s6',title:'Quiz "Voce Sabe Seus Direitos?"',desc:'Serie de 3-5 perguntas sobre direito previdenciario em formato de quiz. Muito compartilhavel.',type:'story',done:false},
+    {id:'s7',title:'Dica Rapida do Dia',desc:'Um fato ou dica em 15 segundos. Ex: "Voce sabia que o INSS tem prazo de 45 dias para resposta?"',type:'story',done:false},
+    {id:'s8',title:'Compartilha Depoimento',desc:'Print anonimizado de mensagem de cliente agradecendo o resultado. Prova social poderosa.',type:'story',done:false},
+    {id:'s9',title:'Repost de Noticias do INSS',desc:'Compartilha noticia relevante sobre previdencia e comenta rapidamente. Posiciona como atualizado.',type:'story',done:false},
+    {id:'s10',title:'"Esse e um sinal que voce precisa de ajuda"',desc:'Lista de situacoes que indicam necessidade de consulta juridica. Alto potencial de conversao.',type:'story',done:false},
+    {id:'s11',title:'Contagem Regressiva',desc:'Para eventos, mudancas de prazo ou datas de pagamento do INSS. Cria expectativa e urgencia.',type:'story',done:false},
+    {id:'s12',title:'Bastidores de uma Audiencia',desc:'Foto ou video rapido antes de entrar no forum/TRF. Mostra atuacao real, gera credibilidade.',type:'story',done:false},
+    {id:'s13',title:'Mood de Segunda',desc:'Frase motivacional com vies juridico para comecar a semana. Tom humano e acolhedor.',type:'story',done:false},
+    {id:'s14',title:'Link para Novo Reel',desc:'Story promovendo novo video publicado: previa de 5s + CTA "Assista no feed!"',type:'story',done:false},
+    {id:'s15',title:'"Como nos contratar"',desc:'Instrucoes simples: WhatsApp, Instagram, endereco. Com botao de link direto. Publicar 1x/semana.',type:'story',done:false}
+  ]
+};
+
+/* ========== ESTADO DAS IDEIAS ========== */
+var IDEAS = {
+  videos: JSON.parse(localStorage.getItem('cf-ideas-videos') || 'null') || JSON.parse(JSON.stringify(DEFAULT_IDEAS.videos)),
+  fotos: JSON.parse(localStorage.getItem('cf-ideas-fotos') || 'null') || JSON.parse(JSON.stringify(DEFAULT_IDEAS.fotos)),
+  stories: JSON.parse(localStorage.getItem('cf-ideas-stories') || 'null') || JSON.parse(JSON.stringify(DEFAULT_IDEAS.stories))
+};
+
+function saveIdeas(tab) { localStorage.setItem('cf-ideas-' + tab, JSON.stringify(IDEAS[tab])); }
+
+function renderIdeas(tab) {
+  var prefix = {videos:'v',fotos:'f',stories:'s'}[tab];
+  var grid = document.getElementById('grid-' + tab);
+  if (!grid) return;
+  grid.innerHTML = '';
+  var list = IDEAS[tab];
+  var doneCount = list.filter(function(i){ return i.done; }).length;
+  var totalEl = document.getElementById(prefix + '-total');
+  var doneEl = document.getElementById(prefix + '-done');
+  if (totalEl) totalEl.textContent = list.length;
+  if (doneEl) doneEl.textContent = doneCount;
+
+  list.forEach(function(item, idx) {
+    var card = document.createElement('div');
+    card.className = 'idea-card' + (item.done ? ' published' : '');
+    card.dataset.id = item.id;
+
+    var typeOpts = ['reel','foto','carrossel','story'].map(function(t){
+      return '<option value="' + t + '"' + (item.type===t?' selected':'') + '>' + t.charAt(0).toUpperCase()+t.slice(1) + '</option>';
+    }).join('');
+
+    card.innerHTML =
+      '<div class="idea-card-header">' +
+        '<div class="idea-title" contenteditable="false" onclick="startEdit(this)" onblur="saveTitle(this,'' + tab + '','' + item.id + '')" onkeydown="if(event.key==='Enter'){event.preventDefault();this.blur()}">' + item.title + '</div>' +
+        '<div class="idea-card-btns">' +
+          '<button title="Excluir" onclick="deleteIdea('' + tab + '','' + item.id + '')" style="color:#ff6b6b">&#x2715;</button>' +
+        '</div>' +
+      '</div>' +
+      '<div class="idea-desc" contenteditable="false" onclick="startEdit(this)" onblur="saveDesc(this,'' + tab + '','' + item.id + '')">' + item.desc + '</div>' +
+      '<div class="idea-footer">' +
+        '<select class="idea-type-select" onchange="saveType(this,'' + tab + '','' + item.id + '')">' + typeOpts + '</select>' +
+        '<button class="btn-published ' + (item.done ? 'is-done' : 'not-done') + '" onclick="togglePublished('' + tab + '','' + item.id + '')">' +
+          (item.done ? '&#9989; Publicado' : '&#9711; Marcar Publicado') +
+        '</button>' +
+      '</div>';
+    grid.appendChild(card);
+  });
+}
+
+function startEdit(el) {
+  el.contentEditable = 'true';
+  el.focus();
+  var range = document.createRange();
+  range.selectNodeContents(el);
+  range.collapse(false);
+  var sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(range);
+}
+
+function saveTitle(el, tab, id) {
+  el.contentEditable = 'false';
+  var item = IDEAS[tab].find(function(i){ return i.id === id; });
+  if (item) { item.title = el.textContent.trim() || item.title; saveIdeas(tab); }
+}
+
+function saveDesc(el, tab, id) {
+  el.contentEditable = 'false';
+  var item = IDEAS[tab].find(function(i){ return i.id === id; });
+  if (item) { item.desc = el.textContent.trim() || item.desc; saveIdeas(tab); }
+}
+
+function saveType(sel, tab, id) {
+  var item = IDEAS[tab].find(function(i){ return i.id === id; });
+  if (item) { item.type = sel.value; saveIdeas(tab); renderIdeas(tab); }
+}
+
+function togglePublished(tab, id) {
+  var item = IDEAS[tab].find(function(i){ return i.id === id; });
+  if (item) { item.done = !item.done; saveIdeas(tab); renderIdeas(tab); }
+}
+
+function deleteIdea(tab, id) {
+  if (!confirm('Excluir esta ideia?')) return;
+  IDEAS[tab] = IDEAS[tab].filter(function(i){ return i.id !== id; });
+  saveIdeas(tab); renderIdeas(tab);
+}
+
+function addIdea(tab) {
+  var title = prompt('Titulo da nova ideia:');
+  if (!title || !title.trim()) return;
+  var desc = prompt('Descricao (opcional):') || '';
+  var types = {videos:'reel',fotos:'foto',stories:'story'};
+  var newId = tab.charAt(0) + Date.now();
+  IDEAS[tab].push({id:newId, title:title.trim(), desc:desc.trim(), type:types[tab], done:false});
+  saveIdeas(tab); renderIdeas(tab);
+}
+
+function resetIdeas(tab) {
+  if (!confirm('Restaurar todas as ideias padrao? Suas edicoes serao perdidas.')) return;
+  IDEAS[tab] = JSON.parse(JSON.stringify(DEFAULT_IDEAS[tab]));
+  saveIdeas(tab); renderIdeas(tab);
+}
+
+/* ========== KANBAN ========== */
 var cards = JSON.parse(localStorage.getItem('cf-kanban') || 'null') || [
   {id:1,title:'Reel: INSS negou? Saiba o que fazer',type:'reel',date:'2026-06-02',desc:'Roteiro dos 3 passos pos-negativa',col:'scheduled',done:false},
   {id:2,title:'Story: Caixa de Perguntas',type:'story',date:'2026-06-03',desc:'Me pergunte sobre o INSS',col:'scheduled',done:false},
@@ -408,201 +570,102 @@ var cards = JSON.parse(localStorage.getItem('cf-kanban') || 'null') || [
   {id:11,title:'Foto: Perfil Profissional Escritorio',type:'foto',date:'2026-06-25',desc:'Tom de autoridade e especialidade',col:'ideas',done:false},
   {id:12,title:'Reel: Pericia Medica - Dicas',type:'reel',date:'2026-06-27',desc:'Como se preparar para a pericia',col:'ideas',done:false}
 ];
-var nextId = 100;
-var currentMonth = 5;
-var currentYear = 2026;
-var dragId = null;
-var editingId = null;
-var months = ['Janeiro','Fevereiro','Marco','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+var nextId=100, currentMonth=5, currentYear=2026, dragId=null, editingId=null;
+var months=['Janeiro','Fevereiro','Marco','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
 
-function save() { localStorage.setItem('cf-kanban', JSON.stringify(cards)); }
+function saveCards(){ localStorage.setItem('cf-kanban',JSON.stringify(cards)); }
 
-function showTab(name, btn) {
+function showTab(name,btn) {
   document.querySelectorAll('.tab').forEach(function(t){ t.classList.remove('active'); });
   document.querySelectorAll('nav button').forEach(function(b){ b.classList.remove('active'); });
-  document.getElementById('tab-' + name).classList.add('active');
-  if (btn) btn.classList.add('active');
-  if (name === 'kanban') renderKanban();
+  document.getElementById('tab-'+name).classList.add('active');
+  if(btn) btn.classList.add('active');
+  if(name==='kanban') renderKanban();
+  if(name==='videos') renderIdeas('videos');
+  if(name==='fotos') renderIdeas('fotos');
+  if(name==='stories') renderIdeas('stories');
 }
 
 function changeMonth(d) {
-  currentMonth += d;
-  if (currentMonth > 11) { currentMonth = 0; currentYear++; }
-  if (currentMonth < 0) { currentMonth = 11; currentYear--; }
-  document.getElementById('month-label').textContent = months[currentMonth] + ' ' + currentYear;
+  currentMonth+=d;
+  if(currentMonth>11){currentMonth=0;currentYear++;}
+  if(currentMonth<0){currentMonth=11;currentYear--;}
+  document.getElementById('month-label').textContent=months[currentMonth]+' '+currentYear;
   renderKanban();
 }
 
 function renderKanban() {
-  var cols = {ideas:[],scheduled:[],doing:[],done:[]};
-  var mn = currentMonth + 1;
-  cards.forEach(function(c) {
-    if (!c.date) { cols[c.col].push(c); return; }
-    var parts = c.date.split('-');
-    var cy = parseInt(parts[0]), cm = parseInt(parts[1]);
-    if (cm === mn && cy === currentYear) cols[c.col].push(c);
+  var cols={ideas:[],scheduled:[],doing:[],done:[]};
+  var mn=currentMonth+1;
+  cards.forEach(function(c){
+    if(!c.date){cols[c.col].push(c);return;}
+    var p=c.date.split('-');
+    if(parseInt(p[1])===mn&&parseInt(p[0])===currentYear) cols[c.col].push(c);
   });
-  ['ideas','scheduled','doing','done'].forEach(function(col) {
-    var el = document.getElementById('cards-' + col);
-    if (!el) return;
-    el.innerHTML = '';
-    cols[col].forEach(function(c) { el.appendChild(makeCard(c)); });
-    var cnt = document.getElementById('cnt-' + col);
-    if (cnt) cnt.textContent = cols[col].length;
+  ['ideas','scheduled','doing','done'].forEach(function(col){
+    var el=document.getElementById('cards-'+col);
+    if(!el) return;
+    el.innerHTML='';
+    cols[col].forEach(function(c){ el.appendChild(makeCard(c)); });
+    var cnt=document.getElementById('cnt-'+col);
+    if(cnt) cnt.textContent=cols[col].length;
   });
 }
 
 function makeCard(c) {
-  var div = document.createElement('div');
-  div.className = 'kanban-card' + (c.done ? ' done-card' : '');
-  div.draggable = true;
-  div.dataset.id = c.id;
-  div.addEventListener('dragstart', function(e) {
-    dragId = c.id;
-    div.classList.add('dragging');
-    e.dataTransfer.setData('text/plain', c.id);
-  });
-  div.addEventListener('dragend', function() { div.classList.remove('dragging'); });
-  var typeLabel = {reel:'Reel',foto:'Foto',carrossel:'Carrossel',story:'Story'};
-  var dateStr = c.date ? (function(d){var p=d.split('-');return p[2]+'/'+p[1]+'/'+p[0];})(c.date) : '';
-  div.innerHTML =
-    '<div class="card-actions">' +
-    '<button onclick="openEdit(' + c.id + ')" title="Editar">&#9998;</button>' +
-    '<button onclick="deleteCard(' + c.id + ')" style="color:#ff6b6b" title="Excluir">&#x2715;</button>' +
-    '</div>' +
-    '<div class="card-title">' + c.title + '</div>' +
-    '<div class="card-meta">' +
-    '<span class="badge ' + c.type + '" style="font-size:11px;padding:2px 7px">' + typeLabel[c.type] + '</span>' +
-    (dateStr ? '<span class="card-date">' + dateStr + '</span>' : '') +
-    '</div>' +
-    '<div class="card-check">' +
-    '<input type="checkbox" id="chk' + c.id + '" ' + (c.done ? 'checked' : '') + ' onchange="toggleDone(' + c.id + ',this.checked)">' +
-    '<label for="chk' + c.id + '">' + (c.done ? '&#9989; Publicado' : 'Marcar como publicado') + '</label>' +
-    '</div>';
+  var div=document.createElement('div');
+  div.className='kanban-card'+(c.done?' done-card':'');
+  div.draggable=true;
+  div.dataset.id=c.id;
+  div.addEventListener('dragstart',function(e){ dragId=c.id; div.classList.add('dragging'); e.dataTransfer.setData('text/plain',c.id); });
+  div.addEventListener('dragend',function(){ div.classList.remove('dragging'); });
+  var tl={reel:'Reel',foto:'Foto',carrossel:'Carrossel',story:'Story'};
+  var dt=c.date?(function(d){var p=d.split('-');return p[2]+'/'+p[1]+'/'+p[0];})(c.date):'';
+  div.innerHTML=
+    '<div class="card-actions">'+
+    '<button onclick="openEdit('+c.id+')" title="Editar">&#9998;</button>'+
+    '<button onclick="deleteCard('+c.id+')" style="color:#ff6b6b" title="Excluir">&#x2715;</button>'+
+    '</div>'+
+    '<div class="card-title">'+c.title+'</div>'+
+    '<div class="card-meta"><span class="badge '+c.type+'" style="font-size:11px;padding:2px 7px">'+tl[c.type]+'</span>'+(dt?'<span class="card-date">'+dt+'</span>':'')+'</div>'+
+    '<div class="card-check"><input type="checkbox" id="chk'+c.id+'" '+(c.done?'checked':'')+' onchange="toggleDone('+c.id+',this.checked)"><label for="chk'+c.id+'">'+(c.done?'&#9989; Publicado':'Marcar como publicado')+'</label></div>';
   return div;
 }
 
-function allowDrop(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  e.currentTarget.classList.add('drag-over');
+function allowDrop(e){ e.preventDefault(); e.stopPropagation(); e.currentTarget.classList.add('drag-over'); }
+function dragLeave(e){ e.currentTarget.classList.remove('drag-over'); }
+function dropCard(e,col){ e.preventDefault(); e.stopPropagation(); document.querySelectorAll('.drag-over').forEach(function(z){z.classList.remove('drag-over');}); if(dragId!==null){ var card=cards.find(function(c){return c.id===dragId;}); if(card){card.col=col;saveCards();renderKanban();} dragId=null; } }
+function toggleDone(id,checked){ var c=cards.find(function(x){return x.id===id;}); if(c){c.done=checked;if(checked)c.col='done';saveCards();renderKanban();} }
+function deleteCard(id){ if(!confirm('Excluir este card?'))return; cards=cards.filter(function(c){return c.id!==id;}); saveCards();renderKanban(); }
+function openEdit(id){ var c=cards.find(function(x){return x.id===id;}); if(!c)return; editingId=id; document.getElementById('editTitle').value=c.title; document.getElementById('editDate').value=c.date||''; document.getElementById('editDesc').value=c.desc||''; openModal('editModal'); }
+function saveEdit(){ var c=cards.find(function(x){return x.id===editingId;}); if(c){c.title=document.getElementById('editTitle').value;c.date=document.getElementById('editDate').value;c.desc=document.getElementById('editDesc').value;saveCards();renderKanban();} closeModal('editModal'); }
+function addNewCard(){ var title=document.getElementById('newTitle').value.trim(); if(!title){alert('Insira um titulo!');return;} var c={id:++nextId,title:title,type:document.getElementById('newType').value,date:document.getElementById('newDate').value,desc:document.getElementById('newDesc').value,col:document.getElementById('newCol').value,done:false}; cards.push(c); saveCards();renderKanban();closeModal('addModal'); document.getElementById('newTitle').value='';document.getElementById('newDate').value='';document.getElementById('newDesc').value=''; }
+function clearDone(){ if(!confirm('Remover todos os cards publicados?'))return; cards=cards.filter(function(c){return!c.done;}); saveCards();renderKanban(); }
+function openModal(id){ document.getElementById(id).classList.add('open'); }
+function closeModal(id){ document.getElementById(id).classList.remove('open'); }
+
+function generateAnalysis(){
+  var posts=parseInt(document.getElementById('evalPosts').value)||0;
+  var reach=parseInt(document.getElementById('evalReach').value)||0;
+  var diff=document.getElementById('evalDiff').value;
+  var mName=months[parseInt(document.getElementById('evalMonth').value)-1];
+  var score=Math.min(100,Math.round((posts/20)*60+(reach/1000)*40));
+  var done=cards.filter(function(c){return c.done;}).length;
+  var tips={criacao:'Separe 1 dia por semana so para gravar. Crie batches de 4-5 videos de uma vez para ganhar eficiencia.',consistencia:'Use o Kanban diariamente. Defina um horario fixo de postagem (ex: 18h) e respeite.',engajamento:'Adicione CTAs mais diretos. Finalize cada video com uma pergunta ao publico para gerar comentarios.',ideias:'Use as abas Videos e Stories deste dashboard. Voce tem mais de 35 ideias prontas para usar!',tempo:'Delegue edicao ou use templates prontos. Reels de 30s gastam bem menos tempo de producao.'};
+  var sc=score>=70?'#3cff7a':score>=40?'#ffe97b':'#ff6b6b';
+  var sm=score>=70?'Excelente consistencia! Foque agora em qualidade e CTAs mais fortes.':score>=40?'Bom ritmo! Tente aumentar para 4x por semana para acelerar o crescimento.':'Atencao: Menos de 8 posts/mes reduz muito a visibilidade. Tente postar ao menos 3x por semana.';
+  var html='<div class="analysis-box"><h4>Analise de '+mName+'</h4><div class="score-labels"><span>Pontuacao</span><span>'+score+'/100</span></div><div class="score-bar"><div class="score-fill" id="sfill" style="width:0%"></div></div><ul style="margin-top:16px"><li><strong>Posts publicados:</strong> '+posts+' (meta: 20/mes)</li>'+(reach?'<li><strong>Alcance medio:</strong> '+reach+' pessoas/post</li>':'')+'<li><strong>Cards concluidos no Kanban:</strong> '+done+'</li></ul><h4 style="margin-top:16px">Sugestao Principal</h4><p>'+tips[diff]+'</p><p style="margin-top:12px;color:'+sc+'">'+sm+'</p></div>';
+  document.getElementById('analysisResult').innerHTML=html;
+  setTimeout(function(){ var f=document.getElementById('sfill'); if(f) f.style.width=score+'%'; },100);
 }
 
-function dragLeave(e) {
-  e.currentTarget.classList.remove('drag-over');
-}
+window.addEventListener('click',function(e){ if(e.target.classList.contains('modal-overlay')) e.target.classList.remove('open'); });
 
-function dropCard(e, col) {
-  e.preventDefault();
-  e.stopPropagation();
-  document.querySelectorAll('.drag-over').forEach(function(z){ z.classList.remove('drag-over'); });
-  if (dragId !== null) {
-    var card = cards.find(function(c){ return c.id === dragId; });
-    if (card) { card.col = col; save(); renderKanban(); }
-    dragId = null;
-  }
-}
-
-function toggleDone(id, checked) {
-  var c = cards.find(function(x){ return x.id === id; });
-  if (c) { c.done = checked; if (checked) c.col = 'done'; save(); renderKanban(); }
-}
-
-function deleteCard(id) {
-  if (!confirm('Excluir este card?')) return;
-  cards = cards.filter(function(c){ return c.id !== id; });
-  save(); renderKanban();
-}
-
-function openEdit(id) {
-  var c = cards.find(function(x){ return x.id === id; });
-  if (!c) return;
-  editingId = id;
-  document.getElementById('editTitle').value = c.title;
-  document.getElementById('editDate').value = c.date || '';
-  document.getElementById('editDesc').value = c.desc || '';
-  openModal('editModal');
-}
-
-function saveEdit() {
-  var c = cards.find(function(x){ return x.id === editingId; });
-  if (c) {
-    c.title = document.getElementById('editTitle').value;
-    c.date = document.getElementById('editDate').value;
-    c.desc = document.getElementById('editDesc').value;
-    save(); renderKanban();
-  }
-  closeModal('editModal');
-}
-
-function addNewCard() {
-  var title = document.getElementById('newTitle').value.trim();
-  if (!title) { alert('Insira um titulo para o card!'); return; }
-  var c = {
-    id: ++nextId,
-    title: title,
-    type: document.getElementById('newType').value,
-    date: document.getElementById('newDate').value,
-    desc: document.getElementById('newDesc').value,
-    col: document.getElementById('newCol').value,
-    done: false
-  };
-  cards.push(c);
-  save(); renderKanban();
-  closeModal('addModal');
-  document.getElementById('newTitle').value = '';
-  document.getElementById('newDate').value = '';
-  document.getElementById('newDesc').value = '';
-}
-
-function clearDone() {
-  if (!confirm('Remover todos os cards publicados?')) return;
-  cards = cards.filter(function(c){ return !c.done; });
-  save(); renderKanban();
-}
-
-function openModal(id) { document.getElementById(id).classList.add('open'); }
-function closeModal(id) { document.getElementById(id).classList.remove('open'); }
-
-function generateAnalysis() {
-  var posts = parseInt(document.getElementById('evalPosts').value) || 0;
-  var reach = parseInt(document.getElementById('evalReach').value) || 0;
-  var diff = document.getElementById('evalDiff').value;
-  var monthName = months[parseInt(document.getElementById('evalMonth').value) - 1];
-  var score = Math.min(100, Math.round((posts / 20) * 60 + (reach / 1000) * 40));
-  var done = cards.filter(function(c){ return c.done; }).length;
-  var tips = {
-    criacao: 'Separe 1 dia por semana so para gravar. Crie batches de 4-5 videos de uma vez para ganhar eficiencia.',
-    consistencia: 'Use o Kanban diariamente. Defina um horario fixo de postagem (ex: 18h todos os dias) e respeite.',
-    engajamento: 'Adicione CTAs mais diretos. Finalize cada video com uma pergunta ao publico para gerar comentarios.',
-    ideias: 'Use a aba Videos e Stories deste dashboard. Nunca fique sem ideia com o banco de 35+ sugestoes.',
-    tempo: 'Delegue edicao ou use templates prontos. Reels de 30s gastam bem menos tempo de producao.'
-  };
-  var statusColor = score >= 70 ? '#3cff7a' : score >= 40 ? '#ffe97b' : '#ff6b6b';
-  var statusMsg = score >= 70 ? 'Excelente consistencia! Foque agora em qualidade e CTAs mais fortes.' : score >= 40 ? 'Bom ritmo! Tente aumentar para 4x por semana para acelerar o crescimento.' : 'Atencao: Menos de 8 posts/mes reduz muito a visibilidade. Tente postar ao menos 3x por semana.';
-  var html = '<div class="analysis-box">' +
-    '<h4>Analise de ' + monthName + '</h4>' +
-    '<div class="score-labels"><span>Pontuacao do Mes</span><span>' + score + '/100</span></div>' +
-    '<div class="score-bar"><div class="score-fill" id="sfill" style="width:0%"></div></div>' +
-    '<ul style="margin-top:16px">' +
-    '<li><strong>Posts publicados:</strong> ' + posts + ' (meta: 20/mes)</li>' +
-    (reach ? '<li><strong>Alcance medio:</strong> ' + reach + ' pessoas/post</li>' : '') +
-    '<li><strong>Cards concluidos no Kanban:</strong> ' + done + '</li>' +
-    '</ul>' +
-    '<h4 style="margin-top:16px">Principal Sugestao</h4>' +
-    '<p>' + tips[diff] + '</p>' +
-    '<p style="margin-top:12px;color:' + statusColor + '">' + statusMsg + '</p>' +
-    '</div>';
-  var el = document.getElementById('analysisResult');
-  el.innerHTML = html;
-  setTimeout(function(){ var f = document.getElementById('sfill'); if(f) f.style.width = score + '%'; }, 100);
-}
-
-window.addEventListener('click', function(e) {
-  if (e.target.classList.contains('modal-overlay')) e.target.classList.remove('open');
-});
-
+/* Init */
 renderKanban();
+renderIdeas('videos');
+renderIdeas('fotos');
+renderIdeas('stories');
 </script>
 </body>
 </html>
