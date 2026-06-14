@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dashboard Helena Coelho | Marca Pessoal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--burgundy:#6B2737;--burgundy-dark:#4A1B26;--burgundy-light:#8B3A4A;--terracotta:#C36F3E;--terracotta-light:#D98F5F;--cream:#FAF6F0;--cream2:#F2EBE2;--white:#FFFFFF;--text:#3A3A3A;--text2:#6B6B6B;--text3:#9A9A9A;--border:#E5DDD3;--radius:10px}
+body{background:var(--cream);color:var(--text);font-family:'Inter',system-ui,sans-serif;font-size:clamp(15px,1.6vw,17px);min-height:100vh}
+h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif}
+header{background:var(--cream);padding:24px 32px;display:flex;align-items:center;gap:20px;border-bottom:2px solid var(--burgundy)}
+header .logo{width:52px;height:52px;background:var(--burgundy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:var(--cream);flex-shrink:0;font-family:'Playfair Display',serif}
+header h1{font-size:clamp(20px,3vw,30px);font-weight:800;letter-spacing:1px;color:var(--burgundy)}
+header p{font-size:clamp(11px,1.2vw,13px);color:var(--terracotta);margin-top:3px;text-transform:uppercase;letter-spacing:2px;font-weight:700}
+nav{background:var(--white);display:flex;flex-wrap:wrap;gap:4px;padding:12px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+nav button{background:transparent;border:1px solid var(--border);color:var(--text2);padding:8px 16px;border-radius:6px;cursor:pointer;font-size:clamp(13px,1.3vw,15px);font-weight:600;transition:all .2s}
+nav button:hover{border-color:var(--terracotta);color:var(--text)}
+nav button.active{background:var(--burgundy);border-color:var(--burgundy);color:#fff}
+.tab{display:none;padding:28px 24px;max-width:1400px;margin:0 auto}
+.tab.active{display:block}
+h2{font-size:clamp(20px,2.5vw,28px);color:var(--burgundy);margin-bottom:20px;font-weight:800}
+h3{font-size:clamp(17px,2vw,22px);color:var(--terracotta);margin-bottom:12px;font-weight:700}
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:24px}
+.stat{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;border-top:3px solid var(--burgundy)}
+.stat .num{font-size:clamp(24px,3vw,36px);font-weight:900;color:var(--burgundy);display:block;font-family:'Playfair Display',serif}
+.stat .lbl{font-size:clamp(12px,1.2vw,14px);color:var(--text2);margin-top:4px}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:13px;font-weight:600;margin:2px}
+.badge.reel{background:rgba(107,39,55,.1);border:1px solid var(--burgundy);color:var(--burgundy)}
+.badge.foto{background:rgba(195,111,62,.12);border:1px solid var(--terracotta);color:var(--terracotta)}
+.badge.story{background:rgba(74,110,140,.1);border:1px solid #4a6e8c;color:#4a6e8c}
+.badge.carrossel{background:rgba(76,140,110,.1);border:1px solid #4c8c6e;color:#4c8c6e}
+.kanban-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px}
+.kanban-controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.month-nav{display:flex;align-items:center;gap:12px}
+.month-nav button{background:var(--burgundy);border:none;color:#fff;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:18px;line-height:1}
+.month-nav span{font-size:clamp(16px,2vw,20px);font-weight:700;color:var(--burgundy);min-width:180px;text-align:center;font-family:'Playfair Display',serif}
+.btn{padding:9px 18px;border-radius:7px;border:none;cursor:pointer;font-size:clamp(13px,1.3vw,15px);font-weight:700;transition:all .2s}
+.btn-wine{background:var(--burgundy);color:#fff}.btn-wine:hover{background:var(--burgundy-light)}
+.btn-gold{background:var(--terracotta);color:#fff}.btn-gold:hover{background:var(--terracotta-light)}
+.btn-outline{background:transparent;border:1px solid var(--border);color:var(--text2)}.btn-outline:hover{border-color:var(--terracotta);color:var(--text)}
+.btn-sm{padding:5px 12px;font-size:clamp(12px,1.1vw,13px)}
+.kanban-board{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:start}
+@media(max-width:900px){.kanban-board{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.kanban-board{grid-template-columns:1fr}}
+.kanban-col{background:var(--white);border-radius:var(--radius);padding:14px;border-top:4px solid var(--burgundy);min-height:400px;border:1px solid var(--border);border-top-width:4px}
+.kanban-col.col-ideas{border-top-color:#4a6e8c}
+.kanban-col.col-scheduled{border-top-color:var(--terracotta)}
+.kanban-col.col-doing{border-top-color:#c9963c}
+.kanban-col.col-done{border-top-color:#4c8c6e}
+.col-title{font-size:clamp(14px,1.5vw,16px);font-weight:700;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between}
+.col-count{background:var(--cream2);padding:2px 8px;border-radius:10px;font-size:12px;color:var(--text3)}
+.kanban-cards{min-height:200px;display:flex;flex-direction:column;gap:8px}
+.kanban-card{background:var(--cream2);border-radius:8px;padding:12px;cursor:grab;border:1px solid var(--border);transition:all .2s;position:relative}
+.kanban-card:hover{border-color:var(--terracotta);transform:translateY(-2px);box-shadow:0 4px 12px rgba(107,39,55,.12)}
+.kanban-card.dragging{opacity:.4;transform:rotate(2deg)}
+.card-title{font-size:clamp(13px,1.3vw,15px);font-weight:600;color:var(--text);margin-bottom:6px;padding-right:50px}
+.card-meta{font-size:12px;color:var(--text3);display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:4px}
+.card-date{font-size:12px;color:var(--terracotta);font-weight:600}
+.card-actions{position:absolute;top:8px;right:8px;display:flex;gap:4px}
+.card-actions button{background:transparent;border:none;cursor:pointer;color:var(--text3);font-size:13px;padding:2px 5px;border-radius:4px;transition:all .2s}
+.card-actions button:hover{color:var(--text);background:rgba(0,0,0,.06)}
+.card-check{display:flex;align-items:center;gap:6px;margin-top:8px}
+.card-check input[type=checkbox]{width:16px;height:16px;accent-color:var(--burgundy)}
+.card-check label{font-size:12px;color:var(--text2);cursor:pointer}
+.done-card .card-title{text-decoration:line-through;color:var(--text3)}
+.done-card{opacity:.75;border-color:#cfe3d8!important}
+.drop-zone{min-height:60px;border:2px dashed var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:13px;transition:all .2s;margin-top:8px}
+.drop-zone.drag-over,.kanban-cards.drag-over{border-color:var(--terracotta)!important;background:rgba(195,111,62,.05)}
+.ideas-toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px}
+.ideas-toolbar h2{margin-bottom:0}
+.ideas-stats{display:flex;gap:16px;font-size:clamp(13px,1.3vw,15px);color:var(--text2)}
+.ideas-stats strong{color:var(--burgundy)}
+.ideas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.idea-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:18px;border-left:4px solid var(--burgundy);transition:border-color .2s;position:relative}
+.idea-card.published{border-left-color:#4c8c6e;opacity:.85}
+.idea-card.published .idea-title{text-decoration:line-through;color:var(--text3)}
+.idea-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:8px}
+.idea-del-btn{background:transparent;border:none;cursor:pointer;font-size:14px;padding:3px 6px;border-radius:4px;color:#c0524a;opacity:.6;flex-shrink:0;transition:opacity .2s}
+.idea-del-btn:hover{opacity:1;background:rgba(192,82,74,.1)}
+.idea-title{font-size:clamp(14px,1.4vw,16px);font-weight:700;color:var(--text);line-height:1.3;border:1px solid transparent;border-radius:4px;padding:2px 4px;transition:border-color .2s;word-break:break-word;min-height:24px;cursor:text}
+.idea-title:hover{border-color:var(--border)}
+.idea-title:focus{border-color:var(--burgundy);background:var(--cream2);outline:none;padding:4px 8px}
+.idea-desc{font-size:clamp(13px,1.3vw,14px);color:var(--text2);line-height:1.5;margin:6px 0 10px;border:1px solid transparent;border-radius:4px;padding:2px 4px;min-height:36px;transition:border-color .2s;word-break:break-word;cursor:text}
+.idea-desc:hover{border-color:var(--border)}
+.idea-desc:focus{border-color:var(--burgundy);background:var(--cream2);outline:none;padding:4px 8px}
+.idea-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.btn-pub{padding:6px 14px;border-radius:20px;border:1px solid var(--border);cursor:pointer;font-size:clamp(12px,1.2vw,13px);font-weight:700;transition:all .2s;background:transparent;color:var(--text3)}
+.btn-pub:hover{border-color:#4c8c6e;color:#4c8c6e}
+.btn-pub.done{background:#e3f0e9;border-color:#4c8c6e;color:#356b50}
+.idea-type-sel{background:var(--cream2);border:1px solid var(--border);color:var(--text2);border-radius:6px;padding:4px 8px;font-size:12px;cursor:pointer}
+.idea-type-sel:focus{outline:none;border-color:var(--burgundy)}
+.modal-overlay{display:none;position:fixed;inset:0;width:100%;height:100%;background:rgba(58,40,30,.5);z-index:999;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:var(--white);border:1px solid var(--burgundy);border-radius:14px;padding:30px;width:90%;max-width:640px;max-height:90vh;overflow-y:auto;position:relative}
+.modal h2{font-size:clamp(18px,2.2vw,24px);margin-bottom:16px;color:var(--burgundy)}
+.modal-close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--text2);font-size:24px;cursor:pointer;line-height:1}
+.modal-close:hover{color:var(--text)}
+.modal label{display:block;font-size:14px;color:var(--text2);margin-bottom:4px}
+.modal input,.modal select,.modal textarea{width:100%;background:var(--cream2);border:1px solid var(--border);color:var(--text);border-radius:7px;padding:10px 14px;font-size:clamp(14px,1.4vw,16px);margin-bottom:12px;font-family:inherit}
+.modal input:focus,.modal select:focus,.modal textarea:focus{outline:none;border-color:var(--burgundy)}
+.modal textarea{resize:vertical;min-height:80px}
+.modal-btns{display:flex;gap:8px;margin-top:4px}
+.score-bar{background:var(--cream2);border-radius:20px;height:10px;overflow:hidden}
+.score-fill{height:100%;border-radius:20px;background:linear-gradient(90deg,var(--burgundy),var(--terracotta));transition:width 1s}
+.score-labels{display:flex;justify-content:space-between;font-size:13px;color:var(--text2);margin-bottom:4px}
+.analysis-box{background:var(--cream2);border-radius:var(--radius);padding:20px;border-left:4px solid var(--burgundy);margin-top:16px}
+.analysis-box h4{color:var(--burgundy);font-size:clamp(15px,1.6vw,17px);margin-bottom:10px}
+.analysis-box ul{padding-left:20px}
+.analysis-box li{margin-bottom:8px;line-height:1.5;font-size:clamp(14px,1.4vw,16px)}
+.palette{display:flex;flex-wrap:wrap;gap:16px;margin:16px 0}
+.color-chip{border-radius:var(--radius);overflow:hidden;width:130px;border:1px solid var(--border)}
+.color-chip .swatch{height:80px}
+.color-chip .info{padding:8px;background:var(--white);font-size:13px;text-align:center}
+.persona{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;border-left:4px solid var(--terracotta)}
+.persona h4{font-size:clamp(16px,1.8vw,19px);color:var(--burgundy);margin-bottom:10px;font-family:'Playfair Display',serif}
+.persona p{font-size:clamp(13px,1.4vw,15px);color:var(--text2);margin-bottom:6px;line-height:1.5}
+.lang-block{background:var(--white);border-radius:var(--radius);padding:20px;margin-bottom:16px;border-top:3px solid var(--burgundy);border:1px solid var(--border);border-top-width:3px}
+.lang-block h4{color:var(--terracotta);margin-bottom:10px;font-size:clamp(15px,1.6vw,17px);font-family:'Playfair Display',serif}
+.lang-block p{color:var(--text2);line-height:1.6;font-size:clamp(13px,1.4vw,15px)}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.tag{background:var(--cream2);border:1px solid var(--border);padding:5px 12px;border-radius:20px;font-size:13px;color:var(--text2)}
+.pillar-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-bottom:24px}
+.pillar{background:var(--burgundy);color:#fff;border-radius:var(--radius);padding:20px;text-align:center}
+.pillar .pnum{font-size:clamp(22px,2.8vw,30px);font-weight:900;font-family:'Playfair Display',serif;color:var(--terracotta-light)}
+.pillar .plbl{font-size:clamp(12px,1.2vw,14px);margin-top:4px;font-weight:600;letter-spacing:.5px}
+footer{text-align:center;padding:24px;color:var(--text3);font-size:14px;border-top:1px solid var(--border);margin-top:32px}
+footer a{color:var(--burgundy);text-decoration:none;font-weight:700}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">HC</div>
+  <div><h1>Helena Coelho</h1><p>Marca Pessoal &middot; Dashboard de Conteudo Estrategico | @helenacoelhots</p></div>
+</header>
+<nav>
+  <button class="active" onclick="showTab('visao',this)">Visao Geral</button>
+  <button onclick="showTab('pilares',this)">Pilares</button>
+  <button onclick="showTab('kanban',this)">Calendario Kanban</button>
+  <button onclick="showTab('videos',this)">Videos</button>
+  <button onclick="showTab('fotos',this)">Fotos</button>
+  <button onclick="showTab('stories',this)">Stories</button>
+  <button onclick="showTab('linguagem',this)">Linguagem</button>
+  <button onclick="showTab('publico',this)">Publico</button>
+  <button onclick="showTab('cores',this)">Cores e Visual</button>
+</nav>
+
+<div id="tab-visao" class="tab active">
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px;"><h2 style="margin-bottom:0">Visao Geral do Perfil</h2><div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;"><span id="profile-last-updated" style="font-size:clamp(12px,1.2vw,13px);color:var(--text3);">Carregando...</span><button class="btn btn-wine btn-sm" onclick="openProfileModal()">Atualizar Perfil</button></div></div><div id="profile-warn" style="display:none;background:rgba(195,111,62,.1);border:1px solid var(--terracotta);border-radius:8px;padding:10px 16px;margin-bottom:16px;font-size:clamp(13px,1.3vw,14px);color:var(--terracotta);">&#9888; Ja faz mais de 30 dias desde a ultima atualizacao. Acesse o Instagram e atualize os dados do perfil.</div><div id="profile-stats-grid" class="stat-grid"></div>
+
+<div class="card"><h3>Posicionamento</h3>
+  <p style="margin-bottom:8px"><strong style="color:var(--burgundy)">"Gestora de trafego pago que vive de verdade."</strong></p>
+  <p style="color:var(--text2)">Nao e a profissional de fachada perfeita, nem a influencer de lifestyle generica. E a mulher que trabalha muito, sente tudo intensamente, tem fe, erra, se reorganiza e nao esconde nenhuma parte disso. Performance profissional e vida real vividas com intencao, nao como coisas separadas.</p>
+</div>
+
+<div class="card"><h3>Sobre o Perfil</h3>
+  <p><strong>Nome:</strong> Helena Coelho</p>
+  <p><strong>Atuacao:</strong> Gestora de Trafego Pago (Meta Ads e Google Ads) - Agencia Ao Cubo Marketing</p>
+  <p><strong>Tambem oferece:</strong> Mentoria e consultoria para gestores e profissionais de marketing sobrecarregados</p>
+  <p><strong>Local:</strong> Brasil - Fuso horario de Brasilia</p>
+  <p><strong>Instagram:</strong> @helenacoelhots</p>
+  <p style="margin-top:12px;color:var(--text2)">Objetivo: ser reconhecida como autoridade em performance digital atraves de conteudo pessoal conectado ao trabalho - e, no medio/longo prazo, vender mentoria de marketing e qualidade de vida para quem performa bem na profissao e mal na vida pessoal.</p>
+</div>
+
+<div class="card"><h3>Diagnostico Atual - Relancamento do Perfil</h3>
+  <p style="margin-bottom:12px;color:var(--text2)">Perfil @helenacoelhots em relancamento apos pausa desde fevereiro. Plano definido: nova bio, destaques reorganizados, feed reduzido para 15-20 posts coerentes, identidade visual fixa, novo post fixado e 9 roteiros prontos para os primeiros 30 dias.</p>
+  <div><strong style="color:var(--burgundy)">Pontos Fortes:</strong>
+    <div class="tag-cloud"><span class="tag">Autoridade tecnica real (Meta/Google Ads)</span><span class="tag">Historia de origem forte</span><span class="tag">Tom direto e honesto</span><span class="tag">Rotina rica em conteudo (trabalho + esportes + fe)</span></div>
+  </div>
+  <div style="margin-top:12px"><strong style="color:var(--terracotta)">Oportunidades:</strong>
+    <div class="tag-cloud"><span class="tag">Consistencia de publicacao</span><span class="tag">Bio e destaques organizados</span><span class="tag">CTAs para mentoria</span><span class="tag">Conectar dor profissional + pessoal em cada post</span></div>
+  </div>
+  <div style="margin-top:12px"><strong style="color:#c0524a">Armadilhas a evitar:</strong>
+    <div class="tag-cloud"><span class="tag">Fe como pregacao</span><span class="tag">Dicas genericas</span><span class="tag">Frequencia insustentavel</span></div>
+  </div>
+</div>
+
+<div class="card"><h3>Dor Central da Audiencia</h3>
+  <p style="color:var(--text2)">Performa bem profissionalmente e mal pessoalmente. Aceita cliente dificil por medo de perder contrato. Descarrega ansiedade em comida, relacionamento ruim, silencio quando devia falar. Nao falta competencia, falta estrutura de vida em volta dela. Esse e o gancho emocional de toda a comunicacao de Helena.</p>
+</div>
+</div>
+
+<div id="tab-pilares" class="tab">
+<h2>Pilares de Conteudo</h2>
+<div class="pillar-grid">
+  <div class="pillar"><div class="pnum">01</div><div class="plbl">Trabalho</div></div>
+  <div class="pillar"><div class="pnum">02</div><div class="plbl">Corpo &amp; Movimento</div></div>
+  <div class="pillar"><div class="pnum">03</div><div class="plbl">Autorresponsabilidade</div></div>
+  <div class="pillar"><div class="pnum">04</div><div class="plbl">Fe</div></div>
+  <div class="pillar"><div class="pnum">05</div><div class="plbl">Humor &amp; Honestidade</div></div>
+</div>
+<div class="card"><h3>01 - Trabalho</h3><p style="color:var(--text2)">Bastidores de gestao de trafego pago, erros e aprendizados reais, autoridade tecnica em Meta Ads e Google Ads, rotina na Ao Cubo Marketing. Mostra competencia sem soar arrogante.</p></div>
+<div class="card"><h3>02 - Corpo &amp; Movimento</h3><p style="color:var(--text2)">Muay Thai, gym, transicao capilar. Performance fisica como espelho da performance profissional - e como forma de descarregar a intensidade do dia a dia.</p></div>
+<div class="card"><h3>03 - Autorresponsabilidade</h3><p style="color:var(--text2)">Reorganizacao de vida, limites com clientes dificeis, decisoes dificeis assumidas sem vitimismo. O contraponto direto da "dor central": Helena age, nao so reclama.</p></div>
+<div class="card"><h3>04 - Fe</h3><p style="color:var(--text2)">Fe catolica integrada de forma natural ao dia a dia - nunca como pregacao ou discurso motivacional generico. Aparece como parte da rotina, nao como tema isolado.</p></div>
+<div class="card"><h3>05 - Humor &amp; Honestidade</h3><p style="color:var(--text2)">Tom seco, autodepreciativo, confessional. E onde Helena "vive de verdade" diante da audiencia - vulnerabilidade com leveza, sem coach motivacional generico.</p></div>
+</div>
+
+<div id="tab-kanban" class="tab">
+<div class="kanban-header">
+  <div class="month-nav">
+    <button onclick="changeMonth(-1)">&#8249;</button>
+    <span id="month-label">Junho 2026</span>
+    <button onclick="changeMonth(1)">&#8250;</button>
+  </div>
+  <div class="kanban-controls">
+    <button class="btn btn-gold" onclick="openModal('addModal')">+ Nova Ideia</button>
+    <button class="btn btn-wine" onclick="openModal('evalModal')">&#128202; Avaliar Mes</button>
+    <button class="btn btn-outline" onclick="clearDone()">Limpar Publicados</button>
+  </div>
+</div>
+<div class="kanban-board">
+  <div class="kanban-col col-ideas"><div class="col-title">&#128161; Ideias <span class="col-count" id="cnt-ideas">0</span></div><div class="kanban-cards" id="cards-ideas" ondragover="allowDrop(event)" ondrop="dropCard(event,'ideas')" ondragleave="dragLeave(event)"></div><div class="drop-zone" ondragover="allowDrop(event)" ondrop="dropCard(event,'ideas')" ondragleave="dragLeave(event)">Solte aqui</div></div>
+  <div class="kanban-col col-scheduled"><div class="col-title">&#128197; Agendado <span class="col-count" id="cnt-scheduled">0</span></div><div class="kanban-cards" id="cards-scheduled" ondragover="allowDrop(event)" ondrop="dropCard(event,'scheduled')" ondragleave="dragLeave(event)"></div><div class="drop-zone" ondragover="allowDrop(event)" ondrop="dropCard(event,'scheduled')" ondragleave="dragLeave(event)">Solte aqui</div></div>
+  <div class="kanban-col col-doing"><div class="col-title">&#127909; Produzindo <span class="col-count" id="cnt-doing">0</span></div><div class="kanban-cards" id="cards-doing" ondragover="allowDrop(event)" ondrop="dropCard(event,'doing')" ondragleave="dragLeave(event)"></div><div class="drop-zone" ondragover="allowDrop(event)" ondrop="dropCard(event,'doing')" ondragleave="dragLeave(event)">Solte aqui</div></div>
+  <div class="kanban-col col-done"><div class="col-title">&#9989; Publicado <span class="col-count" id="cnt-done">0</span></div><div class="kanban-cards" id="cards-done" ondragover="allowDrop(event)" ondrop="dropCard(event,'done')" ondragleave="dragLeave(event)"></div><div class="drop-zone" ondragover="allowDrop(event)" ondrop="dropCard(event,'done')" ondragleave="dragLeave(event)">Solte aqui</div></div>
+</div>
+</div>
+
+<div id="tab-videos" class="tab">
+<div class="ideas-toolbar">
+  <h2>&#127909; Videos</h2>
+  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+    <div class="ideas-stats"><span>Total: <strong id="v-total">0</strong></span><span>&#9989; <strong id="v-done">0</strong></span></div>
+    <button class="btn btn-gold btn-sm" onclick="addIdea('videos')">+ Nova Ideia</button>
+    <button class="btn btn-outline btn-sm" onclick="resetIdeas('videos')">Restaurar</button>
+  </div>
+</div>
+<div class="ideas-grid" id="grid-videos"></div>
+</div>
+
+<div id="tab-fotos" class="tab">
+<div class="ideas-toolbar">
+  <h2>&#128248; Fotos e Posts</h2>
+  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+    <div class="ideas-stats"><span>Total: <strong id="f-total">0</strong></span><span>&#9989; <strong id="f-done">0</strong></span></div>
+    <button class="btn btn-gold btn-sm" onclick="addIdea('fotos')">+ Nova Ideia</button>
+    <button class="btn btn-outline btn-sm" onclick="resetIdeas('fotos')">Restaurar</button>
+  </div>
+</div>
+<div class="ideas-grid" id="grid-fotos"></div>
+</div>
+
+<div id="tab-stories" class="tab">
+<div class="ideas-toolbar">
+  <h2>&#128247; Stories</h2>
+  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+    <div class="ideas-stats"><span>Total: <strong id="s-total">0</strong></span><span>&#9989; <strong id="s-done">0</strong></span></div>
+    <button class="btn btn-gold btn-sm" onclick="addIdea('stories')">+ Nova Ideia</button>
+    <button class="btn btn-outline btn-sm" onclick="resetIdeas('stories')">Restaurar</button>
+  </div>
+</div>
+<div class="ideas-grid" id="grid-stories"></div>
+</div>
+
+<div id="tab-linguagem" class="tab">
+<h2>Linguagem e Tom de Voz</h2>
+<div class="lang-block"><h4>Tom Geral</h4><p>Direto e transparente, sem rodeio. Confessional nos videos pessoais, assertivo nos profissionais. Humor seco e autodepreciativo, nunca cruel. Evita coach motivacional generico, vitimismo e postura inacessivel. Helena fala como quem realmente vive o que diz - nao como quem da palestra sobre isso.</p></div>
+<div class="lang-block"><h4>Vocabulario Recomendado</h4><div class="tag-cloud"><span class="tag">Performance de verdade</span><span class="tag">Sem formula magica</span><span class="tag">Aqui nao tem discurso pronto</span><span class="tag">Vou ser honesta com voce</span><span class="tag">Isso nao e dica generica</span><span class="tag">Bastidor sem filtro</span></div></div>
+<div class="lang-block"><h4>CTAs Recomendados</h4><div class="tag-cloud"><span class="tag">Me conta nos comentarios</span><span class="tag">Salva pra quando precisar</span><span class="tag">Manda pra alguem que performa bem e mal</span><span class="tag">Quer saber mais sobre a mentoria? Manda DM</span><span class="tag">Segue se voce tambem vive assim</span></div></div>
+<div class="lang-block"><h4>Hashtags</h4><div class="tag-cloud"><span class="tag">#gestoradetrafego</span><span class="tag">#trafegopago</span><span class="tag">#metaads</span><span class="tag">#googleads</span><span class="tag">#marcapessoal</span><span class="tag">#performancereal</span><span class="tag">#mentoriadetrafego</span><span class="tag">#vidareal</span></div></div>
+<div class="lang-block"><h4>Narrativa de Origem</h4><p>Helena vem das frustracoes e corta o que nao serve. Sai da cadeira e testa esportes. Revisita uma desilusao antiga e encontra ali o treino para lidar com gente que nao fala a verdade. E demitida por IA e mergulha na tecnologia. O arco gera credibilidade emocional antes de qualquer oferta.</p></div>
+</div>
+
+<div id="tab-publico" class="tab">
+<h2>Publico-Alvo</h2>
+<div class="persona"><h4>Primario: Gestores de Trafego Sobrecarregados</h4><p><strong>Perfil:</strong> Profissionais de marketing/trafego pago que trabalham muito, lidam com clientes dificeis e metas constantes.</p><p><strong>Dor:</strong> Performam bem no trabalho e mal na vida pessoal. Aceitam o que nao deveriam por medo de perder contrato.</p><p><strong>O que converte:</strong> Conteudo tecnico genuino + vulnerabilidade real. Sentir que existe alguem igual a eles, mas que esta se organizando.</p></div>
+<div class="persona"><h4>Secundario: Empreendedores que Querem Contratar</h4><p><strong>Perfil:</strong> Donos de negocio buscando uma gestora de trafego confiavel e competente.</p><p><strong>Dor:</strong> Ja foram mal atendidos por agencias genericas, querem alguem que se identifique e que mostre resultado.</p><p><strong>O que converte:</strong> Autoridade tecnica visivel + identificacao pessoal com a forma de trabalhar de Helena.</p></div>
+<div class="persona"><h4>Terciario: Mulheres que Trabalham Muito e Comem a Propria Frustracao</h4><p><strong>Perfil:</strong> Mulheres com rotina intensa, alta performance profissional, baixa estrutura de autocuidado.</p><p><strong>Dor:</strong> Silencio quando deviam falar, ansiedade descarregada em comida ou relacionamentos ruins.</p><p><strong>O que converte:</strong> Conteudo de autorresponsabilidade, fe e corpo & movimento sem tom de sermao - mostrando processo real, nao perfeicao.</p></div>
+</div>
+
+<div id="tab-cores" class="tab">
+<h2>Identidade Visual e Cores</h2>
+<div class="card"><h3>Paleta da Marca</h3>
+<div class="palette">
+  <div class="color-chip"><div class="swatch" style="background:#6B2737"></div><div class="info"><strong>#6B2737</strong><br>Bordo Principal</div></div>
+  <div class="color-chip"><div class="swatch" style="background:#4A1B26"></div><div class="info"><strong>#4A1B26</strong><br>Bordo Escuro</div></div>
+  <div class="color-chip"><div class="swatch" style="background:#8B3A4A"></div><div class="info"><strong>#8B3A4A</strong><br>Bordo Medio</div></div>
+  <div class="color-chip"><div class="swatch" style="background:#C36F3E"></div><div class="info"><strong>#C36F3E</strong><br>Terracota</div></div>
+  <div class="color-chip"><div class="swatch" style="background:#FAF6F0"></div><div class="info"><strong>#FAF6F0</strong><br>Creme (Fundo)</div></div>
+  <div class="color-chip"><div class="swatch" style="background:#3A3A3A"></div><div class="info"><strong>#3A3A3A</strong><br>Texto Principal</div></div>
+</div>
+</div>
+<div class="card"><h3>Tipografia</h3><p>Titulos e destaques: <strong>Playfair Display</strong> (serifada, editorial, transmite autoridade e sofisticacao sem ser fria). Corpo de texto: <strong>Inter</strong> (sans-serif limpa e legivel, transmite clareza e modernidade). Tamanho minimo: 15px.</p></div>
+<div class="card"><h3>Aplicacao Visual</h3><p>Fundo claro em creme (#FAF6F0) com cards brancos, titulos em bordo (#6B2737) e detalhes/acentos em terracota (#C36F3E). Visual editorial e acolhedor - performance e cuidado com a vida real ao mesmo tempo. Fotos em luz natural, tons quentes, nada de fundo escuro ou frio - isso contrasta com a proposta de "vida real" e acessibilidade.</p></div>
+<div class="card"><h3>Sugestoes de Logo</h3>
+  <p style="margin-bottom:10px"><strong style="color:var(--burgundy)">Opcao 1 - Monograma "HC":</strong> <span style="color:var(--text2)">circulo bordo solido com as iniciais "HC" em creme, tipografia Playfair Display. Funciona como foto de perfil e marca de destaques do Instagram.</span></p>
+  <p style="margin-bottom:10px"><strong style="color:var(--burgundy)">Opcao 2 - Assinatura/Wordmark:</strong> <span style="color:var(--text2)">"Helena Coelho" escrito em Playfair Display itálico, em bordo, sobre fundo creme - usado em capas de carrossel e materiais de mentoria.</span></p>
+  <p><strong style="color:var(--burgundy)">Opcao 3 - Selo Editorial:</strong> <span style="color:var(--text2)">pequeno selo circular com a frase "Performance &amp; Vida Real" contornando o monograma "HC", em terracota sobre creme - usado como marca d'agua discreta em fotos.</span></p>
+</div>
+</div>
+
+<div class="modal-overlay" id="addModal">
+<div class="modal"><button class="modal-close" onclick="closeModal('addModal')">&#x2715;</button><h2>+ Nova Ideia (Kanban)</h2><label>Titulo</label><input type="text" id="newTitle" placeholder="Ex: Reel sobre rotina de trafego pago"><label>Tipo</label><select id="newType"><option value="reel">Reel</option><option value="foto">Foto</option><option value="carrossel">Carrossel</option><option value="story">Story</option></select><label>Data Planejada</label><input type="date" id="newDate"><label>Notas</label><textarea id="newDesc" placeholder="Detalhes..."></textarea><label>Coluna</label><select id="newCol"><option value="ideas">Ideias</option><option value="scheduled">Agendado</option><option value="doing">Produzindo</option></select><div class="modal-btns"><button class="btn btn-wine" onclick="addNewCard()">Adicionar</button><button class="btn btn-outline" onclick="closeModal('addModal')">Cancelar</button></div></div>
+</div>
+<div class="modal-overlay" id="editModal">
+<div class="modal"><button class="modal-close" onclick="closeModal('editModal')">&#x2715;</button><h2>Editar Card</h2><label>Titulo</label><input type="text" id="editTitle"><label>Data</label><input type="date" id="editDate"><label>Notas</label><textarea id="editDesc"></textarea><div class="modal-btns"><button class="btn btn-wine" onclick="saveEdit()">Salvar</button><button class="btn btn-outline" onclick="closeModal('editModal')">Cancelar</button></div></div>
+</div>
+<div class="modal-overlay" id="evalModal">
+<div class="modal"><button class="modal-close" onclick="closeModal('evalModal')">&#x2715;</button><h2>&#128202; Avaliar Mes</h2><label>Mes</label><select id="evalMonth"><option value="1">Janeiro</option><option value="2">Fevereiro</option><option value="3">Marco</option><option value="4">Abril</option><option value="5">Maio</option><option value="6" selected>Junho</option><option value="7">Julho</option><option value="8">Agosto</option><option value="9">Setembro</option><option value="10">Outubro</option><option value="11">Novembro</option><option value="12">Dezembro</option></select><label>Posts publicados</label><input type="number" id="evalPosts" min="0" max="60" placeholder="Ex: 12"><label>Alcance medio por post</label><input type="number" id="evalReach" placeholder="Ex: 850"><label>Principal dificuldade</label><select id="evalDiff"><option value="criacao">Criacao de conteudo</option><option value="consistencia">Manter consistencia</option><option value="engajamento">Baixo engajamento</option><option value="ideias">Falta de ideias</option><option value="tempo">Falta de tempo</option></select><button class="btn btn-wine" onclick="generateAnalysis()" style="width:100%;margin:8px 0 4px">Gerar Analise</button><div id="analysisResult"></div></div>
+</div>
+<!-- Profile Update Modal -->
+<div id="profileModal" class="modal-overlay"><div class="modal"><button class="modal-close" onclick="closeProfileModal()">&times;</button><h2>Atualizar Dados do Perfil</h2><p style="font-size:clamp(13px,1.3vw,14px);color:var(--text2);margin-bottom:20px;">Acesse o Instagram @helenacoelhots e atualize os numeros abaixo. Isso permite acompanhar a evolucao do relancamento do perfil.</p><label>Publicacoes</label><input type="number" id="pf-posts" min="0" placeholder="Ex: 18"><label>Seguidores</label><input type="number" id="pf-followers" min="0" placeholder="Ex: 1200"><label>Seguindo</label><input type="number" id="pf-following" min="0" placeholder="Ex: 400"><label>Meta de Crescimento</label><input type="text" id="pf-goal" placeholder="Ex: Autoridade em 90 dias"><div class="modal-btns"><button class="btn btn-wine" onclick="saveProfileData()">Salvar Atualizacao</button><button class="btn btn-outline" onclick="closeProfileModal()">Cancelar</button></div></div></div>
+
+<footer><p>Dashboard Helena Coelho | Marca Pessoal - <a href="https://instagram.com/helenacoelhots" target="_blank">@helenacoelhots</a></p></footer>
+<script>
+// ===== PROFILE OVERVIEW =====
+var HC_PROFILE_KEY = "hc-profile-data";
+function getProfileData() {
+  var defaults = {posts:"18",followers:"1.200",following:"400",goal:"Autoridade em 90 dias",updatedAt:null};
+  try { var s=localStorage.getItem(HC_PROFILE_KEY); return s?JSON.parse(s):defaults; } catch(e){return defaults;}
+}
+function renderProfileStats() {
+  var d = getProfileData();
+  var grid = document.getElementById("profile-stats-grid");
+  if(!grid) return;
+  grid.innerHTML = '' +
+    '<div class="stat"><span class="num" id="pf-disp-posts">'+d.posts+'</span><div class="lbl">Publicacoes</div></div>' +
+    '<div class="stat"><span class="num" id="pf-disp-followers">'+d.followers+'</span><div class="lbl">Seguidores</div></div>' +
+    '<div class="stat"><span class="num" id="pf-disp-following">'+d.following+'</span><div class="lbl">Seguindo</div></div>' +
+    '<div class="stat"><span class="num" id="pf-disp-goal">'+d.goal+'</span><div class="lbl">Meta de Crescimento</div></div>';
+  var lu = document.getElementById("profile-last-updated");
+  var warn = document.getElementById("profile-warn");
+  if(d.updatedAt) {
+    var dt = new Date(d.updatedAt);
+    var now = new Date();
+    var diff = Math.floor((now - dt)/(1000*60*60*24));
+    lu.textContent = "Atualizado em " + dt.toLocaleDateString("pt-BR") + " (" + diff + " dias atras)";
+    if(diff >= 30) { warn.style.display="block"; } else { warn.style.display="none"; }
+  } else {
+    lu.textContent = "Dados de referencia - atualize com os valores atuais do Instagram";
+    warn.style.display = "none";
+  }
+}
+function openProfileModal() {
+  var d = getProfileData();
+  document.getElementById("pf-posts").value = d.posts.replace(/\./g,"");
+  document.getElementById("pf-followers").value = d.followers.replace(/\./g,"");
+  document.getElementById("pf-following").value = d.following.replace(/\./g,"");
+  document.getElementById("pf-goal").value = d.goal;
+  document.getElementById("profileModal").classList.add("open");
+}
+function closeProfileModal() {
+  document.getElementById("profileModal").classList.remove("open");
+}
+function saveProfileData() {
+  var posts = parseInt(document.getElementById("pf-posts").value)||0;
+  var followers = parseInt(document.getElementById("pf-followers").value)||0;
+  var following = parseInt(document.getElementById("pf-following").value)||0;
+  var goal = document.getElementById("pf-goal").value || "Autoridade em 90 dias";
+  function fmt(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".");}
+  var data = {posts:fmt(posts),followers:fmt(followers),following:fmt(following),goal:goal,updatedAt:new Date().toISOString()};
+  localStorage.setItem(HC_PROFILE_KEY, JSON.stringify(data));
+  renderProfileStats();
+  closeProfileModal();
+}
+// ===== END PROFILE =====
+
+/* ===== DADOS PADRAO ===== */
+var DEF = {
+videos:[
+{id:"v1",title:"Bom no trabalho, pessima na vida real",desc:"Reel confessional sobre a dor central: performance profissional alta e estrutura pessoal zero. CTA: Me conta nos comentarios.",type:"reel",done:false},
+{id:"v2",title:"Um dia de gestora de trafego (sem filtro)",desc:"Bastidor real da rotina: reunioes, ajustes de campanha, imprevistos. Mostra competencia tecnica sem arrogancia.",type:"reel",done:false},
+{id:"v3",title:"Fui demitida pela IA - e foi o melhor que me aconteceu",desc:"Narrativa de origem: como a demissao por IA empurrou Helena para a tecnologia e para o trafego pago.",type:"reel",done:false},
+{id:"v4",title:"Por que eu aceitava cliente dificil (e parei)",desc:"Pilar Autorresponsabilidade: o medo de perder contrato e a decisao de colocar limites.",type:"reel",done:false},
+{id:"v5",title:"Muay Thai descarregou minha ansiedade hoje",desc:"Pilar Corpo & Movimento: como o treino virou ferramenta de regulacao emocional, nao so estetica.",type:"reel",done:false},
+{id:"v6",title:"3 sinais de que sua campanha esta performando mal",desc:"Conteudo tecnico de autoridade em Meta Ads/Google Ads, linguagem direta e sem jargao.",type:"reel",done:false},
+{id:"v7",title:"Minha fe no dia a dia (sem sermao)",desc:"Pilar Fe integrada de forma natural a rotina - sem tom de pregacao ou discurso motivacional.",type:"reel",done:false},
+{id:"v8",title:"O que aprendi voltando a treinar depois dos 30",desc:"Pilar Corpo & Movimento com humor seco e autodepreciativo sobre recomecos.",type:"reel",done:false},
+{id:"v9",title:"Trabalho demais, descanso de menos - mudando isso",desc:"Pilar Autorresponsabilidade: processo real de reorganizar rotina, sem discurso de produtividade toxica.",type:"reel",done:false},
+{id:"v10",title:"Erros que cometi gerindo trafego (e ninguem me contou)",desc:"Conteudo de autoridade tecnica + vulnerabilidade. Gera confianca para a mentoria.",type:"reel",done:false}
+],
+fotos:[
+{id:"f1",title:"Setup de trabalho - dashboards de ads",desc:"Foto autentica do home office com telas de campanhas. Tom: trabalho de verdade, sem cenografia.",type:"foto",done:false},
+{id:"f2",title:"Carrossel: 5 licoes de performar bem no trabalho e mal na vida",desc:"Slides em bordo e terracota conectando a dor central com aprendizados pessoais.",type:"carrossel",done:false},
+{id:"f3",title:"Foto pos-treino de Muay Thai",desc:"Estilo de vida ativo, suor real, sem pose perfeita. Reforca o pilar Corpo & Movimento.",type:"foto",done:false},
+{id:"f4",title:"Sem make, transicao capilar - foto autentica",desc:"Conteudo de vulnerabilidade real, reforcando 'vive de verdade'.",type:"foto",done:false},
+{id:"f5",title:"Carrossel: Metricas que realmente importam em Meta Ads",desc:"Conteudo tecnico de autoridade explicado de forma simples e visual.",type:"carrossel",done:false},
+{id:"f6",title:"Momento de fe na rotina",desc:"Foto sutil - oracao, igreja ou bíblia na mesa de trabalho. Sem texto de pregacao.",type:"foto",done:false},
+{id:"f7",title:"Citacao pessoal sobre autorresponsabilidade",desc:"Post de frase de autoria propria sobre assumir a propria vida - tom direto, nao motivacional generico.",type:"foto",done:false},
+{id:"f8",title:"Bastidor do relancamento do perfil",desc:"Carrossel mostrando o processo de reorganizar bio, destaques e feed - transparencia do processo.",type:"carrossel",done:false},
+{id:"f9",title:"Foto na Agencia Ao Cubo Marketing",desc:"Bastidores profissionais reforcando atuacao real na agencia.",type:"foto",done:false},
+{id:"f10",title:"Carrossel: Performance no trabalho x vida real",desc:"Carrossel central da marca - usa a dor central como gancho, sem soar vitimista.",type:"carrossel",done:false}
+],
+stories:[
+{id:"s1",title:"Caixa de perguntas: trafego ou vida real",desc:"Convite para perguntas tecnicas (trafego pago) ou pessoais. Gera proximidade e engajamento.",type:"story",done:false},
+{id:"s2",title:"Rotina: trabalho + treino do dia",desc:"Sequencia de stories mostrando o dia real - trabalho e Muay Thai/gym.",type:"story",done:false},
+{id:"s3",title:"Bastidor: configurando uma campanha",desc:"Story rapido mostrando ajustes em Meta Ads/Google Ads - autoridade tecnica no formato leve.",type:"story",done:false},
+{id:"s4",title:"Enquete: voce performa bem no trabalho e mal em casa?",desc:"Enquete SIM/NAO conectando com a dor central da audiencia.",type:"story",done:false},
+{id:"s5",title:"Pequena vitoria da semana",desc:"Compartilha um avanco pessoal (treino, habito, decisao) - tom humano, sem exagero.",type:"story",done:false},
+{id:"s6",title:"Repost do novo Reel",desc:"Story promovendo video recem publicado, com previa de 5s e CTA para o feed.",type:"story",done:false},
+{id:"s7",title:"Meme/humor sobre rotina de gestora de trafego",desc:"Pilar Humor & Honestidade - leveza sobre o dia a dia da profissao.",type:"story",done:false},
+{id:"s8",title:"Reflexao do dia (sem pregacao)",desc:"Pequena reflexao de fe natural, no estilo 'hoje eu aprendi que...' - curto e direto.",type:"story",done:false},
+{id:"s9",title:"Convite para mentoria",desc:"Story direto: 'Quer organizar trabalho e vida ao mesmo tempo? Me manda DM' - CTA claro sem ser forcado.",type:"story",done:false},
+{id:"s10",title:"Confissao da semana",desc:"Formato vulneravel e honesto - um erro, frustracao ou aprendizado real da semana.",type:"story",done:false}
+]};
+
+/* ===== ESTADO ===== */
+var IDEAS = {
+  videos: JSON.parse(localStorage.getItem("hc-ideas-videos") || "null") || JSON.parse(JSON.stringify(DEF.videos)),
+  fotos:  JSON.parse(localStorage.getItem("hc-ideas-fotos")  || "null") || JSON.parse(JSON.stringify(DEF.fotos)),
+  stories:JSON.parse(localStorage.getItem("hc-ideas-stories")|| "null") || JSON.parse(JSON.stringify(DEF.stories))
+};
+function saveIdeas(tab){ localStorage.setItem("hc-ideas-"+tab, JSON.stringify(IDEAS[tab])); }
+
+/* ===== RENDER IDEIAS - SEM ASPAS INLINE ===== */
+function renderIdeas(tab){
+  var prefix = {videos:"v", fotos:"f", stories:"s"}[tab];
+  var grid = document.getElementById("grid-"+tab);
+  if(!grid) return;
+  grid.innerHTML = "";
+  var list = IDEAS[tab];
+  var doneCount = list.filter(function(i){ return i.done; }).length;
+  var tel = document.getElementById(prefix+"-total"); if(tel) tel.textContent = list.length;
+  var del = document.getElementById(prefix+"-done");  if(del) del.textContent = doneCount;
+
+  list.forEach(function(item){
+    var card = document.createElement("div");
+    card.className = "idea-card" + (item.done ? " published" : "");
+    card.dataset.id = item.id;
+    card.dataset.tab = tab;
+
+    var top = document.createElement("div");
+    top.className = "idea-card-top";
+
+    var titleEl = document.createElement("div");
+    titleEl.className = "idea-title";
+    titleEl.contentEditable = "true";
+    titleEl.textContent = item.title;
+    titleEl.addEventListener("blur", function(){
+      var it = IDEAS[tab].find(function(x){ return x.id===item.id; });
+      if(it){ it.title = titleEl.textContent.trim() || it.title; saveIdeas(tab); }
+    });
+    titleEl.addEventListener("keydown", function(e){ if(e.key==="Enter"){ e.preventDefault(); titleEl.blur(); } });
+
+    var delBtn = document.createElement("button");
+    delBtn.className = "idea-del-btn";
+    delBtn.title = "Excluir";
+    delBtn.textContent = "X";
+    delBtn.addEventListener("click", function(){
+      if(!confirm("Excluir esta ideia?")) return;
+      IDEAS[tab] = IDEAS[tab].filter(function(x){ return x.id!==item.id; });
+      saveIdeas(tab); renderIdeas(tab);
+    });
+
+    top.appendChild(titleEl);
+    top.appendChild(delBtn);
+
+    var descEl = document.createElement("div");
+    descEl.className = "idea-desc";
+    descEl.contentEditable = "true";
+    descEl.textContent = item.desc;
+    descEl.addEventListener("blur", function(){
+      var it = IDEAS[tab].find(function(x){ return x.id===item.id; });
+      if(it){ it.desc = descEl.textContent.trim() || it.desc; saveIdeas(tab); }
+    });
+
+    var footer = document.createElement("div");
+    footer.className = "idea-footer";
+
+    var sel = document.createElement("select");
+    sel.className = "idea-type-sel";
+    ["reel","foto","carrossel","story"].forEach(function(t){
+      var opt = document.createElement("option");
+      opt.value = t;
+      opt.textContent = t.charAt(0).toUpperCase()+t.slice(1);
+      if(t === item.type) opt.selected = true;
+      sel.appendChild(opt);
+    });
+    sel.addEventListener("change", function(){
+      var it = IDEAS[tab].find(function(x){ return x.id===item.id; });
+      if(it){ it.type = sel.value; saveIdeas(tab); renderIdeas(tab); }
+    });
+
+    var pubBtn = document.createElement("button");
+    pubBtn.className = "btn-pub" + (item.done ? " done" : "");
+    pubBtn.textContent = item.done ? "Publicado" : "Marcar Publicado";
+    pubBtn.addEventListener("click", function(){
+      var it = IDEAS[tab].find(function(x){ return x.id===item.id; });
+      if(it){ it.done = !it.done; saveIdeas(tab); renderIdeas(tab); }
+    });
+
+    footer.appendChild(sel);
+    footer.appendChild(pubBtn);
+
+    card.appendChild(top);
+    card.appendChild(descEl);
+    card.appendChild(footer);
+    grid.appendChild(card);
+  });
+}
+
+function addIdea(tab){
+  var title = prompt("Titulo da nova ideia:");
+  if(!title || !title.trim()) return;
+  var desc = prompt("Descricao (opcional):") || "";
+  var types = {videos:"reel", fotos:"foto", stories:"story"};
+  IDEAS[tab].push({id: tab.charAt(0)+Date.now(), title:title.trim(), desc:desc.trim(), type:types[tab], done:false});
+  saveIdeas(tab); renderIdeas(tab);
+}
+
+function resetIdeas(tab){
+  if(!confirm("Restaurar todas as ideias padrao? Suas edicoes serao perdidas.")) return;
+  IDEAS[tab] = JSON.parse(JSON.stringify(DEF[tab]));
+  saveIdeas(tab); renderIdeas(tab);
+}
+
+/* ===== NAVEGACAO ===== */
+function showTab(name, btn){
+  document.querySelectorAll(".tab").forEach(function(t){ t.classList.remove("active"); });
+  document.querySelectorAll("nav button").forEach(function(b){ b.classList.remove("active"); });
+  document.getElementById("tab-"+name).classList.add("active");
+  if(btn) btn.classList.add("active");
+  if(name==="kanban") renderKanban();
+  if(name==="visao") renderProfileStats();
+  if(name==="videos") renderIdeas("videos");
+  if(name==="fotos")  renderIdeas("fotos");
+  if(name==="stories") renderIdeas("stories");
+}
+
+/* ===== KANBAN ===== */
+var cards = JSON.parse(localStorage.getItem("hc-kanban") || "null") || [
+  {id:1,title:"Reel: Bom no trabalho, pessima na vida real",type:"reel",date:"2026-06-02",desc:"Confessional - dor central",col:"scheduled",done:false},
+  {id:2,title:"Story: Caixa de perguntas trafego ou vida real",type:"story",date:"2026-06-03",desc:"Engajamento e proximidade",col:"scheduled",done:false},
+  {id:3,title:"Carrossel: 5 licoes de performar bem e mal",type:"carrossel",date:"2026-06-05",desc:"Slides bordo e terracota",col:"ideas",done:false},
+  {id:4,title:"Reel: Fui demitida pela IA",type:"reel",date:"2026-06-09",desc:"Narrativa de origem",col:"scheduled",done:false},
+  {id:5,title:"Foto: setup de trabalho com dashboards",type:"foto",date:"2026-06-10",desc:"Bastidor real",col:"ideas",done:false},
+  {id:6,title:"Reel: 3 sinais de campanha performando mal",type:"reel",date:"2026-06-12",desc:"Autoridade tecnica",col:"doing",done:false},
+  {id:7,title:"Story: enquete trabalho x vida pessoal",type:"story",date:"2026-06-13",desc:"Conexao com dor central",col:"scheduled",done:false},
+  {id:8,title:"Reel: Muay Thai e ansiedade",type:"reel",date:"2026-06-16",desc:"Corpo & Movimento",col:"ideas",done:false},
+  {id:9,title:"Carrossel: metricas que importam em Meta Ads",type:"carrossel",date:"2026-06-18",desc:"Conteudo tecnico",col:"scheduled",done:false},
+  {id:10,title:"Reel: por que eu aceitava cliente dificil",type:"reel",date:"2026-06-23",desc:"Autorresponsabilidade",col:"ideas",done:false},
+  {id:11,title:"Foto: bastidor do relancamento do perfil",type:"carrossel",date:"2026-06-25",desc:"Transparencia do processo",col:"ideas",done:false},
+  {id:12,title:"Story: convite para mentoria",type:"story",date:"2026-06-27",desc:"CTA direto",col:"ideas",done:false}
+];
+var nextId=100, currentMonth=5, currentYear=2026, dragId=null, editingId=null;
+var months=["Janeiro","Fevereiro","Marco","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+
+function saveCards(){ localStorage.setItem("hc-kanban", JSON.stringify(cards)); }
+
+function changeMonth(d){
+  currentMonth+=d;
+  if(currentMonth>11){currentMonth=0;currentYear++;}
+  if(currentMonth<0){currentMonth=11;currentYear--;}
+  document.getElementById("month-label").textContent = months[currentMonth]+" "+currentYear;
+  renderKanban();
+}
+
+function renderKanban(){
+  var cols={ideas:[],scheduled:[],doing:[],done:[]};
+  var mn=currentMonth+1;
+  cards.forEach(function(c){
+    if(!c.date){cols[c.col].push(c);return;}
+    var p=c.date.split("-");
+    if(parseInt(p[1])===mn && parseInt(p[0])===currentYear) cols[c.col].push(c);
+  });
+  ["ideas","scheduled","doing","done"].forEach(function(col){
+    var el=document.getElementById("cards-"+col); if(!el) return;
+    el.innerHTML="";
+    cols[col].forEach(function(c){ el.appendChild(makeCard(c)); });
+    var cnt=document.getElementById("cnt-"+col); if(cnt) cnt.textContent=cols[col].length;
+  });
+}
+
+function makeCard(c){
+  var div=document.createElement("div");
+  div.className="kanban-card"+(c.done?" done-card":"");
+  div.draggable=true;
+  div.dataset.id=c.id;
+  div.addEventListener("dragstart",function(e){ dragId=c.id; div.classList.add("dragging"); e.dataTransfer.setData("text/plain",c.id); });
+  div.addEventListener("dragend",function(){ div.classList.remove("dragging"); });
+
+  var tl={reel:"Reel",foto:"Foto",carrossel:"Carrossel",story:"Story"};
+  var dt=c.date?(function(d){var p=d.split("-");return p[2]+"/"+p[1]+"/"+p[0];})(c.date):"";
+
+  var actDiv=document.createElement("div"); actDiv.className="card-actions";
+  var editBtn=document.createElement("button"); editBtn.title="Editar"; editBtn.textContent="...";
+  editBtn.addEventListener("click",function(){ openEdit(c.id); });
+  var delBtn=document.createElement("button"); delBtn.title="Excluir"; delBtn.textContent="X"; delBtn.style.color="#c0524a";
+  delBtn.addEventListener("click",function(){ deleteCard(c.id); });
+  actDiv.appendChild(editBtn); actDiv.appendChild(delBtn);
+
+  var titleDiv=document.createElement("div"); titleDiv.className="card-title"; titleDiv.textContent=c.title;
+  var metaDiv=document.createElement("div"); metaDiv.className="card-meta";
+  var badge=document.createElement("span"); badge.className="badge "+c.type; badge.style.cssText="font-size:11px;padding:2px 7px"; badge.textContent=tl[c.type];
+  metaDiv.appendChild(badge);
+  if(dt){ var dSpan=document.createElement("span"); dSpan.className="card-date"; dSpan.textContent=dt; metaDiv.appendChild(dSpan); }
+
+  var chkDiv=document.createElement("div"); chkDiv.className="card-check";
+  var chk=document.createElement("input"); chk.type="checkbox"; chk.id="chk"+c.id; chk.checked=!!c.done;
+  chk.addEventListener("change",function(){ toggleDone(c.id,chk.checked); });
+  var lbl=document.createElement("label"); lbl.htmlFor="chk"+c.id; lbl.textContent=c.done?"Publicado":"Marcar como publicado";
+  chkDiv.appendChild(chk); chkDiv.appendChild(lbl);
+
+  div.appendChild(actDiv); div.appendChild(titleDiv); div.appendChild(metaDiv); div.appendChild(chkDiv);
+  return div;
+}
+
+function allowDrop(e){ e.preventDefault(); e.stopPropagation(); e.currentTarget.classList.add("drag-over"); }
+function dragLeave(e){ e.currentTarget.classList.remove("drag-over"); }
+function dropCard(e,col){ e.preventDefault(); e.stopPropagation(); document.querySelectorAll(".drag-over").forEach(function(z){z.classList.remove("drag-over");}); if(dragId!==null){ var c=cards.find(function(x){return x.id===dragId;}); if(c){c.col=col;saveCards();renderKanban();} dragId=null; } }
+function toggleDone(id,checked){ var c=cards.find(function(x){return x.id===id;}); if(c){c.done=checked;if(checked)c.col="done";saveCards();renderKanban();} }
+function deleteCard(id){ if(!confirm("Excluir este card?"))return; cards=cards.filter(function(c){return c.id!==id;}); saveCards();renderKanban(); }
+function openEdit(id){ var c=cards.find(function(x){return x.id===id;}); if(!c)return; editingId=id; document.getElementById("editTitle").value=c.title; document.getElementById("editDate").value=c.date||""; document.getElementById("editDesc").value=c.desc||""; openModal("editModal"); }
+function saveEdit(){ var c=cards.find(function(x){return x.id===editingId;}); if(c){c.title=document.getElementById("editTitle").value;c.date=document.getElementById("editDate").value;c.desc=document.getElementById("editDesc").value;saveCards();renderKanban();} closeModal("editModal"); }
+function addNewCard(){ var t=document.getElementById("newTitle").value.trim(); if(!t){alert("Insira um titulo!");return;} cards.push({id:++nextId,title:t,type:document.getElementById("newType").value,date:document.getElementById("newDate").value,desc:document.getElementById("newDesc").value,col:document.getElementById("newCol").value,done:false}); saveCards();renderKanban();closeModal("addModal"); document.getElementById("newTitle").value="";document.getElementById("newDate").value="";document.getElementById("newDesc").value=""; }
+function clearDone(){ if(!confirm("Remover todos os cards publicados?"))return; cards=cards.filter(function(c){return!c.done;}); saveCards();renderKanban(); }
+function openModal(id){ document.getElementById(id).classList.add("open"); }
+function closeModal(id){ document.getElementById(id).classList.remove("open"); }
+
+function generateAnalysis(){
+  var posts=parseInt(document.getElementById("evalPosts").value)||0;
+  var reach=parseInt(document.getElementById("evalReach").value)||0;
+  var diff=document.getElementById("evalDiff").value;
+  var mName=months[parseInt(document.getElementById("evalMonth").value)-1];
+  var score=Math.min(100,Math.round((posts/20)*60+(reach/1000)*40));
+  var done=cards.filter(function(c){return c.done;}).length;
+  var tips={criacao:"Separe 1 dia por semana so para gravar. Crie batches de 4-5 videos de uma vez, intercalando os 5 pilares.",consistencia:"Use o Kanban diariamente. Defina um horario fixo de postagem e respeite, mesmo nas semanas cheias.",engajamento:"Adicione CTAs mais diretos. Finalize cada video com uma pergunta que conecte trabalho e vida real.",ideias:"Use as abas Videos, Fotos e Stories deste dashboard - voce ja tem 30 ideias prontas distribuidas nos 5 pilares.",tempo:"Aproveite os 9 roteiros prontos dos primeiros 30 dias. Grave em lote nos dias de menos demanda na agencia."};
+  var sc=score>=70?"#4c8c6e":score>=40?"#C36F3E":"#c0524a";
+  var sm=score>=70?"Excelente! Foque agora em qualidade e em fortalecer os CTAs para mentoria.":score>=40?"Bom ritmo! Tente aumentar a frequencia mantendo os 5 pilares equilibrados.":"Atencao: menos posts reduzem o impacto do relancamento do perfil.";
+  document.getElementById("analysisResult").innerHTML="<div class=\"analysis-box\"><h4>Analise de "+mName+"</h4><div class=\"score-labels\"><span>Pontuacao</span><span>"+score+"/100</span></div><div class=\"score-bar\"><div class=\"score-fill\" id=\"sfill\" style=\"width:0%\"></div></div><ul style=\"margin-top:16px\"><li><strong>Posts publicados:</strong> "+posts+" (meta: 15-20/mes)</li>"+(reach?"<li><strong>Alcance medio:</strong> "+reach+" pessoas/post</li>":"")+"<li><strong>Cards kanban concluidos:</strong> "+done+"</li></ul><h4 style=\"margin-top:16px\">Sugestao</h4><p>"+tips[diff]+"</p><p style=\"margin-top:12px;color:"+sc+"\">"+sm+"</p></div>";
+  setTimeout(function(){ var f=document.getElementById("sfill"); if(f) f.style.width=score+"%"; },100);
+}
+
+window.addEventListener("click",function(e){ if(e.target.classList.contains("modal-overlay")) e.target.classList.remove("open"); });
+
+/* Init */
+renderProfileStats();
+renderKanban();
+renderIdeas("videos");
+renderIdeas("fotos");
+renderIdeas("stories");
+</script>
+</body>
+</html>
